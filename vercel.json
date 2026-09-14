@@ -95,6 +95,38 @@
           "value": "no-store"
         }
       ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
+    },
+    {
+      "source": "/llms-full.txt",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
+    },
+    {
+      "source": "/ai.txt",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
+    },
+    {
+      "source": "/plannings",
+      "has": [{ "type": "query", "key": "disc" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
+    },
+    {
+      "source": "/plannings/",
+      "has": [{ "type": "query", "key": "disc" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
+    },
+    {
+      "source": "/plannings",
+      "has": [{ "type": "query", "key": "jour" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
+    },
+    {
+      "source": "/plannings/",
+      "has": [{ "type": "query", "key": "jour" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
     }
   ],
   "redirects": [
