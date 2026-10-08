@@ -4,10 +4,16 @@
    ===================================================================== */
 import { createHash, createHmac, timingSafeEqual } from "crypto";
 
-export function allowCors(res) {
-  res.setHeader("Access-Control-Allow-Origin", process.env.CORS_ORIGIN || "*");
+export function allowCors(res, origin) {
+  const autorisée = origin || process.env.CORS_ORIGIN || "*";
+  res.setHeader("Access-Control-Allow-Origin", autorisée);
   res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, x-admin-token");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Accept, MCP-Protocol-Version, MCP-Session-Id, x-admin-token"
+  );
+  res.setHeader("Access-Control-Expose-Headers", "MCP-Protocol-Version, MCP-Session-Id");
+  if (autorisée !== "*") res.setHeader("Vary", "Origin");
 }
 
 /** Comparaison à temps constant du mot de passe staff (jamais dans le front). */

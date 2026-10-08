@@ -1,11 +1,11 @@
 /* =====================================================================
    SAINT-CYPRIEN · tarifs.js — simple, sans détour.
    Essai en tête → offres de la saison (Duo prioritaire · Saison) → école &
-   compléments → conditions → avis Google RÉELS → FAQ argent. Tout depuis
+   compléments → conditions → lien vers les avis Google actuels → FAQ argent. Tout depuis
    data.js (PROMOS daté, jamais de prix en dur), tous les CTA → box-plus.
    ===================================================================== */
-import { TARIFS, PROMOS, REVIEWS, LINKS, SALLE } from "./data.js?v=27";
-import { PRICING_FAQ } from "./data-tarifs.js?v=22";
+import { TARIFS, PROMOS, REVIEWS, LINKS, SALLE } from "./data.js?v=30";
+import { PRICING_FAQ } from "./data-tarifs.js?v=23";
 
 const $ = (s, r = document) => r.querySelector(s);
 
@@ -75,19 +75,20 @@ function renderMore() {
   el.innerHTML = cards.map(carteTarif).join("");
 }
 
-/* Avis Google RÉELS — verbatim, cités (jamais inventés) */
+/* La source Google reste fraîche ; on ne recopie ni note ni compteur volatil. */
 function renderReviews() {
   const el = $("#reviews");
   if (!el) return;
   const r = REVIEWS;
+  /* Des avis réels, cités mot pour mot. Ni note, ni compteur, ni étoiles
+     (ordre d'Eddy, 08/10/2026) : la preuve, ce sont leurs mots. */
   el.innerHTML = `
-    <div class="reviews__bar"><span class="reviews__rating">${r.rating}</span><span class="reviews__src">${r.count} ${r.source}</span></div>
+    <div class="reviews__bar"><a class="reviews__src" href="${r.url}" target="_blank" rel="noopener noreferrer">${r.source} · ${r.label} ↗</a></div>
     <div class="reviews__grid" data-reveal-group>
       ${r.quotes
         .map(
           (q) => `<blockquote class="review">
-        <span class="review__stars" aria-hidden="true">★★★★★</span>
-        <p class="review__text">${q.text}</p>
+        <p class="review__text">« ${q.text} »</p>
         <cite class="review__author">— ${q.author}</cite>
       </blockquote>`
         )

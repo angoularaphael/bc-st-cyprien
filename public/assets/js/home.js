@@ -5,9 +5,9 @@
    La home positionne + route : configurateur → /plannings/ · /activites/ ·
    box-plus. Tout est rendu depuis data.js (planning réel rentrée 2026).
    ===================================================================== */
-import { DISCIPLINES, COACHES, LINKS, COACH_TBD_SHORT, COACH_TBD_WHY_SHORT } from "./data.js?v=27";
-import { STATS } from "./data-home.js?v=22";
-import { SCHEDULE } from "./data.js?v=27";
+import { DISCIPLINES, COACHES, LINKS, COACH_TBD_SHORT, COACH_TBD_WHY_SHORT } from "./data.js?v=30";
+import { STATS } from "./data-home.js?v=23";
+import { SCHEDULE } from "./data.js?v=30";
 
 /* Un chiffre de la bande d’accueil est DÉRIVÉ du planning : il ne peut donc
    pas diverger du poster quand le vestiaire publie une grille différente. */
@@ -37,7 +37,7 @@ function renderStats() {
 }
 function renderTicker() {
   // items inusables (aucune date, aucun "neuf")
-  const items = ["Ouvert 6 j/7", "Sans réservation", "Centre-ville", "Anglaise", "Thaï · K1", "Grappling", "Hyrox", "Lady Punch", "Dès 3 ans", "Métro A · 4 min"];
+  const items = ["Ouvert 6 j/7", "Sans réservation", "Centre-ville", "Anglaise", "Thaï · K1", "Grappling", "Hyrox", "Lady Punch", "Dès 3 ans", "Tram T1 · Fer à Cheval"];
   const row = items.map((i) => `<span>${i}</span>`).join("");
   const t = $("#marquee");
   if (!t) return;                 // meme regle : optionnel, jamais fatal

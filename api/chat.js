@@ -1,14 +1,78 @@
 /* =====================================================================
    POST /api/chat — l’assistant ancré de Boxing Center Saint-Cyprien.
    Bascule multi-fournisseurs : pool de clés Gemini (mélangées, les mortes
-   sont sautées) → Groq → Mistral. Le prompt système est construit depuis
+   sont sautées) → Groq → Mistral → réponse locale déterministe. Le prompt système est construit depuis
    les VRAIS faits de la salle (api/_lib/salle.js, relu depuis le contenu
    édité au vestiaire) : le modèle n’a rien à inventer.
-   Aucune clé configurée ⇒ 503, et le widget bascule sur sa base de
-   connaissance locale : le bot reste utile, jamais une page morte.
+   Une clé expirée, un quota épuisé ou aucun fournisseur configuré ne peut
+   plus provoquer de 503 : l'API répond elle-même depuis les faits locaux.
    ===================================================================== */
 import { allowCors, readBody, geminiKeys } from "./_lib/util.js";
 import { factsBlock } from "./_lib/salle.js";
+import { localChatReply } from "./_lib/chat-fallback.js";
+
+export function providerTimeoutMs(raw = process.env.CHAT_PROVIDER_TIMEOUT_MS) {
+  const parsed = Number(raw);
+  if (!Number.isFinite(parsed)) return 6500;
+  return Math.min(20_000, Math.max(2_000, Math.round(parsed)));
+}
+
+const PROVIDER_TIMEOUT_MS = providerTimeoutMs();
+const cooling = new Map();
+
+class ProviderError extends Error {
+  constructor(provider, status = 0, category = "unavailable") {
+    super(`${provider} ${status || category}`);
+    this.provider = provider;
+    this.status = Number(status) || 0;
+    this.category = category;
+  }
+}
+
+function categoryFor(status) {
+  if (status === 401 || status === 403) return "auth";
+  if (status === 404) return "model";
+  if (status === 429) return "quota";
+  if (status >= 500) return "upstream";
+  return status ? "request" : "network";
+}
+
+async function providerFetch(provider, url, options) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), PROVIDER_TIMEOUT_MS);
+  try {
+    const response = await fetch(url, { ...options, signal: controller.signal });
+    if (!response.ok) throw new ProviderError(provider, response.status, categoryFor(response.status));
+    return response;
+  } catch (error) {
+    if (error instanceof ProviderError) throw error;
+    throw new ProviderError(provider, 0, error?.name === "AbortError" ? "timeout" : "network");
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function coolingKey(provider, secret) {
+  /* La valeur reste uniquement en mémoire et n'est jamais journalisée. Elle
+     évite qu'un mélange du pool associe le délai d'une clé morte à une clé saine. */
+  return `${provider}:${secret}`;
+}
+
+function cooldownMs(error) {
+  if (error.category === "auth" || error.category === "model") return 30 * 60 * 1000;
+  if (error.category === "quota") return 60 * 1000;
+  return 15 * 1000;
+}
+
+function reportFailure(error) {
+  /* Diagnostic volontairement pauvre : fournisseur, statut et catégorie.
+     Aucun message fournisseur, URL ni fragment de clé ne sort dans les logs. */
+  console.warn("[chat-provider]", JSON.stringify({
+    provider: error.provider,
+    status: error.status || null,
+    category: error.category,
+  }));
+}
 
 const RULES = `Tu es l’assistant du BOXING CENTER SAINT-CYPRIEN, la salle de boxe du quartier Saint-Cyprien, à Toulouse rive gauche.
 
@@ -23,11 +87,12 @@ TA RÈGLE D’OR :
   téléphone de la salle. Ne devine jamais.
 - Le grappling tourne bien au planning, mais aucun nom d’encadrant n’est acté : si on te le
   demande, dis-le franchement plutôt que d’inventer.
-- L’offre Rentrée, c’est 29€ PAR PERSONNE — jamais « 29€ pour deux ».
+- L’offre Rentrée, c’est 29€ PAR PERSONNE et toutes les 4 semaines. Conditions à annoncer : première échéance par carte, IBAN pour les prélèvements suivants, coordonnées d’un proche requises pour débloquer la promotion, badge facturé 34,99€ 72 h après le début.
+- Pour les abonnements classiques sans engagement à 44,99€ adulte / 36,99€ étudiant toutes les 4 semaines, annoncer le badge d’accès de 34,99€ en sus, sauf condition contraire affichée au moment de souscrire.
 
 TA MISSION — VENDRE, dans CET ordre :
-1. L’OFFRE RENTRÉE 29€ par personne (4 semaines illimitées) — propose-la en PREMIER dès qu’on parle de commencer, de prix ou d’hésitation.
-2. La SAISON 259€ en 4× sans frais pour les motivés à l’année.
+1. L’OFFRE RENTRÉE 29€ par personne et par échéance de 4 semaines, cours illimités — propose-la en PREMIER dès qu’on parle de commencer, de prix ou d’hésitation, avec ses conditions ci-dessus.
+2. La SAISON 259€ les 12 mois (au lieu de 400€), comptant ou en 4× sans frais (4 × 64,75€, plusieurs options de paiement en 4× sur la boutique) — moins de 5€ par semaine, accès aux 5 clubs.
 3. L’école pour les enfants (295€ t-shirt inclus, baby 250€).
 4. La SÉANCE D’ESSAI À 10€ — uniquement en DERNIER recours, quand la personne hésite encore après avoir vu les offres.
 L’ARME SECRÈTE plus bas complète cet ordre.
@@ -43,9 +108,13 @@ L’ARME SECRÈTE (à ne dégainer QUE quand la vente est morte) :
   propose-lui gentiment de te laisser son prénom et un numéro ou un email pour qu’un coach le
   rappelle. Une seule fois, sans insister, et jamais en bloquant la conversation.`;
 
+/* La langue du visiteur prime sur celle du prompt (rédigé en français) :
+   posée en tête ET en fin de consigne, là où un modèle la respecte le mieux. */
+const LANGUE = "LANGUE — RÈGLE ABSOLUE : réponds TOUJOURS dans la langue du DERNIER message du visiteur. S’il écrit en anglais, toute ta réponse est en anglais (prix, horaires, conseils) et les libellés de boutons sont traduits : [boutons: offre:Get the 29€ offer]. S’il écrit en espagnol, en espagnol. Sinon, en français.";
+
 function systemFor(context) {
   const c = String(context || "").slice(0, 300).trim();
-  const base = `${RULES}\n\nLES FAITS DE LA SALLE :\n${factsBlock()}`;
+  const base = `${LANGUE}\n\n${RULES}\n\nLES FAITS DE LA SALLE :\n${factsBlock()}\n\n${LANGUE}`;
   return c ? `${base}\n\nCONTEXTE VISITEUR (déjà connu — ne le redemande pas) : ${c}` : base;
 }
 
@@ -67,7 +136,8 @@ async function gemini(key, model, messages, system) {
     role: m.role === "assistant" ? "model" : "user",
     parts: [{ text: m.content }],
   }));
-  const r = await fetch(
+  const r = await providerFetch(
+    "gemini",
     `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`,
     {
       method: "POST",
@@ -81,17 +151,17 @@ async function gemini(key, model, messages, system) {
       }),
     }
   );
-  if (!r.ok) throw new Error("gemini " + r.status);
   const j = await r.json();
   const text = j?.candidates?.[0]?.content?.parts?.map((p) => p.text).join("").trim();
   const coupe = j?.candidates?.[0]?.finishReason === "MAX_TOKENS";
   if (text) return tidy(text, coupe);
-  if (!text) throw new Error("gemini vide");
+  if (!text) throw new ProviderError("gemini", 0, "empty");
   return text;
 }
 
 async function openaiLike(url, key, model, messages, system) {
-  const r = await fetch(url, {
+  const provider = url.includes("groq.com") ? "groq" : "mistral";
+  const r = await providerFetch(provider, url, {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
     body: JSON.stringify({
@@ -101,10 +171,9 @@ async function openaiLike(url, key, model, messages, system) {
       messages: [{ role: "system", content: system }, ...messages],
     }),
   });
-  if (!r.ok) throw new Error("oai " + r.status);
   const j = await r.json();
   const text = (j?.choices?.[0]?.message?.content || "").trim();
-  if (!text) throw new Error("oai vide");
+  if (!text) throw new ProviderError(provider, 0, "empty");
   return text;
 }
 
@@ -125,46 +194,69 @@ export default async function handler(req, res) {
     : [];
   const messages = [...history, { role: "user", content: message }];
   const system = systemFor(body.context);
+  const failures = [];
+  let attempted = 0;
+
+  async function attempt(provider, secret, fn) {
+    const key = coolingKey(provider, secret);
+    if ((cooling.get(key) || 0) > Date.now()) return null;
+    attempted++;
+    try {
+      return await fn();
+    } catch (raw) {
+      const error = raw instanceof ProviderError
+        ? raw
+        : new ProviderError(provider, 0, "unexpected");
+      cooling.set(key, Date.now() + cooldownMs(error));
+      failures.push({ provider: error.provider, status: error.status || null, category: error.category });
+      reportFailure(error);
+      return null;
+    }
+  }
 
   // 1) pool Gemini — mélangé, on saute les clés mortes (cf. _lib/util.js)
   const gKeys = geminiKeys();
   const gModel = process.env.GEMINI_MODEL || "gemini-2.5-flash";
-  for (const key of gKeys) {
-    try {
-      return res.status(200).json({ reply: await gemini(key, gModel, messages, system), via: "gemini" });
-    } catch { /* clé suivante */ }
+  for (let i = 0; i < gKeys.length; i++) {
+    const reply = await attempt("gemini", gKeys[i], () => gemini(gKeys[i], gModel, messages, system));
+    if (reply) return res.status(200).json({ reply, via: "gemini", degraded: false });
   }
 
   // 2) Groq
   if (process.env.GROQ_API_KEY) {
-    try {
-      return res.status(200).json({
-        reply: await openaiLike(
+    const reply = await attempt("groq", process.env.GROQ_API_KEY, () => openaiLike(
           "https://api.groq.com/openai/v1/chat/completions",
           process.env.GROQ_API_KEY,
           process.env.GROQ_MODEL || "llama-3.3-70b-versatile",
           messages, system
-        ),
-        via: "groq",
-      });
-    } catch { /* fournisseur suivant */ }
+        ));
+    if (reply) return res.status(200).json({ reply, via: "groq", degraded: false });
   }
 
   // 3) Mistral
   if (process.env.MISTRAL_API_KEY) {
-    try {
-      return res.status(200).json({
-        reply: await openaiLike(
+    const reply = await attempt("mistral", process.env.MISTRAL_API_KEY, () => openaiLike(
           "https://api.mistral.ai/v1/chat/completions",
           process.env.MISTRAL_API_KEY,
           process.env.MISTRAL_MODEL || "mistral-small-latest",
           messages, system
-        ),
-        via: "mistral",
-      });
-    } catch { /* épuisé */ }
+        ));
+    if (reply) return res.status(200).json({ reply, via: "mistral", degraded: false });
   }
 
-  // Aucun fournisseur : le widget répond depuis sa base locale.
-  return res.status(503).json({ error: "Assistant IA indisponible.", fallback: true });
+  /* Contrat de disponibilité : un problème de clé n'est jamais répercuté sur
+     le visiteur. La réponse reste 200, ancrée, et l'état dégradé est explicite
+     sans exposer les noms de variables ni le moindre fragment de secret. */
+  return res.status(200).json({
+    reply: localChatReply(message),
+    via: "local",
+    degraded: true,
+    diagnostic: {
+      reason: gKeys.length || process.env.GROQ_API_KEY || process.env.MISTRAL_API_KEY
+        ? "providers_unavailable"
+        : "no_provider_configured",
+      attempted,
+      failures: failures.length,
+    },
+  });
 }

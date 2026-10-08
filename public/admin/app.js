@@ -66,7 +66,7 @@ const SCHEMA = {
       { k: "phone", label: "Téléphone (affiché)" },
       { k: "phoneHref", label: "Téléphone (lien)", hint: "Format international, ex. +33562244682" },
       { k: "email", label: "E-mail" },
-      { k: "hours", label: "Horaires (phrase affichée)", hint: "Ex. Lun – Sam · 10h00 – 21h15" },
+      { k: "hours", label: "Horaires (phrase affichée)", hint: "Ex. Lun – Sam · 10h00 – 21h30" },
       { k: "address", label: "Adresse", type: "object", fields: [
         { k: "street", label: "Rue" }, { k: "zip", label: "Code postal" }, { k: "city", label: "Ville" },
       ] },

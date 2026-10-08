@@ -11,7 +11,7 @@
 export const ECOLE_LEVELS = [
   { age: "3 → 6 ans",   name: "Baby Boxe",         jours: "Samedi 14h15",          d: "Le samedi : coordination, jeu, premiers déplacements. On apprend à bouger avant d’apprendre à frapper." },
   { age: "7 → 11 ans",  name: "Éducative enfants", jours: "Mercredi & samedi 15h", d: "La technique par le jeu, le cadre par le respect. La vraie boxe, à leur échelle." },
-  { age: "12 → 16 ans", name: "Éducative ados",    jours: "Mercredi & samedi 15h", d: "Gestuelle propre, intensité qui monte, premiers assauts encadrés." },
+  { age: "12 → 16 ans", name: "Éducative ados",    jours: "Mercredi & samedi 16h", d: "Gestuelle propre, intensité qui monte, premiers assauts encadrés." },
   { age: "Compétition", name: "Compétiteurs",      jours: "Mercredi & samedi",     d: "Le créneau de ceux qui montent sur le ring : préparation, sparring, corner." },
 ];
 
@@ -95,4 +95,3 @@ export const SEMAINES = [
     ],
   },
 ];
-

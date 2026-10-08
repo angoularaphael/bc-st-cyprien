@@ -12,8 +12,8 @@
    Ce module la REMPLACE par un bouton qui ouvre le panneau. Script mort ou
    bloqué ⇒ la pastille d’origine appelle la salle. Rien ne régresse.
    ===================================================================== */
-import { QUICKS, fallbackAnswer, GENERIC } from "./chatbot-kb.js";
-import { SALLE } from "./data.js?v=27";
+import { QUICKS, fallbackAnswer, GENERIC } from "./chatbot-kb.js?v=23";
+import { SALLE } from "./data.js?v=30";
 
 /* ---------------------------- constantes -------------------------- */
 const EMAIL_RE = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i;
@@ -503,11 +503,11 @@ export function initChatbot() {
       const ACCUEILS = {
         "/tarifs/": ["Bonjour \u{1F44B} Tu es sur les tarifs.", "La rentrée à 29€ par personne est la formule la plus prise. Je t’aide à choisir ?"],
         "/activites/": ["Bonjour \u{1F44B} Tu regardes les disciplines.", "Sept, de l’anglaise au grappling, gants prêtés et aucun niveau demandé. Dis-moi ton objectif, je t’oriente."],
-        "/plannings/": ["Bonjour \u{1F44B} Tu cherches un créneau.", "Ouvert du lundi au samedi, 10h–21h15. Donne-moi tes dispos, je te dis lequel prendre."],
+        "/plannings/": ["Bonjour \u{1F44B} Tu cherches un créneau.", "Ouvert du lundi au samedi, 10h–21h30. Donne-moi tes dispos, je te dis lequel prendre."],
         "/coachs/": ["Bonjour \u{1F44B} Tu regardes l’équipe.", "Trois coachs : Dadi, Tawee et Brice. Une question sur l’un d’eux ?"],
         "/la-salle/": ["Bonjour \u{1F44B} Tu découvres la salle.", "Sacs, tatamis et ring, plus la muscu et le cardio en accès libre. Envie de passer ?"],
         "/galerie/": ["Bonjour \u{1F44B} Tu parcours la galerie.", "Les clichés de la salle, zone par zone. Une question sur l’une d’elles ?"],
-        "/contact/": ["Bonjour \u{1F44B} Tu cherches à nous joindre.", "11 rue Sainte-Lucie, à 4 minutes du métro A. Ou laisse-moi ton numéro."],
+        "/contact/": ["Bonjour \u{1F44B} Tu cherches à nous joindre.", "11 rue Sainte-Lucie, à 200 m du tram T1 Fer à Cheval. Ou laisse-moi ton numéro."],
       };
       const _page = location.pathname.replace(/index\.html$/, "");
       const [_b, _s] = ACCUEILS[_page] || ["Bonjour \u{1F44B} Je suis l’assistant de Boxing Center Saint-Cyprien.", "Les cours, les créneaux, les tarifs — dis-moi ce que tu cherches."];

@@ -1,6 +1,6 @@
 /* =====================================================================
    SAINT-CYPRIEN · "LA NOUVELLE GÉNÉRATION" — la-salle.css
-   La visite privée : le récit de la lignée, six postes qui S'ALLUMENT au
+   La visite privée : le récit du réseau, six postes qui S'ALLUMENT au
    passage (la lumière isole le geste), le code de la salle, le réseau comme
    preuve du titre, les infos pratiques. Réutilise base.css + home.css
    (.phero, .media, .gong, .quartier__cta) — n'ajoute que le propre à la page.
@@ -68,7 +68,7 @@
 .sister__feat { color: var(--muted); font-size: var(--step--1); line-height: 1.5; margin-top: .3rem; }
 .sister__link { flex: 0 0 auto; width: 44px; height: 44px; display: grid; place-items: center; border: 1.5px solid var(--line); border-radius: 50%; color: var(--ink-soft); font-family: var(--f-mono); transition: border-color .3s, color .3s, transform .4s var(--ease-spring); }
 .sister__link:hover { border-color: var(--spark); color: var(--spark); transform: translateY(-2px); }
-/* la dernière-née = la salle allumée (le bout de la lignée) */
+/* Saint-Cyprien = la salle courante mise en évidence */
 .sister--self { background: var(--spark); border-color: var(--spark); box-shadow: var(--glow), var(--shadow); }
 .sister--self .sister__i { color: rgba(var(--void-rgb),.6); }
 .sister--self .sister__tag { color: var(--on-spark); }

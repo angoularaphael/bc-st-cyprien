@@ -9,7 +9,7 @@
    créneau. C'est interne au club — ça se demande au 05 62 24 46 82. La
    grille de /plannings/ ne porte d'ailleurs plus aucun nom.
    ===================================================================== */
-import { COACHES, picture } from "./data.js?v=27";
+import { COACHES, picture } from "./data.js?v=30";
 
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s = "") => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

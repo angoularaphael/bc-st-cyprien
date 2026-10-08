@@ -14,8 +14,8 @@ network: 5 salles Boxing Center a Toulouse et son agglomeration
 - Premiere salle Boxing Center en centre-ville, ouverte le 10 janvier 2022
 - (Aucune surface n'est annoncee pour cette salle : les 1 200 m2 sont ceux de Toulouse Etats-Unis)
 - Boxe anglaise, boxe thai et K1, grappling, Hyrox et cross-training, Lady Punch, boxing camp, ecole des 3 ans
-- Metro A Saint-Cyprien Republique, quatre minutes a pied
-- Ouvert du lundi au samedi, 10h00 a 21h15
+- Tram T1 Fer-a-Cheval a proximite ; metro A Saint-Cyprien Republique accessible a pied
+- Ouvert du lundi au samedi, 10h00 a 21h30 (dernier cours termine a 21h15 selon les jours)
 - Seance d'essai : 10 EUR, materiel prete, sans engagement
 - Fiche structuree pour LLM : https://club-boxe-toulouse.com/llms.txt
 - Version detaillee : https://club-boxe-toulouse.com/llms-full.txt

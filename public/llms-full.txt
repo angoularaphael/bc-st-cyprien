@@ -3,17 +3,23 @@
 > Version longue de llms.txt : les faits de chaque page du site, sans marketing.
 > Source : https://club-boxe-toulouse.com — salle du réseau Boxing Center (Toulouse).
 
+## Identification locale
+
+- Type : club et salle de boxe à Toulouse Saint-Cyprien, quartier rive gauche (31300).
+- Zone et disciplines : Toulouse Saint-Cyprien (rive gauche), boxe anglaise, boxe thaï/K1, grappling, cours féminins et boxe enfants.
+- Le planning 2026–2027 publié pour Saint-Cyprien ne comporte pas de créneau explicitement intitulé « MMA » ; il affiche du grappling et des cours pieds-poings. Vérifier auprès du club avant d’annoncer un cours de MMA.
+
 ## Établissement
 
 - Nom : Boxing Center Saint-Cyprien
 - Adresse : 11 rue Sainte-Lucie, 31300 Toulouse (quartier Saint-Cyprien, rive gauche)
 - Téléphone : 05 62 24 46 82 (international : +33562244682)
 - E-mail : boxingcenter31@gmail.com
-- Horaires : lundi–samedi 10h00–21h15 ; dimanche fermé. Dernier cours 20h–21h15 selon les jours.
-- Accès : métro ligne A, station Saint-Cyprien République, à 4 minutes à pied ; rive gauche, à 10 min du centre-ville ; parking Saint-Cyprien à proximité.
-- Équipement : Sacs de frappe, espace tatamis et ring ; musculation, cardio et cross-training en accès libre. La page officielle de Saint-Cyprien ne donne aucune surface — les 1 200 m² sont ceux de Toulouse États-Unis, ne jamais les attribuer à cette salle.
+- Horaires d’ouverture : lundi–samedi 10h00–21h30 ; dimanche fermé. Le dernier cours se termine à 21h15 selon les jours.
+- Accès : tram T1, arrêt Fer à Cheval à 200 m (3 min à pied) ; métro A, station Saint-Cyprien – République à 600 m (8 min à pied) ; parking Saint-Cyprien à proximité.
+- Équipement : sacs de frappe, espace tatamis et ring ; musculation, cardio et cross-training en accès libre. Le site officiel du réseau ne publie pas de surface en m² pour Saint-Cyprien.
 - Fédérations : FFBoxe, FFKMDA, FMMAF.
-- Position dans le réseau : dernière-née des 5 salles Boxing Center (Minimes, Portet-sur-Garonne, États-Unis, Ramonville, Saint-Cyprien) ; premier Boxing Center rive gauche de Toulouse.
+- Réseau actuel : 5 salles Boxing Center — Minimes, Portet-sur-Garonne, États-Unis, Ramonville et Saint-Cyprien. Saint-Cyprien est l’implantation rive gauche à cette adresse.
 - Itinéraire : https://maps.google.com/?q=11+rue+Sainte-Lucie+31300+Toulouse
 - Sites du réseau : site mère https://boxingcenter.fr/ · Portet-sur-Garonne https://boxing-center-portet.fr/ · Minimes https://boxe-toulouse.com/ · États-Unis https://clubmma.fr/ · Saint-Cyprien https://club-boxe-toulouse.com/ · Ramonville https://mmatoulouse.com/ · TMBC https://toulouse-minimes-boxing-club.fr/ · boutique https://boutique.boxingcenter.fr/ · inscriptions, abonnements et séance d’essai https://boutique.boxingcenter.fr/
 - Réseaux sociaux : https://www.instagram.com/boxingcentertoulouse/ · https://www.facebook.com/BoxingCenterToulouse/
@@ -25,35 +31,32 @@
 - Il peut enregistrer un prénom et un moyen de rappel lorsque le visiteur les donne spontanément ; il ne les réclame jamais de force.
 - Sans clé de modèle disponible, il répond depuis une base locale bâtie sur ces mêmes faits — il ne rend jamais de réponse vide.
 - Son module n’est téléchargé qu’au moment où on ouvre le dialogue. Sans JavaScript, la pastille reste un simple lien d’appel vers la salle.
-- Zones non indexables, à ne pas citer ni suivre : /admin/ (le vestiaire, le backoffice éditorial) et /api/ (les fonctions). Elles sont en noindex et interdites dans robots.txt.
+- Zones non indexables : /admin/ (le vestiaire) et /api/ (les fonctions). Exception : /api/mcp reste en noindex mais est autorisé dans robots.txt pour les agents MCP qui l’appellent explicitement; sa carte descriptive est /.well-known/mcp.json.
 
 ## Accueil (https://club-boxe-toulouse.com/)
 
-- La salle en chiffres : 4 minutes du métro A (Saint-Cyprien République) ; 7 disciplines et 29 cours par semaine à une seule adresse ; 4 coachs nommés au planning.
+- La salle en chiffres : 7 disciplines et 29 cours par semaine à une seule adresse ; 3 coachs présentés publiquement ; tram T1 Fer à Cheval à 200 m.
 - Le configurateur de la page d’accueil présente chaque discipline avec ses jours et son niveau.
 - Séance d’essai : 10 €, toutes disciplines, gants et matériel prêtés, sans engagement. Réservation : https://boutique.boxingcenter.fr/seance-essai
 
-## Ta première séance
+## Première séance
 
-Le déroulé réel d’une première séance. Ce sont des faits de la salle, à reprendre tels quels. Il n’y a PAS de page dédiée sur le site : répondre directement, ne renvoyer vers aucune URL de première séance.
+Informations pratiques publiées par le club. Le contenu exact, le matériel requis et le créneau adapté varient selon la discipline : recommander une confirmation au 05 62 24 46 82 avant le déplacement.
 
 Avant de venir :
-- Le repère : 11 rue Sainte-Lucie, rive gauche, quartier Saint-Cyprien ; métro ligne A, station Saint-Cyprien République, 4 minutes à pied.
-- L’heure : arriver une dizaine de minutes avant le cours. Salle ouverte lundi–samedi 10h00–21h15, fermée le dimanche.
-- Le créneau : tous les cours du planning acceptent une première séance. Point d’entrée conseillé si l’on n’a jamais mis de gants : le Boxing Camp (lundi et vendredi 18h20, samedi 11h).
+- Le repère : 11 rue Sainte-Lucie, rive gauche, quartier Saint-Cyprien ; tram T1, arrêt Fer à Cheval à 200 m.
+- L’heure : arriver une dizaine de minutes avant le cours. Salle ouverte lundi–samedi 10h00–21h30, fermée le dimanche.
+- Le créneau : contacter le club pour choisir un cours adapté. Le planning publié propose notamment le Boxing Camp lundi et vendredi à 18h20, et samedi à 11h.
 
-Le déroulé, dans l’ordre (environ 1h15) :
+Exemple indicatif de déroulé d’un cours (environ 1h15) :
 1. Passer la porte — un seul niveau, la ligne de sacs, le tapis, le ring au fond, la cage à droite.
 2. Dire que c’est sa première fois — la seule phrase à préparer. Le coach du créneau prend le relais.
-3. Les gants et les protections sont PRÊTÉS pour la première séance ; le coach montre le vestiaire et la zone de travail.
+3. Demander au club, avant de venir, quel matériel apporter et si du matériel de prêt est disponible.
 4. Échauffement collectif d’environ 15 minutes : corde, déplacements, mobilité. Le coach cale la suite sur le niveau observé.
 5. Un seul point technique par cours — la garde, le souffle ou les appuis — travaillé jusqu’à ce qu’il tienne.
 6. Application aux sacs ou aux pattes d’ours, à son rythme, puis retour au calme (gainage, étirements) et point du coach.
 
-Ce que la salle ne fait PAS le premier soir (à ne jamais contredire) :
-- Aucun sparring imposé : personne ne monte sur le ring sans en avoir envie — ça se demande, ça ne s’impose pas.
-- Aucun test d’entrée : ni chrono, ni nombre de répétitions, ni niveau à prouver.
-- Aucun engagement à la sortie : l’essai est sans engagement, aucune signature n’est demandée.
+L’essai est sans engagement, gants et matériel prêtés. Aucun sparring n’est imposé à une première séance. Pour une question de niveau ou de certificat médical, la salle répond au 05 62 24 46 82.
 - Aucun certificat médical ni dossier pour l’essai : ils se règlent au moment de l’inscription seulement.
 
 La tenue : t-shirt, short ou legging, baskets propres réservées à l’intérieur, bouteille d’eau. Rien d’autre à acheter.
@@ -68,11 +71,11 @@ Six postes sur un seul niveau :
 3. Le pieds-poings — la surface thaï / K1.
 4. La zone cross & muscu — machines, charges, sacs ; Hyrox, cross-training et HIIT.
 5. L’école — Baby Boxe 3/6 le samedi, éducative 7/11, ados 12/16, compétiteurs.
-6. Le collectif — Lady Punch mardi et jeudi, boxing camp 3 créneaux par semaine.
+6. Le collectif — Lady Punch mardi et jeudi, Boxing Camp 4 créneaux par semaine.
 
-Déroulé d’une séance (affiché sur la page) : accueil et présentation au coach en arrivant ; environ 15 minutes d’échauffement collectif (corde, déplacements, mobilité) pendant lesquelles le coach cale la suite sur ton niveau ; le cœur de séance sur un seul point technique (garde, souffle ou appuis) puis son application aux sacs ou aux pattes ; retour au calme (gainage, étirements) et point du coach sur ce qui a progressé. Gants et protections prêtés pour la première séance : venir en tenue de sport.
+Déroulé indicatif affiché sur la page : accueil et présentation au coach, échauffement collectif, travail technique puis retour au calme. Le contenu varie selon le cours. Pour une première séance, venir en tenue de sport : gants et matériel sont prêtés.
 
-La lignée du réseau (ordre d’arrivée) : Minimes (le berceau, la salle historique, 3 rings, l’école), Portet-sur-Garonne (le vaisseau amiral, ring de boxe anglaise, cage MMA — https://boxing-center-portet.fr/), États-Unis (le colosse, 1 200 m², 3 zones, 2 rings, cage MMA), Ramonville (le ciel ouvert, octogone 7 m, ring de boxe anglaise, 300 m² extérieur), puis Saint-Cyprien.
+Les cinq salles actuelles du réseau sont présentées sans prétendre à un ordre historique : Minimes, Portet-sur-Garonne, États-Unis, Ramonville et Saint-Cyprien. Vérifier les équipements propres à chaque salle sur son site avant de les citer.
 
 ## Activités (https://club-boxe-toulouse.com/activites/)
 
@@ -100,7 +103,7 @@ Semaines-types proposées à titre d’exemple (créneaux réels du planning, ce
 Paliers de l’école, âge par âge :
 - Baby Boxe, 3 à 6 ans — samedi 14h15 : coordination, jeu, premiers déplacements.
 - Éducative enfants, 7 à 11 ans — mercredi et samedi 15h : la technique par le jeu, le cadre par le respect.
-- Éducative ados, 12 à 16 ans — mercredi et samedi 15h : gestuelle propre, premiers assauts encadrés.
+- Éducative ados, 12 à 16 ans — mercredi et samedi 16h : gestuelle propre, premiers assauts encadrés.
 - Compétiteurs — mercredi et samedi : préparation, sparring, corner .
 
 ## Coachs (https://club-boxe-toulouse.com/coachs/)
@@ -119,14 +122,15 @@ Méthode d’encadrement (trois règles affichées sur la page) :
 
 ## Galerie (https://club-boxe-toulouse.com/galerie/)
 
-16 photos réelles de la salle, réparties en 7 zones. Aucune image de banque : ce sont les clichés du club, pris pendant des cours réels. Chaque photo s’ouvre en grand dans une visionneuse (clavier : flèches pour naviguer, Échap pour fermer).
-- Le plateau (1 photo) — depuis la porte on voit les sacs, le ring et la cage.
+15 photos réelles du réseau Boxing Center, réparties en 7 zones : le plateau, l’anglaise, le pieds-poings, le sol, le moteur, Lady Punch et l’école. Aucune image de banque, aucune photo répétée d’une autre page. Chaque photo s’ouvre en grand dans une visionneuse (clavier : flèches pour naviguer, Échap pour fermer).
+- Le plateau (1 photo) — depuis la porte on voit les sacs et le ring.
 - L’anglaise (2 photos) — le ring.
 - Le pieds-poings (3 photos) — la surface thaï / K1.
 - Le sol (1 photo) — grappling dans la cage, mardi et jeudi.
 - Le moteur (4 photos) — muscu, charges, rameurs, cross-training, Hyrox, boxing camp.
 - Lady Punch (2 photos) — créneau 100 % féminin, mardi et jeudi 18h20.
-- L’école (3 photos) — Baby Boxe, éducative 7/11, ados 12/16, compétiteurs.
+- L’école (2 photos) — Baby Boxe, éducative 7/11, ados 12/16, compétiteurs.
+- Le réseau en mouvement (1 photo) — travail debout photographié au Boxing Center Ramonville, sans prétendre montrer les locaux de Saint-Cyprien.
 
 ## Planning (https://club-boxe-toulouse.com/plannings/)
 
@@ -141,31 +145,31 @@ Grille hebdomadaire (le poster officiel de la saison, affiché sur la page, fait
 - Vendredi : 12h40 Boxe Anglaise ; 18h20 Boxing Camp ; 19h00 Boxe Thaï · K1 ; 20h00 Boxe Anglaise.
 - Samedi : 11h00 Boxing Camp ; 14h15 Baby Boxe 3/6 ; 15h00 Éducative 7/11, 16h00 Éducative 12/16, 17h00 Éducative compétiteurs ; 18h00 Boxe Pieds-Poings.
 - Dimanche : fermé.
-Conseils pratiques : arriver 10 minutes avant ; gants et protections prêtés pour la première séance ; en cas de doute sur un créneau, appeler le 05 62 24 46 82.
+Conseils pratiques : arriver 10 minutes avant, en tenue de sport, et dire que c’est une première fois ; gants et matériel prêtés. Téléphone : 05 62 24 46 82.
 
 ## Tarifs (https://club-boxe-toulouse.com/tarifs/)
 
-- Offre Rentrée : 29 € par personne (au lieu de 44,99 €) — 4 semaines, cours illimités, sans engagement. Toujours « 29 € par personne », jamais « 29 € pour deux ».
-- Offre Saison : 259 € les 12 mois (au lieu de 400 €) — boxe anglaise, MMA, boxe pieds-poings, Lady Punch, Boxing Fitness ; payable en 4× sans frais ; accès libre aux 5 clubs du réseau.
-- Abonnement classique, hors promotion : 44,99 € adulte et 36,99 € étudiant, par échéance de 4 semaines, accès aux 5 salles et à toutes les disciplines ; aucun prix barré (c’est le tarif, pas une offre) : https://boutique.boxingcenter.fr/abonnements#prelevement — relevé sur la boutique le 2026-08-07. C’est ce 44,99 € qui figure en prix barré sur l’offre de rentrée.
+- Offre Rentrée : 29 € par personne et par échéance de 4 semaines (au lieu de 44,99 €) — cours illimités, sans engagement. Première échéance par carte puis IBAN ; coordonnées d’un proche requises pour débloquer la promotion, même sans inscription de cette personne ; badge facturé 34,99 € 72 h après le début. Source : https://boutique.boxingcenter.fr/offre/29
+- Offre Saison : 259 € comptant pour 12 mois (au lieu de 400 €) — accès aux disciplines du réseau, dont le MMA uniquement dans les salles qui le programment ; comptant ou en 4× sans frais (4 × 64,75 €, plusieurs options de paiement en 4×) ; accès libre aux 5 clubs. Source : https://boutique.boxingcenter.fr/offre/259
+- Abonnement classique, hors promotion : 44,99 € adulte et 36,99 € étudiant, par échéance de 4 semaines. Les CGV annoncent un badge d’accès de 34,99 € en sus des abonnements sans engagement, sauf condition contraire affichée à la souscription : https://boutique.boxingcenter.fr/abonnements#prelevement · https://boutique.boxingcenter.fr/cgv
 - École & Baby Boxe : 295 €/an t-shirt du club inclus, Baby Boxe 250 €/an — 3/6, 7/11, ados 12/16, matériel fourni, compétiteurs encadrés par Dadi.
 - École : 295 €/an t-shirt du club inclus, Baby Boxe 250 €/an.
 - Coaching privé : sur rendez-vous, avec un coach de la salle (détail sur https://boutique.boxingcenter.fr/coachings).
-- Séance d’essai : 10 € la séance — accès à toutes les disciplines, gants et matériel prêtés, sans engagement. Elle est présentée EN DERNIER : l’ordre de vente sur tout le site est rentrée 29 €, saison 259 €, classique 44,99 €/36,99 € par 4 semaines, école 295 € (baby 250 €), essai 10 €.
+- Séance d’essai : 10 € la séance, toutes disciplines, gants et matériel prêtés, sans engagement. Elle est présentée EN DERNIER : l’ordre de vente sur tout le site est rentrée 29 €, saison 259 €, classique 44,99 €/36,99 € par 4 semaines, école 295 € (baby 250 €), essai 10 €.
 - L’inscription, les prélèvements et le détail des formules se finalisent sur box-plus : https://boutique.boxingcenter.fr/offre/259
-- Avis Google affichés sur la page : 4,0/5, 97 avis (relevé du 2026-08-06). Citations réelles : « Une petite salle au top, des coachs au top, nichée au cœur de Saint Cyp'. » (Ronan L.) ; « Super salle, tous les mois Dadi améliore la salle avec des nouveaux équipements. » (Kayon M.) ; « Bonne salle, propre avec de bons équipements. Cours complet. » (Omar T.) ; « Les cours de boxing lady sont top ! Il y a une bonne ambiance. » (Alyssia P.)
+- Avis Google : quatre avis réels cités mot pour mot (Ronan L., Kayon M., Omar T., Alyssia P.), sans note ni compteur, avec un lien vers la fiche Google Maps.
 
 ## Contact (https://club-boxe-toulouse.com/contact/)
 
 - Adresse : 11 rue Sainte-Lucie, 31300 Toulouse.
 - Téléphone : 05 62 24 46 82.
 - E-mail : boxingcenter31@gmail.com
-- Horaires : lundi–vendredi 10h00–21h15 ; samedi 10h00–21h15 ; dimanche fermé.
+- Horaires : lundi–samedi 10h00–21h30 ; dimanche fermé. Dernier cours terminé à 21h15 selon les jours.
 - Questions fréquentes :
-  - Où se trouve la salle ? Au 11 rue Sainte-Lucie, 31300 Toulouse, quartier Saint-Cyprien rive gauche, à 4 minutes à pied du métro ligne A (Saint-Cyprien République).
-  - Comment se passe la première séance ? Arriver 10 minutes avant, en tenue de sport ; dire que c’est sa première fois ; gants et matériel prêtés ; échauffement, technique, sac, à son rythme ; aucun sparring imposé et aucun test ; la séance d’essai coûte 10 €, toutes disciplines.
+  - Où se trouve Boxing Center Saint-Cyprien ? Au 11 rue Sainte-Lucie, 31300 Toulouse, quartier Saint-Cyprien, rive gauche. Tram T1, arrêt Fer à Cheval à 200 m (3 min à pied) ; métro A, station Saint-Cyprien – République à 600 m (8 min à pied).
+  - Comment se passe la première séance ? Arriver 10 minutes avant, en tenue de sport, et dire que c’est une première fois. Gants et matériel prêtés sur place ; échauffement, technique et sac, à son rythme, sans sparring imposé. La séance d’essai coûte 10 €, toutes disciplines.
   - Peut-on venir sans avoir jamais boxé ? Oui — la plupart des créneaux sont tous niveaux ; le Boxing Camp est le meilleur point d’entrée.
   - Quelles disciplines ? Boxe anglaise, boxe thaï/K1, grappling, Hyrox, cross-training, Lady Punch, boxing camp et l’école enfants du Baby Boxe (3/6 ans) aux compétiteurs.
   - Des cours pour enfants ? Oui, dès 3 ans : Baby Boxe le samedi, éducative 7/11 et ados 12/16 le mercredi et le samedi, un créneau compétiteurs encadré par Dadi.
-  - Faut-il un abonnement pour commencer ? Non — la séance d’essai à 10 € suffit ; l’abonnement vient ensuite, sans engagement ou à la saison.
-  - Quels horaires ? Lundi–samedi 10h00–21h15 (dernier cours 20h–21h15 selon les jours) ; fermé le dimanche.
+  - Faut-il un abonnement pour commencer ? Non — la séance d’essai à 10 € suffit, toutes disciplines, matériel prêté ; l’abonnement vient ensuite, sans engagement (offre Rentrée 29 € par personne toutes les 4 semaines) ou à la saison (259 € les 12 mois).
+  - Quels horaires ? Lundi–samedi 10h00–21h30 ; dernier cours terminé à 21h15 selon les jours ; fermé le dimanche.

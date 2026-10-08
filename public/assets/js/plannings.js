@@ -5,7 +5,7 @@
    couleur, plus bas dans la page, reste la source de vérité.
    Deep-link : /plannings/#<discipline> pré-sélectionne la discipline.
    ===================================================================== */
-import { SCHEDULE, DAYS, DISCIPLINES, SEASON_LABEL, COACH_TBD, COACH_TBD_SHORT } from "./data.js?v=27";
+import { SCHEDULE, DAYS, DISCIPLINES, SEASON_LABEL, COACH_TBD, COACH_TBD_SHORT } from "./data.js?v=30";
 
 const $ = (s, r = document) => r.querySelector(s);
 const byKey = Object.fromEntries(DISCIPLINES.map((d) => [d.key, d]));

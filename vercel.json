@@ -1,10 +1,21 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "api/chat.js": {
       "includeFiles": "public/content.json"
     }
   },
   "headers": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "bc-st-cyprien.vercel.app" }],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
@@ -116,9 +127,55 @@
       "permanent": true
     },
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "bc-st-cyprien.vercel.app" }],
+      "destination": "https://club-boxe-toulouse.com/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "bc-st-cyprien.vercel.app" }],
       "destination": "https://club-boxe-toulouse.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/activites",
+      "destination": "/activites/",
+      "permanent": true
+    },
+    {
+      "source": "/coachs",
+      "destination": "/coachs/",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/galerie",
+      "destination": "/galerie/",
+      "permanent": true
+    },
+    {
+      "source": "/la-salle",
+      "destination": "/la-salle/",
+      "permanent": true
+    },
+    {
+      "source": "/plannings",
+      "destination": "/plannings/",
+      "permanent": true
+    },
+    {
+      "source": "/tarifs",
+      "destination": "/tarifs/",
       "permanent": true
     }
   ]

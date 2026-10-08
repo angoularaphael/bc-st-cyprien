@@ -4,6 +4,10 @@
     "verdict": "avif",
     "q": 40
   },
+  "sc/ados-pattes.webp": {
+    "octets": 256300,
+    "verdict": "webp"
+  },
   "sc/anglaise-header.webp": {
     "octets": 123564,
     "verdict": "avif",
@@ -24,9 +28,23 @@
     "verdict": "avif",
     "q": 60
   },
+  "sc/boxe-anglaise-sacs.webp": {
+    "octets": 112580,
+    "verdict": "avif",
+    "q": 60
+  },
+  "sc/cage-coup-de-pied.webp": {
+    "octets": 214050,
+    "verdict": "webp"
+  },
   "sc/charpente-contrejour.webp": {
     "octets": 250532,
     "verdict": "webp"
+  },
+  "sc/circuit-halteres.webp": {
+    "octets": 110790,
+    "verdict": "avif",
+    "q": 65
   },
   "sc/coach-brice.webp": {
     "octets": 30034,
@@ -118,6 +136,21 @@
     "octets": 46780,
     "verdict": "webp"
   },
+  "sc/gainage-binome.webp": {
+    "octets": 208506,
+    "verdict": "avif",
+    "q": 70
+  },
+  "sc/grappling-kimono-controle.webp": {
+    "octets": 59054,
+    "verdict": "avif",
+    "q": 55
+  },
+  "sc/grappling-kimono-sol.webp": {
+    "octets": 113606,
+    "verdict": "avif",
+    "q": 60
+  },
   "sc/grappling.webp": {
     "octets": 100714,
     "verdict": "avif",
@@ -140,6 +173,11 @@
     "octets": 69716,
     "verdict": "avif",
     "q": 60
+  },
+  "sc/kettlebell-swing.webp": {
+    "octets": 87564,
+    "verdict": "avif",
+    "q": 55
   },
   "sc/kettlebells-rangee.webp": {
     "octets": 110836,
@@ -215,6 +253,16 @@
     "octets": 69042,
     "verdict": "avif",
     "q": 60
+  },
+  "sc/pattes-ours-combinaison.webp": {
+    "octets": 144766,
+    "verdict": "avif",
+    "q": 70
+  },
+  "sc/pieds-poings-binome.webp": {
+    "octets": 155452,
+    "verdict": "avif",
+    "q": 65
   },
   "sc/planning-2026-1600.webp": {
     "octets": 128934,

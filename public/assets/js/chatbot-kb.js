@@ -21,22 +21,22 @@ export const QUICKS = [
   {
     label: "La séance d’essai",
     q: "Comment se passe la séance d’essai ?",
-    a: "10€ la séance, toutes disciplines, gants et matériel prêtés, sans engagement. Tu arrives 10 minutes avant en tenue de sport, tu dis que c’est ta première fois — c’est la seule phrase à préparer — puis échauffement, technique et sac, à ton rythme. Pas de sparring imposé, pas de test. [boutons: premiere, essai]",
+    a: "La séance d’essai coûte 10€, toutes disciplines, gants et matériel prêtés, sans engagement. Tu arrives 10 minutes avant en tenue de sport, tu dis que c’est ta première fois — c’est tout. [boutons: essai, contact]",
   },
   {
     label: "Les tarifs",
     q: "Quels sont les tarifs ?",
-    a: "L’offre Rentrée : 29€ par personne pour 4 semaines illimitées (au lieu de 44€). La Saison : 259€ les 12 mois en 4× sans frais, accès libre aux 5 clubs. Hors promo, l’abonnement classique est à 44€ adulte / 36€ étudiant par échéance de 4 semaines. L’école : 295€ l’année t-shirt inclus, baby 250€. Et l’essai à 10€ pour tester, en dernier. [boutons: offre, saison, tarifs]",
+    a: "L’offre Rentrée : 29€ par personne toutes les 4 semaines, avec première échéance carte, IBAN pour la suite, coordonnées d’un proche requises et badge à 34,99€ facturé après 72 h. La Saison : 259€ les 12 mois au lieu de 400€, comptant ou en 4× sans frais, accès aux 5 clubs. Hors promo : 44,99€ adulte / 36,99€ étudiant toutes les 4 semaines, avec badge 34,99€ en sus sauf condition contraire à la souscription. École : 295€ l’année, baby 250€. [boutons: offre, saison, tarifs]",
   },
   {
     label: "Les horaires",
     q: "Quels sont les horaires ?",
-    a: "Du lundi au samedi, 10h00 – 21h15. Fermé le dimanche. Les derniers cours démarrent à 20h selon les jours.",
+    a: "Du lundi au samedi, 10h00 – 21h30. Fermé le dimanche. Le dernier cours se termine à 21h15 selon les jours.",
   },
   {
     label: "Où c’est ?",
     q: "Où se trouve la salle ?",
-    a: "11 rue Sainte-Lucie, 31300 Toulouse — plein cœur de Saint-Cyprien, rive gauche. Métro ligne A, arrêt Saint-Cyprien République, 4 minutes à pied. Parking Saint-Cyprien juste à côté.",
+    a: "11 rue Sainte-Lucie, 31300 Toulouse — quartier Saint-Cyprien, rive gauche. Tram T1, arrêt Fer à Cheval à 200 m (3 min à pied). Métro A, station Saint-Cyprien – République à 600 m (8 min à pied). Parking Saint-Cyprien à proximité.",
   },
   {
     label: "Les disciplines",
@@ -46,7 +46,7 @@ export const QUICKS = [
   {
     label: "Pour les enfants",
     q: "Y a-t-il des cours pour les enfants ?",
-    a: "Oui, dès 3 ans. Baby Boxe le samedi à 14h15, éducative 7/11 et ados 12/16 le mercredi et le samedi à 15h, et un créneau compétiteurs. Dadi tient toute l’école, du premier déplacement au premier combat.",
+    a: "Oui, dès 3 ans. Baby Boxe le samedi à 14h15, éducative 7/11 à 15h et ados 12/16 à 16h le mercredi et le samedi, puis un créneau compétiteurs. Dadi tient toute l’école, du premier déplacement au premier combat.",
   },
   {
     label: "Les coachs",
@@ -56,7 +56,7 @@ export const QUICKS = [
   {
     label: "Débuter",
     q: "Je n’ai jamais boxé, je peux venir ?",
-    a: "Oui, et c’est même le cas le plus courant. Commence par le Boxing Camp — technique, cardio, sacs, à ton rythme. Aucun acquis demandé, personne ne regarde le nouveau, et aucun sparring n’est imposé le premier soir. [boutons: premiere, essai]",
+    a: "Oui, et c’est même le cas le plus courant. Commence par le Boxing Camp — technique, cardio, sacs, à ton rythme. Aucun acquis demandé, personne ne regarde le nouveau, et aucun sparring n’est imposé le premier soir. [boutons: essai]",
   },
 ];
 

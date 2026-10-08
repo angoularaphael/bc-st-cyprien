@@ -16,6 +16,7 @@ User-agent: Bingbot
 User-agent: DuckDuckBot
 User-agent: Qwantify
 Allow: /
+Allow: /api/mcp
 Disallow: /admin/
 Disallow: /api/
 
@@ -42,12 +43,14 @@ User-agent: cohere-ai
 User-agent: YouBot
 User-agent: CCBot
 Allow: /
+Allow: /api/mcp
 Disallow: /admin/
 Disallow: /api/
 
 # --- Tous les autres ---
 User-agent: *
 Allow: /
+Allow: /api/mcp
 # Le vestiaire et les fonctions n'ont rien à faire dans un index.
 Disallow: /admin/
 Disallow: /api/

@@ -33,10 +33,10 @@
   <meta name="twitter:description" content="Cette page n’existe pas. Retrouve le planning, les tarifs et le contact de Boxing Center Saint-Cyprien, rive gauche à Toulouse." />
   <meta name="twitter:image" content="https://club-boxe-toulouse.com/assets/img/og.jpg?v=2" />
 
-  <link rel="stylesheet" href="/assets/css/base.css?v=39" />
+  <link rel="stylesheet" href="/assets/css/base.css?v=41" />
   <link rel="stylesheet" href="/assets/css/roulette.css?v=22" />
   <link rel="stylesheet" href="/assets/css/photos.css?v=22" />
-  <link rel="stylesheet" href="/assets/css/home.css?v=38" />
+  <link rel="stylesheet" href="/assets/css/home.css?v=39" />
 
   <style is:inline>
     .e404 { min-height: 78vh; display: grid; place-items: center; text-align: center; position: relative; overflow: hidden; background: var(--void); }
@@ -58,7 +58,7 @@
     <section class="e404" aria-label="Page introuvable">
       <div class="e404__in">
         <span class="e404__code">Erreur 404</span>
-        <h1 class="e404__title">Ce créneau<span class="tint">n’existe pas.</span></h1>
+        <h1 class="e404__title">Ce créneau <span class="tint">n’existe pas.</span></h1>
         <p class="lead">La page a bougé ou n’a jamais existé. Reviens dans la lumière : le planning, les tarifs et la salle t’attendent rive gauche.</p>
         <div class="e404__links">
           <a class="btn btn--primary" data-magnetic href="/"><span>Retour à l’accueil</span></a>
@@ -69,15 +69,17 @@
     </section>
   </main>
 
-  <div id="footer"><!-- LE MAILLAGE DE MARQUE, SERVI EN DUR ------------------------------
-       Les liens sortants du pied de page (le groupe, la boutique, les salles
-       sœurs, les réseaux) sont écrits par site.js. Un robot qui n’exécute pas
-       le JavaScript n’en voyait donc AUCUN dans le HTML livré : le maillage
-       n’existait qu’à l’écran. Il est posé ici, en dur, À L’INTÉRIEUR du
-       conteneur que site.js remplace intégralement au montage. Résultat : les
-       liens sont dans dist/*.html, et le rendu à l’écran est inchangé — ce
-       bloc ne peint rien et disparaît dès que le pied de page est monté. -->
-    <nav class="maillage" hidden style="display:none" aria-label="Le réseau Boxing Center">
+  <div id="footer"><!-- Repli HTML visible : site.js le remplace par le pied complet.
+       Sans JavaScript, visiteurs et robots reçoivent les mêmes liens réseau. -->
+    <nav class="maillage" aria-label="Le réseau Boxing Center">
+      <a href="/">Accueil</a>
+      <a href="/la-salle/">La salle</a>
+      <a href="/activites/">Activités</a>
+      <a href="/coachs/">Coachs</a>
+      <a href="/galerie/">Galerie</a>
+      <a href="/plannings/">Planning</a>
+      <a href="/tarifs/">Tarifs</a>
+      <a href="/contact/">Contact</a>
       <a href="https://boxingcenter.fr/">Boxing Center — le groupe</a>
       <a href="https://boutique.boxingcenter.fr/">La boutique Boxing Center</a>
       <a href="https://boxe-toulouse.com/">Boxing Center Minimes</a>
@@ -86,6 +88,7 @@
       <a href="https://mmatoulouse.com/">Boxing Center Ramonville</a>
       <a href="https://www.instagram.com/boxingcentertoulouse/">Instagram Boxing Center</a>
       <a href="https://www.facebook.com/BoxingCenterToulouse/">Facebook Boxing Center</a>
+      <a href="/mentions-legales/">Mentions légales</a>
     </nav>
   </div>
 
@@ -97,6 +100,6 @@
 
   <!-- Libs d’animation, auto-hébergées et regroupées (gsap + ScrollTrigger + Lenis). -->
   <script is:inline defer src="/assets/js/vendor.min.js?v=22"></script>
-  <script is:inline type="module" src="/assets/js/site.js?v=23"></script>
+  <script is:inline type="module" src="/assets/js/site.js?v=26"></script>
 </body>
 </html>

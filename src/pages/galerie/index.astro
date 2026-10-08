@@ -1,19 +1,19 @@
+---
+import { AUTEUR_PRINCIPAL } from "../../../api/_lib/auteurs.js";
+---
 <!doctype html>
 <html lang="fr" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Galerie sport de combat | Boxing Center Saint-Cyprien</title>
-  <meta name="description" content="Le plateau, le ring d’anglaise, la surface pieds-poings, la zone moteur, la Lady Punch et l’école. La salle rive gauche, telle qu’elle est." />
+  <title>Photos de la salle de boxe | Toulouse Saint-Cyprien</title>
+  <meta name="description" content="Découvrez en photos la salle de boxe de Toulouse Saint-Cyprien : plateau, ring d’anglaise, tatamis, pieds-poings, grappling, Lady Punch et école." />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/space-grotesk-latin.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin />
-  <meta name="keywords" content="photos salle de boxe Toulouse, salle boxe Saint-Cyprien images, boxe rive gauche Toulouse photos, ring boxe Toulouse, salle boxe thaï Toulouse photos, boxing gym Toulouse, boxing club Toulouse, boxing lessons Toulouse, boxing classes Toulouse rive gauche, MMA gym Toulouse, kickboxing Toulouse, muay thai Toulouse, martial arts gym Toulouse, kids boxing Toulouse, women boxing Toulouse, gym near Saint-Cyprien" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="author" content="Boxing Center Saint-Cyprien" />
+  <meta name="author" content={AUTEUR_PRINCIPAL.nom} />
   <meta name="geo.region" content="FR-31" />
   <meta name="geo.placename" content="Toulouse — Saint-Cyprien" />
-  <meta name="geo.position" content="43.598;1.427" />
-  <meta name="ICBM" content="43.598, 1.427" />
   <link rel="canonical" href="https://club-boxe-toulouse.com/galerie/" />
   <meta name="theme-color" content="#0b0d14" />
   <link rel="icon" href="/favicon-16.png?i=3" type="image/png" sizes="16x16" />
@@ -43,10 +43,10 @@
   <meta name="twitter:description" content="Le plateau, le ring, le pieds-poings, la zone moteur, la Lady Punch et l’école. Rive gauche, Toulouse." />
   <meta name="twitter:image" content="https://club-boxe-toulouse.com/assets/img/og.jpg?v=2" />
 
-  <link rel="stylesheet" href="/assets/css/base.css?v=39" />
+  <link rel="stylesheet" href="/assets/css/base.css?v=41" />
   <link rel="stylesheet" href="/assets/css/roulette.css?v=22" />
   <link rel="stylesheet" href="/assets/css/photos.css?v=22" />
-  <link rel="stylesheet" href="/assets/css/home.css?v=38" />
+  <link rel="stylesheet" href="/assets/css/home.css?v=39" />
   <link rel="stylesheet" href="/assets/css/galerie.css?v=22" />
 
   <!-- SEO/GEO — graphe JSON-LD unifié (organisation · salle · site · page · image ·
@@ -122,8 +122,8 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 43.598,
-          "longitude": 1.427
+          "latitude": 43.592848,
+          "longitude": 1.433022
         },
         "hasMap": "https://maps.google.com/?q=11+rue+Sainte-Lucie+31300+Toulouse",
         "areaServed": [
@@ -152,7 +152,7 @@
               "Saturday"
             ],
             "opens": "10:00",
-            "closes": "21:15"
+            "closes": "21:30"
           }
         ],
         "sport": [
@@ -211,7 +211,7 @@
               "name": "Offre Rentrée",
               "price": "29",
               "priceCurrency": "EUR",
-              "description": "29€ par personne, 4 semaines, cours illimités, sans engagement.",
+              "description": "29€ par personne et par échéance de 4 semaines, sans engagement ; conditions complètes sur la boutique, dont badge à 34,99€.",
               "url": "https://boutique.boxingcenter.fr/offre/29"
             },
             {
@@ -219,7 +219,7 @@
               "name": "Offre Saison",
               "price": "259",
               "priceCurrency": "EUR",
-              "description": "259€ les 12 mois, payable en 4× sans frais, accès libre aux 5 clubs.",
+              "description": "259€ les 12 mois au lieu de 400€, comptant ou en 4× sans frais ; accès libre aux 5 clubs.",
               "url": "https://boutique.boxingcenter.fr/offre/259"
             },
             {
@@ -227,7 +227,7 @@
               "name": "Abonnement adulte, échéance de 4 semaines",
               "price": "44.99",
               "priceCurrency": "EUR",
-              "description": "44€ par échéance de 4 semaines, accès aux 5 salles et à toutes les disciplines — le tarif de tous les jours.",
+              "description": "44,99€ par échéance de 4 semaines. Badge d’accès 34,99€ en sus selon les CGV, sauf condition contraire à la souscription.",
               "url": "https://boutique.boxingcenter.fr/abonnements#prelevement"
             },
             {
@@ -235,7 +235,7 @@
               "name": "Abonnement étudiant, échéance de 4 semaines",
               "price": "36.99",
               "priceCurrency": "EUR",
-              "description": "36€ par échéance de 4 semaines pour les étudiants, accès aux 5 salles et à toutes les disciplines.",
+              "description": "36,99€ par échéance de 4 semaines pour les étudiants. Badge d’accès 34,99€ en sus selon les CGV, sauf condition contraire à la souscription.",
               "url": "https://boutique.boxingcenter.fr/abonnements#prelevement"
             },
             {
@@ -256,7 +256,7 @@
             }
           ]
         },
-        "description": "Boxing Center Saint-Cyprien : la salle du centre-ville de Toulouse, rive gauche de Toulouse. Boxe anglaise, thaï/K1, grappling, Hyrox, cross-training, Lady Punch et école enfants dès 3 ans, à 4 minutes du métro A (Saint-Cyprien République). Séance d’essai 10€.",
+        "description": "Boxing Center Saint-Cyprien : la salle du centre-ville de Toulouse, rive gauche. Boxe anglaise, thaï/K1, grappling, Hyrox, cross-training, Lady Punch et école enfants dès 3 ans, à 200 m du tram T1 Fer à Cheval. Séance d’essai 10€.",
         "potentialAction": {
           "@type": "ReserveAction",
           "name": "Réserver une séance d’essai",
@@ -302,17 +302,7 @@
           "@id": "https://club-boxe-toulouse.com/galerie/#primaryimage"
         },
         "datePublished": "2026-07-17",
-        "dateModified": "2026-07-19",
-        "breadcrumb": {
-          "@id": "https://club-boxe-toulouse.com/galerie/#breadcrumb"
-        },
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [
-            "h1",
-            ".lead"
-          ]
-        }
+        "dateModified": "2026-10-08"
       },
       {
         "@type": "ImageObject",
@@ -346,7 +336,7 @@
         "@type": "ImageGallery",
         "@id": "https://club-boxe-toulouse.com/galerie/#gallery",
         "name": "La salle Boxing Center Saint-Cyprien, zone par zone",
-        "description": "16 photos réelles de la salle réparties en 7 zones : le plateau, l’anglaise, le pieds-poings, le sol, le moteur, la Lady Punch et l’école. Aucune image de banque.",
+        "description": "15 photos réelles du réseau Boxing Center en 7 zones : le plateau de Saint-Cyprien, l’anglaise, le pieds-poings, le sol, le moteur, Lady Punch et l’école. Aucune image de banque.",
         "inLanguage": "fr-FR",
         "isPartOf": {
           "@id": "https://club-boxe-toulouse.com/galerie/#webpage"
@@ -357,38 +347,78 @@
         "hasPart": [
           {
             "@type": "ImageObject",
-            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/salle-1.webp",
-            "caption": "Le plateau vu dans sa longueur : bancs et racks au premier plan, tapis bleu et rouge, bannière Boxing Center au fond — Boxing Center Saint-Cyprien"
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/salle-contrejour.webp",
+            "caption": "Le ring Boxing Center vu entre deux sacs de frappe, un pratiquant à la corde au premier plan"
           },
           {
             "@type": "ImageObject",
-            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/anglaise-header.webp",
-            "caption": "Un cours en plein travail : les pratiquants frappent des boucliers ronds tenus par leurs binômes, entre les sacs suspendus"
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/cours-garde.webp",
+            "caption": "Un cours de boxe anglaise : des pratiquantes en garde travaillent aux boucliers sur le tapis bleu et rouge"
           },
           {
             "@type": "ImageObject",
-            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/thai-2.webp",
-            "caption": "Le groupe aux sacs pendant un cours pieds-poings, chacun sur son sac le long de la charpente"
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/boxe-anglaise-sacs.webp",
+            "caption": "Un boxeur en maillot vert, garde haute, déplace ses appuis entre deux sacs de frappe"
           },
           {
             "@type": "ImageObject",
-            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/grappling.webp",
-            "caption": "Deux pratiquants au sol sur le tapis bleu : l’un contrôle l’autre, au pied du ring"
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/thai-genou.webp",
+            "caption": "Un cours pieds-poings : au premier plan un jeune en garde, derrière lui un pratiquant lance un coup de pied haut"
           },
           {
             "@type": "ImageObject",
-            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/muscu.webp",
-            "caption": "La salle de charge : cage à squat, bancs inclinés et machines alignées sur sol caoutchouc"
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/cage-coup-de-pied.webp",
+            "caption": "Dans la cage, un pratiquant arme un coup de pied sur les paos que tient son partenaire"
           },
           {
             "@type": "ImageObject",
-            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/lady-2.webp",
-            "caption": "Deux pratiquantes en garde, mains bandées, pendant un cours Lady Punch"
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/pieds-poings-binome.webp",
+            "caption": "Une pratiquante monte le genou sur les paos que tient son partenaire, protège-tibias aux jambes"
           },
           {
             "@type": "ImageObject",
-            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/educative.webp",
-            "caption": "Deux jeunes licenciées en maillot Boxing Center, médaille aux dents, après une compétition"
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/grappling-kimono-controle.webp",
+            "caption": "Deux pratiquants en kimono, l’un en blanc l’autre en bleu, se disputent un contrôle au sol"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/grappling-kimono-sol.webp",
+            "caption": "Un pratiquant en kimono bleu maintient son partenaire au sol sous lui, appuis bien écartés"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/kettlebells.webp",
+            "caption": "Une rangée de kettlebells noirs et jaunes posés au sol devant la cage"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/kettlebell-swing.webp",
+            "caption": "Une pratiquante en t-shirt jaune lève un kettlebell à bout de bras devant une fresque noire et blanche"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/gainage-binome.webp",
+            "caption": "Deux pratiquantes enchaînent un exercice de gainage à quatre pattes sur les dalles noires"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/lady-cage.webp",
+            "caption": "Un cours Lady Punch dans la cage : deux pratiquantes travaillent en binôme, gants aux mains"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/lady-garde.webp",
+            "caption": "Une pratiquante en sweat vert, mains bandées, garde haute et regard fixé devant elle"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/lady-sac.webp",
+            "caption": "Une pratiquante frappe le sac Metal, gants noirs, sur le tapis bleu et rouge"
+          },
+          {
+            "@type": "ImageObject",
+            "contentUrl": "https://club-boxe-toulouse.com/assets/img/sc/ados-pattes.webp",
+            "caption": "Un adolescent, mains bandées, en garde face à son coach au bord du ring"
           }
         ]
       }
@@ -412,8 +442,8 @@
       <div class="phero__spot" aria-hidden="true"></div>
       <div class="wrap">
         <p class="eyebrow" data-reveal style="margin-top:1.1rem">En images · <span id="gcount">zone par zone</span></p>
-        <h1 class="display"><span class="reveal-mask"><span>La salle</span></span><span class="reveal-mask"><span class="tint">en photos.</span></span></h1>
-        <p class="lead" data-reveal>Zone par zone, sous la lumière. Ce que tu vois là, c’est ce que tu trouves en passant la porte : les mêmes sacs, le même ring, le même tapis un peu marqué. Clique une photo pour la voir en grand.</p>
+        <h1 class="display"><span class="reveal-mask"><span>Notre salle de boxe à Toulouse,</span></span><span class="reveal-mask"><span class="tint">en photos.</span></span></h1>
+        <p class="lead" data-reveal>Zone par zone : le plateau, l’anglaise, le pieds-poings, le sol, le moteur, Lady Punch et l’école. Ce qu’on fait ici, en vrai — clique une photo pour la voir en grand.</p>
         <nav class="gindex" id="gindex" data-reveal aria-label="Aller à une zone"></nav>
         <div class="phero__mark" aria-hidden="true"></div>
       </div>
@@ -477,7 +507,7 @@
         <h2 class="display" style="font-size:clamp(2rem,5vw,3.6rem)"><span class="reveal-mask"><span>Viens l’entendre</span></span><span class="reveal-mask"><span class="tint">en vrai.</span></span></h2>
         <p class="lead" data-reveal>Le bruit des sacs ne tient pas dans une image. Dix euros pour l’entendre pour de vrai.</p>
         <div class="gong__cta" data-reveal>
-          <a class="btn btn--primary" data-magnetic href="https://boutique.boxingcenter.fr/inscription?product=offre-duo&step=1&utm_source=site&utm_medium=cta&utm_campaign=st-cyprien"><span>Ma place de rentrée — 29€</span></a><a class="btn btn--ghost" data-magnetic href="https://boutique.boxingcenter.fr/seance-essai?utm_source=site&utm_medium=cta&utm_campaign=st-cyprien"><span>Essayer une séance · 10€</span></a>
+          <a class="btn btn--primary" data-magnetic href="https://boutique.boxingcenter.fr/offre/29"><span>Voir l’offre Rentrée — 29€</span></a><a class="btn btn--ghost" data-magnetic href="https://boutique.boxingcenter.fr/seance-essai?utm_source=site&utm_medium=cta&utm_campaign=st-cyprien"><span>Essayer une séance · 10€</span></a>
           <a class="btn" data-magnetic href="/la-salle/"><span>Visiter la salle</span></a>
         </div>
       </div>
@@ -485,15 +515,17 @@
 
   </main>
 
-  <div id="footer"><!-- LE MAILLAGE DE MARQUE, SERVI EN DUR ------------------------------
-       Les liens sortants du pied de page (le groupe, la boutique, les salles
-       sœurs, les réseaux) sont écrits par site.js. Un robot qui n’exécute pas
-       le JavaScript n’en voyait donc AUCUN dans le HTML livré : le maillage
-       n’existait qu’à l’écran. Il est posé ici, en dur, À L’INTÉRIEUR du
-       conteneur que site.js remplace intégralement au montage. Résultat : les
-       liens sont dans dist/*.html, et le rendu à l’écran est inchangé — ce
-       bloc ne peint rien et disparaît dès que le pied de page est monté. -->
-    <nav class="maillage" hidden style="display:none" aria-label="Le réseau Boxing Center">
+  <div id="footer"><!-- Repli HTML visible : site.js le remplace par le pied complet.
+       Sans JavaScript, visiteurs et robots reçoivent les mêmes liens réseau. -->
+    <nav class="maillage" aria-label="Le réseau Boxing Center">
+      <a href="/">Accueil</a>
+      <a href="/la-salle/">La salle</a>
+      <a href="/activites/">Activités</a>
+      <a href="/coachs/">Coachs</a>
+      <a href="/galerie/">Galerie</a>
+      <a href="/plannings/">Planning</a>
+      <a href="/tarifs/">Tarifs</a>
+      <a href="/contact/">Contact</a>
       <a href="https://boxingcenter.fr/">Boxing Center — le groupe</a>
       <a href="https://boutique.boxingcenter.fr/">La boutique Boxing Center</a>
       <a href="https://boxe-toulouse.com/">Boxing Center Minimes</a>
@@ -502,6 +534,7 @@
       <a href="https://mmatoulouse.com/">Boxing Center Ramonville</a>
       <a href="https://www.instagram.com/boxingcentertoulouse/">Instagram Boxing Center</a>
       <a href="https://www.facebook.com/BoxingCenterToulouse/">Facebook Boxing Center</a>
+      <a href="/mentions-legales/">Mentions légales</a>
     </nav>
   </div>
 
@@ -514,7 +547,7 @@
   <!-- Libs d’animation, auto-hébergées et regroupées (gsap + ScrollTrigger + Lenis) :
        une seule requête same-origin au lieu de trois vers un CDN tiers. -->
   <script is:inline defer src="/assets/js/vendor.min.js?v=22"></script>
-  <script is:inline type="module" src="/assets/js/site.js?v=23"></script>
-  <script is:inline type="module" src="/assets/js/galerie.js?v=22"></script>
+  <script is:inline type="module" src="/assets/js/site.js?v=26"></script>
+  <script is:inline type="module" src="/assets/js/galerie.js?v=24"></script>
 </body>
 </html>

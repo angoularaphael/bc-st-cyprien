@@ -5,8 +5,8 @@
    Puis LE CODE (4 valeurs durables), LE RÉSEAU (les 4 sœurs + sa place, la
    preuve du titre) et les infos pratiques. Tout depuis data.js.
    ===================================================================== */
-import { NETWORK, SALLE, LINKS, picture } from "./data.js?v=27";
-import { VISITE, VALUES } from "./data-la-salle.js?v=24";
+import { NETWORK, SALLE, LINKS, picture } from "./data.js?v=30";
+import { VISITE, VALUES } from "./data-la-salle.js?v=26";
 
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s = "") => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -110,8 +110,8 @@ function renderCode() {
   ).join("");
 }
 
-/* LE RÉSEAU — les quatre sœurs dans l’ordre de la lignée, puis Saint-Cyprien
-   en bout de chaîne (la preuve : elle vient après et retient ce qui marche). */
+/* LE RÉSEAU — les quatre autres salles, puis Saint-Cyprien. La liste ne
+   prétend pas donner un ordre historique. */
 function renderLineage() {
   const el = $("#lineage");
   if (!el) return;
@@ -129,9 +129,9 @@ function renderLineage() {
   const self = `<li class="sister sister--self" data-reveal>
       <span class="sister__i">05</span>
       <div class="sister__body">
-        <span class="sister__tag">La nouvelle génération</span>
+        <span class="sister__tag">Toulouse rive gauche</span>
         <h3 class="sister__name">Saint-Cyprien</h3>
-        <p class="sister__feat">Centre-ville · rive gauche · toutes les discipline autres</p>
+        <p class="sister__feat">Centre-ville · rive gauche · toutes les disciplines</p>
       </div>
       <span class="sister__here" aria-hidden="true">Tu es ici</span>
     </li>`;
@@ -144,7 +144,7 @@ function renderInfos() {
   if (!el) return;
   const rows = [
     { k: "Adresse", v: SALLE.address.full },
-    { k: "Métro", v: "Ligne A · Saint-Cyprien République (4 min à pied)" },
+    { k: "Tram", v: "Ligne T1 · Fer à Cheval, 200 m" },
     { k: "Horaires", v: SALLE.hours },
     { k: "Stationnement", v: "Parking Saint-Cyprien à proximité" },
     { k: "Téléphone", v: `<a href="tel:${SALLE.phoneHref}">${SALLE.phone}</a>` },

@@ -6,6 +6,15 @@
 
 .phero-cta { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: clamp(1.4rem,3vw,2rem); }
 
+.contact-answer { padding-block: clamp(2.8rem,6vw,5rem); background: var(--paper-2); border-bottom: 1px solid var(--line); }
+.contact-answer__title { margin-top: 1rem; font-size: clamp(1.9rem,1rem + 2.8vw,3.2rem); }
+.contact-answer__grid { display: grid; gap: .75rem; margin-top: clamp(1.5rem,3vw,2.2rem); }
+.contact-answer__grid article { border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1.1rem,2vw,1.5rem); background: var(--paper-3); }
+.contact-answer__grid h3 { color: var(--ink); font: 700 var(--step-1)/1.2 var(--f-display); }
+.contact-answer__grid p { margin-top: .65rem; color: var(--ink-soft); line-height: 1.65; }
+.contact-answer__grid a { color: var(--ink); text-decoration: underline; text-underline-offset: .18em; }
+@media (min-width: 820px){ .contact-answer__grid { grid-template-columns: repeat(3,1fr); } }
+
 .contact-sec { padding-block: clamp(3rem,7vw,5.5rem); }
 .contact-grid { display: grid; gap: clamp(1.8rem,4vw,3rem); grid-template-columns: 1fr; align-items: start; }
 @media (min-width: 900px){ .contact-grid { grid-template-columns: 1fr 1.05fr; } }

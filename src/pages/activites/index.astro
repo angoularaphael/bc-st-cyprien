@@ -1,19 +1,19 @@
+---
+import { AUTEUR_PRINCIPAL } from "../../../api/_lib/auteurs.js";
+---
 <!doctype html>
 <html lang="fr" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nos activités | Boxing Center Saint-Cyprien</title>
-  <meta name="description" content="Boxe anglaise, thaï/K1, kick boxing, PAOS, Boxing Lady, école enfants, Boxing Camp, cross training et Hyrox à Toulouse Saint-Cyprien. Musculation et cardio en accès libre, du lundi au samedi." />
+  <title>Cours de boxe à Saint-Cyprien : anglaise, K1, grappling</title>
+  <meta name="description" content="Cours de boxe à Toulouse Saint-Cyprien : anglaise, thaï/K1, kick-boxing, grappling, Lady Punch, enfants, Hyrox et cross-training. Tous niveaux." />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/space-grotesk-latin.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin />
-  <meta name="keywords" content="cours de boxe Toulouse rive gauche, boxe anglaise Saint-Cyprien, boxe thaï K1 Toulouse, grappling Toulouse, Hyrox cross training Toulouse, Lady Punch Toulouse, baby boxe dès 3 ans, boxe éducative enfants Toulouse, boxing gym Toulouse, boxing club Toulouse, boxing lessons Toulouse, boxing classes Toulouse rive gauche, MMA gym Toulouse, kickboxing Toulouse, muay thai Toulouse, martial arts gym Toulouse, kids boxing Toulouse, women boxing Toulouse, gym near Saint-Cyprien" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="author" content="Boxing Center Saint-Cyprien" />
+  <meta name="author" content={AUTEUR_PRINCIPAL.nom} />
   <meta name="geo.region" content="FR-31" />
   <meta name="geo.placename" content="Toulouse — Saint-Cyprien" />
-  <meta name="geo.position" content="43.598;1.427" />
-  <meta name="ICBM" content="43.598, 1.427" />
   <link rel="canonical" href="https://club-boxe-toulouse.com/activites/" />
   <meta name="theme-color" content="#0b0d14" />
   <link rel="icon" href="/favicon-16.png?i=3" type="image/png" sizes="16x16" />
@@ -43,10 +43,10 @@
   <meta name="twitter:description" content="Anglaise, thaï/K1, grappling, Hyrox, camp, Lady Punch, école dès 3 ans. Rive gauche, Toulouse." />
   <meta name="twitter:image" content="https://club-boxe-toulouse.com/assets/img/og.jpg?v=2" />
 
-  <link rel="stylesheet" href="/assets/css/base.css?v=39" />
+  <link rel="stylesheet" href="/assets/css/base.css?v=41" />
   <link rel="stylesheet" href="/assets/css/roulette.css?v=22" />
   <link rel="stylesheet" href="/assets/css/photos.css?v=22" />
-  <link rel="stylesheet" href="/assets/css/home.css?v=38" />
+  <link rel="stylesheet" href="/assets/css/home.css?v=39" />
   <link rel="stylesheet" href="/assets/css/activites.css?v=25" />
 
   <!-- SEO/GEO — graphe JSON-LD unifié (organisation · salle · site · page · image ·
@@ -122,8 +122,8 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 43.598,
-          "longitude": 1.427
+          "latitude": 43.592848,
+          "longitude": 1.433022
         },
         "hasMap": "https://maps.google.com/?q=11+rue+Sainte-Lucie+31300+Toulouse",
         "areaServed": [
@@ -152,7 +152,7 @@
               "Saturday"
             ],
             "opens": "10:00",
-            "closes": "21:15"
+            "closes": "21:30"
           }
         ],
         "sport": [
@@ -211,7 +211,7 @@
               "name": "Offre Rentrée",
               "price": "29",
               "priceCurrency": "EUR",
-              "description": "29€ par personne, 4 semaines, cours illimités, sans engagement.",
+              "description": "29€ par personne et par échéance de 4 semaines, sans engagement ; conditions complètes sur la boutique, dont badge à 34,99€.",
               "url": "https://boutique.boxingcenter.fr/offre/29"
             },
             {
@@ -219,7 +219,7 @@
               "name": "Offre Saison",
               "price": "259",
               "priceCurrency": "EUR",
-              "description": "259€ les 12 mois, payable en 4× sans frais, accès libre aux 5 clubs.",
+              "description": "259€ les 12 mois au lieu de 400€, comptant ou en 4× sans frais ; accès libre aux 5 clubs.",
               "url": "https://boutique.boxingcenter.fr/offre/259"
             },
             {
@@ -227,7 +227,7 @@
               "name": "Abonnement adulte, échéance de 4 semaines",
               "price": "44.99",
               "priceCurrency": "EUR",
-              "description": "44€ par échéance de 4 semaines, accès aux 5 salles et à toutes les disciplines — le tarif de tous les jours.",
+              "description": "44,99€ par échéance de 4 semaines. Badge d’accès 34,99€ en sus selon les CGV, sauf condition contraire à la souscription.",
               "url": "https://boutique.boxingcenter.fr/abonnements#prelevement"
             },
             {
@@ -235,7 +235,7 @@
               "name": "Abonnement étudiant, échéance de 4 semaines",
               "price": "36.99",
               "priceCurrency": "EUR",
-              "description": "36€ par échéance de 4 semaines pour les étudiants, accès aux 5 salles et à toutes les disciplines.",
+              "description": "36,99€ par échéance de 4 semaines pour les étudiants. Badge d’accès 34,99€ en sus selon les CGV, sauf condition contraire à la souscription.",
               "url": "https://boutique.boxingcenter.fr/abonnements#prelevement"
             },
             {
@@ -256,7 +256,7 @@
             }
           ]
         },
-        "description": "Boxing Center Saint-Cyprien : la salle du centre-ville de Toulouse, rive gauche de Toulouse. Boxe anglaise, thaï/K1, grappling, Hyrox, cross-training, Lady Punch et école enfants dès 3 ans, à 4 minutes du métro A (Saint-Cyprien République). Séance d’essai 10€.",
+        "description": "Boxing Center Saint-Cyprien : la salle du centre-ville de Toulouse, rive gauche. Boxe anglaise, thaï/K1, grappling, Hyrox, cross-training, Lady Punch et école enfants dès 3 ans, à 200 m du tram T1 Fer à Cheval. Séance d’essai 10€.",
         "potentialAction": {
           "@type": "ReserveAction",
           "name": "Réserver une séance d’essai",
@@ -302,17 +302,7 @@
           "@id": "https://club-boxe-toulouse.com/activites/#primaryimage"
         },
         "datePublished": "2026-07-17",
-        "dateModified": "2026-07-19",
-        "breadcrumb": {
-          "@id": "https://club-boxe-toulouse.com/activites/#breadcrumb"
-        },
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [
-            "h1",
-            ".lead"
-          ]
-        }
+        "dateModified": "2026-10-08"
       },
       {
         "@type": "ImageObject",
@@ -438,7 +428,7 @@
       <img class="phero__bg" src="/assets/img/sc/cross-groupe.webp" alt="Un groupe en plein circuit dans la salle" loading="eager" decoding="async" />
       <div class="phero__spot" aria-hidden="true"></div>
       <div class="wrap">
-        <h1 class="display">Nos activités</h1>
+        <h1 class="display">Cours de boxe <span class="tint">à Saint-Cyprien.</span></h1>
         <p class="lead">Boxe, entraînement et préparation physique : choisissez ce qui vous correspond.</p>
         <p class="phero__note">Vous débutez ? Aucun problème. Dites-le au coach du créneau, il vous prend en charge. Les gants sont prêtés.</p>
       </div>
@@ -450,7 +440,7 @@
         <div class="arows">
         <article class="arow" data-act data-dir="g">
           <figure class="ph ph--3x2 arow__ph">
-            <img src="/assets/img/sc/anglaise.webp" alt="" loading="lazy" decoding="async" />
+            <img src="/assets/img/sc/anglaise.webp" alt="Une pratiquante en garde pendant un entraînement de boxe dans la salle" loading="lazy" decoding="async" />
           </figure>
           <div class="arow__txt">
             <span class="arow__n">01</span>
@@ -461,7 +451,7 @@
         </article>
         <article class="arow" data-act data-dir="d">
           <figure class="ph ph--3x2 arow__ph">
-            <img src="/assets/img/sc/thai.webp" alt="" loading="lazy" decoding="async" />
+            <img src="/assets/img/sc/thai.webp" alt="Une pratiquante exécute un coup de pied haut devant la cage d’entraînement" loading="lazy" decoding="async" />
           </figure>
           <div class="arow__txt">
             <span class="arow__n">02</span>
@@ -472,7 +462,7 @@
         </article>
         <article class="arow" data-act data-dir="x">
           <figure class="ph ph--3x2 arow__ph">
-            <img src="/assets/img/sc/k1-coup-pied.webp" alt="" loading="lazy" decoding="async" />
+            <img src="/assets/img/sc/k1-coup-pied.webp" alt="Un pratiquant travaille un coup de genou avec un coach devant le ring" loading="lazy" decoding="async" />
           </figure>
           <div class="arow__txt">
             <span class="arow__n">03</span>
@@ -483,7 +473,7 @@
         </article>
         <article class="arow" data-act data-dir="d">
           <figure class="ph ph--3x2 arow__ph">
-            <img src="/assets/img/sc/k1-duo.webp" alt="" loading="lazy" decoding="async" />
+            <img src="/assets/img/sc/k1-duo.webp" alt="Un coach montre la garde et la distance à un pratiquant en tenue de boxe" loading="lazy" decoding="async" />
           </figure>
           <div class="arow__txt">
             <span class="arow__n">04</span>
@@ -494,7 +484,7 @@
         </article>
         <article class="arow" data-act data-dir="g">
           <figure class="ph ph--3x2 arow__ph">
-            <img src="/assets/img/sc/anglaise-header.webp" alt="" loading="lazy" decoding="async" />
+            <img src="/assets/img/sc/pattes-ours-combinaison.webp" alt="Un coach tient les pattes d’ours, un jeune boxeur enchaîne sa combinaison" loading="lazy" decoding="async" />
           </figure>
           <div class="arow__txt">
             <span class="arow__n">05</span>
@@ -505,7 +495,7 @@
         </article>
         <article class="arow" data-act data-dir="d">
           <figure class="ph ph--3x2 arow__ph">
-            <img src="/assets/img/sc/lady.webp" alt="" loading="lazy" decoding="async" />
+            <img src="/assets/img/sc/lady.webp" alt="Un groupe de femmes avec leur coach pendant un cours entre les sacs de frappe" loading="lazy" decoding="async" />
           </figure>
           <div class="arow__txt">
             <span class="arow__n">06</span>
@@ -516,7 +506,7 @@
         </article>
         <article class="arow" data-act data-dir="x">
           <figure class="ph ph--3x2 arow__ph">
-            <img src="/assets/img/sc/educative.webp" alt="" loading="lazy" decoding="async" />
+            <img src="/assets/img/sc/educative.webp" alt="Deux jeunes boxeuses du Boxing Center montrent leur médaille après une rencontre" loading="lazy" decoding="async" />
           </figure>
           <div class="arow__txt">
             <span class="arow__n">07</span>
@@ -527,7 +517,7 @@
         </article>
         <article class="arow" data-act data-dir="d">
           <figure class="ph ph--3x2 arow__ph">
-            <img src="/assets/img/sc/tous-niveaux.webp" alt="" loading="lazy" decoding="async" />
+            <img src="/assets/img/sc/tous-niveaux.webp" alt="Des adolescents s’entraînent en binômes entre les sacs de frappe" loading="lazy" decoding="async" />
           </figure>
           <div class="arow__txt">
             <span class="arow__n">08</span>
@@ -538,7 +528,7 @@
         </article>
         <article class="arow" data-act data-dir="g">
           <figure class="ph ph--3x2 arow__ph">
-            <img src="/assets/img/sc/cross-groupe.webp" alt="" loading="lazy" decoding="async" />
+            <img src="/assets/img/sc/cours-large.webp" alt="Un cours collectif sur tout le plateau : binômes en garde, sacs et ring au fond" loading="lazy" decoding="async" />
           </figure>
           <div class="arow__txt">
             <span class="arow__n">09</span>
@@ -549,7 +539,7 @@
         </article>
         <article class="arow" data-act data-dir="d">
           <figure class="ph ph--3x2 arow__ph">
-            <img src="/assets/img/sc/cross-circuit.webp" alt="" loading="lazy" decoding="async" />
+            <img src="/assets/img/sc/cross-circuit.webp" alt="Un groupe réalise des squats en deux lignes pendant un circuit collectif" loading="lazy" decoding="async" />
           </figure>
           <div class="arow__txt">
             <span class="arow__n">10</span>
@@ -560,7 +550,7 @@
         </article>
         <article class="arow" data-act data-dir="x">
           <figure class="ph ph--3x2 arow__ph">
-            <img src="/assets/img/sc/hyrox.webp" alt="" loading="lazy" decoding="async" />
+            <img src="/assets/img/sc/circuit-halteres.webp" alt="Trois pratiquantes enchaînent swing, développé et fentes autour d’un box en bois" loading="lazy" decoding="async" />
           </figure>
           <div class="arow__txt">
             <span class="arow__n">11</span>
@@ -575,7 +565,7 @@
 
     <!-- ============ L'ACCÈS LIBRE — la salle en fond ============= -->
     <section class="libre" aria-label="Les espaces en accès libre">
-      <img class="libre__bg" src="/assets/img/sc/muscu.webp" alt="" loading="lazy" decoding="async" />
+      <img class="libre__bg" src="/assets/img/sc/muscu-detail.webp" alt="Disques, barres et racks de la zone musculation, en accès libre" loading="lazy" decoding="async" />
       <div class="wrap libre__say" data-act data-dir="n">
         <span class="eyebrow">Sans cours, sans réservation</span>
         <h2 class="display">Vous préférez vous<br />entraîner librement ?</h2>
@@ -635,8 +625,8 @@
     <section class="offres" aria-label="Les offres">
       <span class="gong__mark offres__mark" aria-hidden="true"><b>Boxing Center</b><i>Saint-Cyprien</i></span>
       <div class="wrap offres__grid">
-        <article class="offre offre--phare" data-act data-dir="n">          <span class="offre__flag">Offre à saisir</span>          <div class="offre__head">            <span class="offre__disc"><b>29€</b><i>par personne</i></span>            <div>              <h3 class="offre__n">L’offre Rentrée</h3>              <p class="offre__s">4 semaines illimitées</p>            </div>          </div>          <ul class="offre__l">            <li><svg class="offre__c" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.5"/><path d="m8.4 12.2 2.5 2.5 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Accès à toutes les activités</span></li>            <li><svg class="offre__c" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.5"/><path d="m8.4 12.2 2.5 2.5 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sans engagement</span></li>            <li><svg class="offre__c" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.5"/><path d="m8.4 12.2 2.5 2.5 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Accès libre 6 j/7 aux 5 salles</span></li>          </ul>          <a class="btn btn--primary offre__cta" href="https://boutique.boxingcenter.fr/offres-speciales"><span>Je profite de l’offre</span></a>        </article>
-        <article class="offre" data-act data-dir="n">          <div class="offre__head">            <span class="offre__disc"><b>259€</b><i>les 12 mois</i></span>            <div>              <h3 class="offre__n">La saison complète</h3>              <p class="offre__s">au lieu de 400€</p>            </div>          </div>          <ul class="offre__l">            <li><svg class="offre__c" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.5"/><path d="m8.4 12.2 2.5 2.5 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Accès à toutes les activités</span></li>            <li><svg class="offre__c" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.5"/><path d="m8.4 12.2 2.5 2.5 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Cours collectifs illimités, sans réservation</span></li>            <li><svg class="offre__c" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.5"/><path d="m8.4 12.2 2.5 2.5 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Payable en 4× sans frais</span></li>          </ul>          <a class="btn  offre__cta" href="https://boutique.boxingcenter.fr/offres-speciales"><span>Je prends ma saison</span></a>        </article>
+        <article class="offre offre--phare" data-act data-dir="n">          <span class="offre__flag">Offre à saisir</span>          <div class="offre__head">            <span class="offre__disc"><b>29€</b><i>par personne</i></span>            <div>              <h3 class="offre__n">L’offre Rentrée</h3>              <p class="offre__s">29€ toutes les 4 semaines</p>            </div>          </div>          <ul class="offre__l">            <li><svg class="offre__c" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.5"/><path d="m8.4 12.2 2.5 2.5 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Première échéance par carte, puis IBAN</span></li>            <li><svg class="offre__c" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.5"/><path d="m8.4 12.2 2.5 2.5 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Coordonnées d’un proche requises</span></li>            <li><svg class="offre__c" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.5"/><path d="m8.4 12.2 2.5 2.5 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Badge 34,99€ facturé après 72 h · sans engagement</span></li>          </ul>          <a class="btn btn--primary offre__cta" href="https://boutique.boxingcenter.fr/offre/29"><span>Voir les conditions de l’offre</span></a>        </article>
+        <article class="offre" data-act data-dir="n">          <div class="offre__head">            <span class="offre__disc"><b>259€</b><i>les 12 mois</i></span>            <div>              <h3 class="offre__n">La saison complète</h3>              <p class="offre__s">au lieu de 400€</p>            </div>          </div>          <ul class="offre__l">            <li><svg class="offre__c" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.5"/><path d="m8.4 12.2 2.5 2.5 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Toutes les disciplines adultes, 12 mois</span></li>            <li><svg class="offre__c" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.5"/><path d="m8.4 12.2 2.5 2.5 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Accès libre aux 5 clubs</span></li>            <li><svg class="offre__c" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.5"/><path d="m8.4 12.2 2.5 2.5 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Comptant ou 4× sans frais — moins de 5€ par semaine</span></li>          </ul>          <a class="btn  offre__cta" href="https://boutique.boxingcenter.fr/offre/259"><span>Voir les conditions de la saison</span></a>        </article>
       </div>
 
       <ul class="rassure" data-act data-dir="n">
@@ -661,15 +651,17 @@
     </section>
   </main>
 
-  <div id="footer"><!-- LE MAILLAGE DE MARQUE, SERVI EN DUR ------------------------------
-       Les liens sortants du pied de page (le groupe, la boutique, les salles
-       sœurs, les réseaux) sont écrits par site.js. Un robot qui n’exécute pas
-       le JavaScript n’en voyait donc AUCUN dans le HTML livré : le maillage
-       n’existait qu’à l’écran. Il est posé ici, en dur, À L’INTÉRIEUR du
-       conteneur que site.js remplace intégralement au montage. Résultat : les
-       liens sont dans dist/*.html, et le rendu à l’écran est inchangé — ce
-       bloc ne peint rien et disparaît dès que le pied de page est monté. -->
-    <nav class="maillage" hidden style="display:none" aria-label="Le réseau Boxing Center">
+  <div id="footer"><!-- Repli HTML visible : site.js le remplace par le pied complet.
+       Sans JavaScript, visiteurs et robots reçoivent les mêmes liens réseau. -->
+    <nav class="maillage" aria-label="Le réseau Boxing Center">
+      <a href="/">Accueil</a>
+      <a href="/la-salle/">La salle</a>
+      <a href="/activites/">Activités</a>
+      <a href="/coachs/">Coachs</a>
+      <a href="/galerie/">Galerie</a>
+      <a href="/plannings/">Planning</a>
+      <a href="/tarifs/">Tarifs</a>
+      <a href="/contact/">Contact</a>
       <a href="https://boxingcenter.fr/">Boxing Center — le groupe</a>
       <a href="https://boutique.boxingcenter.fr/">La boutique Boxing Center</a>
       <a href="https://boxe-toulouse.com/">Boxing Center Minimes</a>
@@ -678,6 +670,7 @@
       <a href="https://mmatoulouse.com/">Boxing Center Ramonville</a>
       <a href="https://www.instagram.com/boxingcentertoulouse/">Instagram Boxing Center</a>
       <a href="https://www.facebook.com/BoxingCenterToulouse/">Facebook Boxing Center</a>
+      <a href="/mentions-legales/">Mentions légales</a>
     </nav>
   </div>
 
@@ -690,7 +683,7 @@
   <!-- Libs d’animation, auto-hébergées et regroupées (gsap + ScrollTrigger + Lenis) :
        une seule requête same-origin au lieu de trois vers un CDN tiers. -->
   <script is:inline defer src="/assets/js/vendor.min.js?v=22"></script>
-  <script is:inline type="module" src="/assets/js/site.js?v=23"></script>
+  <script is:inline type="module" src="/assets/js/site.js?v=26"></script>
   <script is:inline type="module" src="/assets/js/activites.js?v=25"></script>
 </body>
 </html>

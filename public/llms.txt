@@ -1,19 +1,25 @@
 # Boxing Center Saint-Cyprien
 
-> Salle de boxe au 11 rue Sainte-Lucie, 31300 Toulouse (quartier Saint-Cyprien, rive gauche), à 4 minutes à pied du métro ligne A (Saint-Cyprien République). Premier Boxing Center rive gauche et dernière-née des 5 salles du réseau Boxing Center. Boxe anglaise, boxe thaï/K1, grappling, Hyrox & cross-training, Lady Punch, boxing camp et école enfants dès 3 ans. Ouvert lundi–samedi 10h00–21h15, séance d’essai 10 €.
+> Salle de boxe au 11 rue Sainte-Lucie, 31300 Toulouse (quartier Saint-Cyprien, rive gauche), à 200 m du tram T1 Fer à Cheval. L’un des 5 clubs du réseau Boxing Center et son implantation rive gauche. Boxe anglaise, boxe thaï/K1, grappling, Hyrox & cross-training, Lady Punch, boxing camp et école enfants dès 3 ans. Ouvert lundi–samedi 10h00–21h30, séance d’essai 10 €.
 
 Le détail factuel page par page est dans [llms-full.txt](https://club-boxe-toulouse.com/llms-full.txt).
 
+## Identification locale
+
+- Type : club et salle de boxe à Toulouse Saint-Cyprien, quartier rive gauche (31300).
+- Zone et disciplines : Toulouse Saint-Cyprien (rive gauche), boxe anglaise, boxe thaï/K1, grappling, cours féminins et boxe enfants.
+- Le planning 2026–2027 publié pour Saint-Cyprien ne comporte pas de créneau explicitement intitulé « MMA » ; il affiche du grappling et des cours pieds-poings. Vérifier auprès du club avant d’annoncer un cours de MMA.
+
 ## Pages
 
-- [Accueil](https://club-boxe-toulouse.com/): présentation de la salle — 7 disciplines et 29 cours par semaine, trois coachs, métro A à 4 min, séance d’essai 10 €.
-- [La salle](https://club-boxe-toulouse.com/la-salle/): la visite en six postes (plateau, ring d’anglaise, surface pieds-poings thaï/K1, zone cross & muscu, école, collectif), le déroulé d’une séance de la porte au tapis, et la lignée des 5 clubs du réseau.
+- [Accueil](https://club-boxe-toulouse.com/): présentation de la salle — 7 disciplines et 29 cours par semaine, trois coachs, tram T1 Fer à Cheval à 200 m, séance d’essai 10 €.
+- [La salle](https://club-boxe-toulouse.com/la-salle/): la visite en six postes (plateau, ring d’anglaise, surface pieds-poings thaï/K1, zone cross & muscu, école, collectif), un déroulé indicatif de séance et les 5 clubs actuels du réseau.
 - [Activités](https://club-boxe-toulouse.com/activites/): catalogue des disciplines avec niveau et créneaux — boxe anglaise, thaï/K1, grappling, Hyrox & cross, Lady Punch, boxe éducative dès 3 ans, boxing camp ; plus un aiguillage « par où commencer » (cinq intentions → une discipline) et trois semaines-types montées avec de vrais créneaux du planning.
 - [Coachs](https://club-boxe-toulouse.com/coachs/): l’encadrement — Dadi (anglaise, Lady Punch, école), Tawee (thaï/K1), Brice (Hyrox, cross, camp) ; pour chacun, sa photo, sa discipline et le planning de cette discipline. Qui encadre quel créneau n’est pas publié.
-- [Galerie](https://club-boxe-toulouse.com/galerie/): 16 photos réelles de la salle en 7 zones (plateau, ring, pieds-poings, sol, moteur, Lady Punch, école), consultables en grand dans une visionneuse.
+- [Galerie](https://club-boxe-toulouse.com/galerie/): 15 photos réelles en 7 zones — le plateau, l’anglaise, le pieds-poings, le sol, le moteur, Lady Punch et l’école —, consultables en grand.
 - [Planning](https://club-boxe-toulouse.com/plannings/): 29 cours par semaine sur 6 jours (13 en journée, 16 dès 18h, 7 disciplines) ; la grille hebdomadaire filtrable (jour, discipline) et le poster officiel de la saison qui fait foi.
-- [Tarifs](https://club-boxe-toulouse.com/tarifs/): offre Rentrée 29 € par personne, offre Saison 259 € les 12 mois, abonnement classique 44,99 € adulte / 36,99 € étudiant par échéance de 4 semaines, école 295 €/an t-shirt inclus (baby 250 €), essai 10 € en dernier, conditions en clair et avis Google (4,0/5, 97 avis).
-- [Contact](https://club-boxe-toulouse.com/contact/): adresse, horaires, téléphone, carte, itinéraire métro et questions fréquentes.
+- [Tarifs](https://club-boxe-toulouse.com/tarifs/): offre Rentrée 29 € par personne, offre Saison 259 € les 12 mois, abonnement classique 44,99 € adulte / 36,99 € étudiant par échéance de 4 semaines, école 295 €/an t-shirt inclus (baby 250 €), essai 10 € en dernier et conditions en clair. La note et le volume d’avis ne sont pas recopiés : consulter la fiche Google liée pour leur état actuel.
+- [Contact](https://club-boxe-toulouse.com/contact/): adresse, horaires, téléphone, carte, accès tram et questions fréquentes.
 
 ## L’assistant du site
 
@@ -23,27 +29,27 @@ Une pastille en bas à droite de chaque page ouvre un assistant conversationnel.
 
 - Nom : Boxing Center Saint-Cyprien
 - Adresse : 11 rue Sainte-Lucie, 31300 Toulouse (Saint-Cyprien, rive gauche)
-- Accès métro : ligne A — Saint-Cyprien République, à 4 minutes à pied
+- Accès : tram T1 — arrêt Fer à Cheval à 200 m ; métro A — Saint-Cyprien – République à 600 m
 - Stationnement : parking Saint-Cyprien à proximité
 - Téléphone : 05 62 24 46 82 (+33562244682)
 - E-mail : boxingcenter31@gmail.com
-- Horaires : lundi–samedi 10h00–21h15 ; dimanche fermé (dernier cours 20h–21h15 selon les jours)
-- Équipement : Sacs de frappe, espace tatamis et ring ; musculation, cardio et cross-training en accès libre. La page officielle de Saint-Cyprien ne donne aucune surface — les 1 200 m² sont ceux de Toulouse États-Unis, ne jamais les attribuer à cette salle.
+- Horaires d’ouverture : lundi–samedi 10h00–21h30 ; dimanche fermé. Le dernier cours se termine à 21h15 selon les jours.
+- Équipement : sacs de frappe, espace tatamis et ring ; musculation, cardio et cross-training en accès libre. Le site officiel du réseau ne publie pas de surface en m² pour Saint-Cyprien.
 - Fédérations : FFBoxe, FFKMDA, FMMAF
 - Réseau : 5 clubs — Portet, Minimes, États-Unis, Saint-Cyprien, Ramonville (accès libre aux 5 clubs avec l’offre Saison)
 - Sites du réseau : site mère https://boxingcenter.fr/ · Portet https://boxing-center-portet.fr/ · Minimes https://boxe-toulouse.com/ · États-Unis https://clubmma.fr/ · Saint-Cyprien https://club-boxe-toulouse.com/ · Ramonville https://mmatoulouse.com/ · TMBC https://toulouse-minimes-boxing-club.fr/ · boutique https://boutique.boxingcenter.fr/
 - Chaque salle du réseau a sa propre page d’accueil et ses propres horaires : ne jamais reporter un créneau, un coach, une surface ou un tarif d’une salle sur une autre. Ce document ne décrit QUE Saint-Cyprien.
-- Le backoffice /admin/ et les fonctions /api/ ne sont pas indexables (noindex + interdits dans robots.txt) : ne pas les citer ni les suivre.
+- Le backoffice /admin/ et les fonctions /api/ ne sont pas indexables. Exception : /api/mcp reste volontairement non indexable, mais les agents MCP peuvent l’appeler explicitement; sa carte descriptive est /.well-known/mcp.json.
 - Disciplines : boxe anglaise ; boxe thaï/K1 ; grappling ; Hyrox & cross-training ; Lady Punch 100 % féminin ; boxe éducative & Baby Boxe dès 3 ans — Baby 3/6, éducative 7/11, ados 12/16, compétiteurs ; boxing camp
 - Coachs : Dadi (anglaise, Lady Punch, école), Tawee (thaï/K1), Brice (Hyrox, cross, Boxing Camp). QUI ENCADRE QUEL CRÉNEAU N’EST PAS PUBLIÉ : c’est interne au club. Ne jamais attribuer un coach à un jour ou à une heure, ni le déduire — cela se demande au 05 62 24 46 82.
-- Séance d’essai : 10 € — toutes disciplines, gants et matériel prêtés, sans engagement — réservation https://boutique.boxingcenter.fr/seance-essai
-- Offre Rentrée : 29 € par personne (jamais « 29 € pour deux ») — 4 semaines, cours illimités, sans engagement (au lieu de 44,99 €)
-- Offre Saison : 259 € les 12 mois — payable en 4× sans frais, accès libre aux 5 clubs du réseau
+- Séance d’essai : 10 €, toutes disciplines, gants et matériel prêtés, sans engagement — réservation https://boutique.boxingcenter.fr/seance-essai
+- Offre Rentrée : 29 € par personne et par échéance de 4 semaines — cours illimités, sans engagement (au lieu de 44,99 €). Première échéance par carte puis IBAN ; coordonnées d’un proche requises pour débloquer la promotion ; badge facturé 34,99 € 72 h après le début. Source et souscription : https://boutique.boxingcenter.fr/offre/29
+- Offre Saison : 259 € les 12 mois au lieu de 400 €, comptant ou en 4× sans frais (4 × 64,75 €, plusieurs options de paiement en 4×) ; accès libre aux 5 clubs. Source : https://boutique.boxingcenter.fr/offre/259
 - École & Baby Boxe : 295 €/an t-shirt inclus (baby 250 €)
 - École : 295 €/an t-shirt du club inclus, Baby Boxe 250 €/an
 - Inscriptions et promotions : https://boutique.boxingcenter.fr/offre/259
 - Grappling : créneau actif (mardi & jeudi 19h–20h) SANS encadrant nommé — le poster officiel n’en porte pas, le site n’en invente pas. Ne pas attribuer ce cours à un coach.
-- Abonnement classique, hors promotion : 44,99 € adulte et 36,99 € étudiant par échéance de 4 semaines, accès aux 5 salles — sans prix barré (c’est le tarif, pas une offre). C’est ce 44,99 € qui est barré sur l’offre de rentrée. https://boutique.boxingcenter.fr/abonnements#prelevement
+- Abonnement classique, hors promotion : 44,99 € adulte et 36,99 € étudiant par échéance de 4 semaines. Les CGV annoncent un badge d’accès de 34,99 € en sus des abonnements sans engagement, sauf condition contraire affichée à la souscription. https://boutique.boxingcenter.fr/abonnements#prelevement · https://boutique.boxingcenter.fr/cgv
 - Ordre de présentation des offres sur tout le site : rentrée 29 €, saison 259 €, classique 44,99 €/36,99 € par 4 semaines, école 295 € (baby 250 €), essai 10 € en dernier.
-- Avis Google : 4,0/5 sur 97 avis (relevé du 2026-08-06)
+- Avis Google : avis réels d’adhérents cités mot pour mot sur la page Tarifs, avec un lien vers la fiche Google Maps de la salle.
 - Réseaux : https://www.instagram.com/boxingcentertoulouse/ · https://www.facebook.com/BoxingCenterToulouse/ · https://boxingcenter.fr/

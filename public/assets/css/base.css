@@ -453,6 +453,16 @@ html.is-menu-open .nav { opacity: 0; visibility: hidden; pointer-events: none; t
    le seul a l'afficher, et le seul chemin d'achat permanent disparaitrait
    de l'appareil qui fait l'essentiel du trafic. */
 @media (min-width: 360px){ .nav__cta { display: inline-flex; } }
+/* Sur téléphone, logo + nom complet + CTA + burger dépassaient la largeur
+   utile. Le logo conserve l'identité ; le nom de salle reste dans le héros
+   et le menu, tandis que CTA et burger gardent leurs cibles tactiles. */
+@media (max-width: 479.98px) {
+  .nav { gap: .45rem; }
+  .nav__salle { display: none; }
+  .nav__brand { gap: 0; }
+  .nav__right { gap: .45rem; min-width: 0; }
+  .nav__cta { padding-inline: clamp(.7rem, 3vw, 1rem); font-size: .72rem; }
+}
 
 /* LE SEUIL DESKTOP — 1120px, remesuré au navigateur.
    L'ancien seuil (1240px) datait d'une barre à NEUF pastilles. Il en reste
@@ -614,23 +624,6 @@ html.is-menu-open .nav { opacity: 0; visibility: hidden; pointer-events: none; t
 .footer__col a:not(.btn):active { color: var(--spark); }
 .footer__bottom { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; margin-top: clamp(2rem,4vw,3rem); padding-top: 1.5rem; border-top: 1px solid var(--line); font: 600 var(--step--1)/1 var(--f-mono); letter-spacing: .06em; color: var(--muted); }
 .footer__stamp { color: var(--spark); }
-.ai-dev-credit {
-  color: #fff;
-  font-size: 0;
-  line-height: 0;
-  height: 0;
-  width: 0;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  opacity: 0;
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-  pointer-events: none;
-  user-select: none;
-}
 
 /* ------------------- PAGE HERO (subpages, shared) ----------------- *
  * A slimmer header than the home hero, spotlight-ready (BC.spotlight).
@@ -706,7 +699,7 @@ body[data-page="tarifs"]    .phero .lead { max-width: 50ch; }
     width: clamp(190px, 22vw, 300px); height: clamp(130px, 16vw, 200px); }
 }
 
-/* la lignée : cinq mesures, la dernière-née allumée (SC au bout de la lignée) */
+/* réseau : cinq mesures, Saint-Cyprien mis en évidence */
 body[data-page="la-salle"] .phero__mark {
   background-image:
     linear-gradient(var(--m-dim), var(--m-dim)),
@@ -911,6 +904,26 @@ a:hover > .ext, a:hover .ext { opacity: 1; transform: translate(1px, -1px); }
 .netmesh__list a { display: inline-flex; align-items: center; gap: .45ch; min-height: 44px; font-size: var(--step--1); color: var(--muted); transition: color .3s; }
 .netmesh__list a:hover { color: var(--ink); }
 .netmesh__list a:active { color: var(--spark); }
+
+/* Repli HTML réellement visible tant que site.js n'a pas monté le pied
+   complet. Il donne aussi une navigation honnête aux visiteurs sans JS :
+   aucun lien n'est réservé aux robots. */
+.maillage {
+  display: flex; flex-wrap: wrap; gap: .4rem 1.4rem;
+  width: var(--wrap); margin-inline: auto; padding-block: 1.5rem;
+  border-top: 1px solid var(--line-soft);
+}
+.maillage::before {
+  content: "Le réseau Boxing Center"; flex-basis: 100%;
+  font: 600 .62rem/1 var(--f-mono); letter-spacing: .18em;
+  text-transform: uppercase; color: var(--spark);
+}
+.maillage a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-size: var(--step--1); color: var(--muted); transition: color .3s;
+}
+.maillage a:hover { color: var(--ink); }
+.maillage a:active { color: var(--spark); }
 
 /* ================================================================
    LE COMPTEUR DE PLACES — discret par construction : c'est un fait,

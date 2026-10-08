@@ -1,10 +1,9 @@
 /* =====================================================================
    SAINT-CYPRIEN · contact.js — zéro friction.
-   Coordonnées + carte + horaires + FAQ (FAQPage, miroir du LD-JSON de la
-   page). Tout depuis data.js ; pas de formulaire local, l’essai → box-plus,
+   Coordonnées + carte + horaires + FAQ visible. Tout depuis data.js ; pas de formulaire local, l’essai → box-plus,
    la pastille chatbot → tel réel.
    ===================================================================== */
-import { SALLE, FAQ, REVIEWS } from "./data.js?v=27";
+import { SALLE, FAQ, REVIEWS } from "./data.js?v=30";
 
 const $ = (s, r = document) => r.querySelector(s);
 
@@ -13,7 +12,7 @@ function renderCoords() {
   if (!el) return;
   const rows = [
     { k: "Adresse", v: SALLE.address.full },
-    { k: "Métro", v: "Ligne A · Saint-Cyprien République (4 min à pied)" },
+    { k: "Tram", v: "Ligne T1 · Fer à Cheval, 200 m" },
     { k: "Stationnement", v: "Parking Saint-Cyprien à proximité" },
     { k: "Téléphone", v: `<a href="tel:${SALLE.phoneHref}">${SALLE.phone}</a>` },
     { k: "E-mail", v: `<a href="mailto:${SALLE.email}">${SALLE.email}</a>` },
@@ -30,10 +29,10 @@ function renderHours() {
     .join("");
 }
 
-function renderRating() {
+function renderReviewsLink() {
   const el = $("#rating");
-  if (!el || !REVIEWS || !REVIEWS.rating) return;
-  el.innerHTML = `<span class="reviews__rating">${REVIEWS.rating}</span><span class="reviews__src">${REVIEWS.count} ${REVIEWS.source}</span>`;
+  if (!el || !REVIEWS?.url) return;
+  el.innerHTML = `<a class="reviews__src" href="${REVIEWS.url}" target="_blank" rel="noopener noreferrer">${REVIEWS.label} ↗</a>`;
 }
 
 function renderFaq() {
@@ -48,7 +47,7 @@ function renderFaq() {
 function boot() {
   renderCoords();
   renderHours();
-  renderRating();
+  renderReviewsLink();
   renderFaq();
 
   window.BC.reveal(document);

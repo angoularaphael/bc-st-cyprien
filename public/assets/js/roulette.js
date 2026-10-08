@@ -19,7 +19,7 @@
    regarde ne doit pas faire tourner un GPU. Et en `prefers-reduced-motion`
    il n’y a plus de tour du tout — l’offre est échangée, point.
    ===================================================================== */
-import { ROULETTE } from "./data.js?v=27";
+import { ROULETTE } from "./data.js?v=30";
 
 const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

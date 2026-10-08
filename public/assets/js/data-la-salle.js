@@ -18,9 +18,9 @@ export const VISITE = [
     n: "01",
     t: "Le plateau",
     tag: "Centre-ville · rive gauche",
-    d: "Un seul niveau, mille deux cents mètres carrés, rive gauche. Tu entres et tu vois déjà où tu vas travailler : le ring au fond, les sacs à droite, rien de planqué.",
-    img: "/assets/img/sc/salle-1.webp",
-    alt: "Le plateau vu dans sa longueur : bancs et racks au premier plan, tapis bleu et rouge, bannière Boxing Center au fond sous la charpente métallique",
+    d: "Un seul niveau, en plein centre-ville, rive gauche. Tu entres et tu vois déjà où tu vas travailler : le ring au fond, les sacs à droite, rien de planqué.",
+    img: "/assets/img/sc/salle-ring-large.webp",
+    alt: "Le plateau d’un seul tenant : tapis bleu et rouge au premier plan, ring Boxing Center au fond sous la charpente",
     specs: ["Centre-ville", "Accès libre 6 j/7"],
   },
   {
@@ -28,8 +28,8 @@ export const VISITE = [
     t: "L’anglaise",
     tag: "Le noble art",
     d: "Ring, cordes tendues, coin bleu, coin rouge. C’est le poste de Dadi : le jab, la garde, le déplacement, cinq fois par semaine.",
-    img: "/assets/img/sc/anglaise.webp",
-    alt: "Une boxeuse en garde, poings fermés devant le visage, concentrée, devant le mur peint de la salle",
+    img: "/assets/img/sc/ring-seul.webp",
+    alt: "Le ring de boxe anglaise, tablier Boxing Center, devant les fresques de boxeurs peintes au mur",
     specs: ["Coach · Dadi", "5 créneaux / sem."],
   },
   {
@@ -37,8 +37,8 @@ export const VISITE = [
     t: "Le pieds-poings",
     tag: "Thaï · K1",
     d: "Le tapis pieds-poings, sous son propre faisceau. Les coachs y passent cinq fois par semaine ; le sixième créneau, samedi 18h, attend son encadrant.",
-    img: "/assets/img/sc/thai-2.webp",
-    alt: "Le groupe aux sacs pendant un cours pieds-poings, chacun sur son sac le long de la charpente",
+    img: "/assets/img/sc/salle-tapis.webp",
+    alt: "Le tapis pieds-poings rouge, la rangée de sacs Metal et le ring au fond",
     specs: ["Boxe thaï · K1", "Tous niveaux"],
   },
   {
@@ -46,8 +46,8 @@ export const VISITE = [
     t: "La zone cross & muscu",
     tag: "Le moteur",
     d: "Machines, charges, sacs : la salle des moteurs. Hyrox, cross-training et HIIT — la caisse derrière chaque discipline.",
-    img: "/assets/img/sc/muscu.webp",
-    alt: "La salle de charge : cage à squat, bancs inclinés et machines alignées sur sol caoutchouc",
+    img: "/assets/img/sc/muscu-machines.webp",
+    alt: "La zone musculation : machines guidées, rameurs et racks sous la bannière Boxing",
     specs: ["Coach · Brice", "Hyrox · Cross · HIIT"],
   },
   {
@@ -55,8 +55,8 @@ export const VISITE = [
     t: "L’école",
     tag: "Dès 3 ans",
     d: "Baby Boxe le samedi, éducative 7/11, ados 12/16, compétiteurs : l’école complète tient son propre créneau, encadrée par Dadi du plus petit au ring.",
-    img: "/assets/img/sc/educative.webp",
-    alt: "Deux jeunes licenciées en maillot Boxing Center, médaille aux dents, après une compétition",
+    img: "/assets/img/sc/salle-tapis-2.webp",
+    alt: "Le grand tapis bleu et rouge où se tient l’école, du Baby Boxe aux compétiteurs",
     specs: ["Baby 3/6 · 7/11 · 12/16", "Coach · Dadi"],
   },
   {
@@ -64,8 +64,8 @@ export const VISITE = [
     t: "Le collectif",
     tag: "Tous niveaux",
     d: "Lady Punch le mardi et le jeudi, boxing camp quatre fois par semaine : les créneaux où l’on transpire ensemble, tous niveaux confondus.",
-    img: "/assets/img/sc/tous-niveaux.webp",
-    alt: "Un groupe mêlé, adultes et plus jeunes, travaille aux sacs et aux cibles murales pendant le même cours",
+    img: "/assets/img/sc/charpente-contrejour.webp",
+    alt: "Un cours collectif sous la charpente : des pratiquantes en garde sur le tapis rose et bleu",
     specs: ["Lady Punch · 100 % féminin", "Camp · 4 créneaux"],
   },
 ];
@@ -76,7 +76,7 @@ export const VISITE = [
 export const VALUES = [
   { n: "01", t: "Le geste", d: "Chaque cours éclaire une chose : ta garde, ton souffle, tes appuis. Le reste attend son tour." },
   { n: "02", t: "L’école", d: "Du Baby Boxe 3/6 aux compétiteurs : une lignée complète, tenue par le même coach d’un âge à l’autre." },
-  { n: "03", t: "Le quartier", d: "Tu vois le ring depuis la porte. Premier Boxing Center rive gauche, à 4 minutes du métro A." },
+  { n: "03", t: "Le quartier", d: "Tu vois le ring depuis la porte. Premier Boxing Center rive gauche, à 200 m du tram T1 Fer à Cheval." },
   { n: "04", t: "Le choix", d: "Sept disciplines et vingt-neuf cours par semaine sur un seul plancher : tu règles ta semaine comme TU la veux." },
 ];
 

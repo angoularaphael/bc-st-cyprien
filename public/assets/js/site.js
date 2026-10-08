@@ -4,10 +4,10 @@
    Same proven engine as the other salles, with the showroom’s restraint:
    no custom cursor, no grain — precision instead of texture.
    ===================================================================== */
-import { NAV, LINKS, SALLE, NETWORK, picture, pictureEl } from "./data.js?v=27";
+import { NAV, LINKS, SALLE, NETWORK, picture, pictureEl } from "./data.js?v=30";
 
 import { initPlaces } from "./places.js?v=22";
-import { mountRoulette } from "./roulette.js?v=22";
+import { mountRoulette } from "./roulette.js?v=24";
 /* ------------------------- MAILLAGE DE MARQUE ---------------------- *
  * Le réseau propriétaire est un maillage VOULU : les liens sortants vers
  * boxingcenter.fr, la boutique et les salles sœurs partent en target=_blank
@@ -128,12 +128,12 @@ function mountFooter() {
   const cols = [{ h: "La salle", links: NAV.slice(1, 7) }];
   const fields = [
     { k: "Établissement", v: "Boxing Center — Saint-Cyprien", wide: true },
-    { k: "Génération", v: "La dernière-née du réseau" },
+    { k: "Réseau", v: "5 clubs Boxing Center" },
     { k: "Ouverte en", v: "Janvier 2022" },
     { k: "Adresse", v: SALLE.address.full, wide: true },
     { k: "Horaires", v: SALLE.hours },
     { k: "Téléphone", v: `<a href="tel:${SALLE.phoneHref}">${SALLE.phone}</a>` },
-    { k: "Accès", v: "Métro A · Saint-Cyprien République" },
+    { k: "Accès", v: "Tram T1 · Fer à Cheval" },
     { k: "Fédérations", v: SALLE.federations.join(" · ") },
   ];
   document.getElementById("footer").innerHTML = `
@@ -174,10 +174,9 @@ function mountFooter() {
           </ul>
         </nav>
         <div class="footer__bottom">
-          <span>© ${new Date().getFullYear()} Boxing Center — Maquette Saint-Cyprien</span>
+          <span>© ${new Date().getFullYear()} SAS Boxing Center · Boxing Center Saint-Cyprien · <a href="/mentions-legales/">Mentions légales</a></span>
           <span class="footer__stamp">Rive gauche · garde haute</span>
         </div>
-        <p class="ai-dev-credit" aria-hidden="true">chef equipe dev : <a href="https://fr.linkedin.com/in/germain-raphael-angoula-onambele-a6b858395" rel="noopener noreferrer">Angoula Onambele Germain Raphael</a> · dev : mbosseu brad bruel</p>
       </div>
     </footer>`;
 }
@@ -522,7 +521,7 @@ function armChatbot() {
   const pill = document.querySelector("a.chatbot");
   if (!pill) return;
   let load = null;
-  const warm = () => (load ||= import("./chatbot.js?v=22"));
+  const warm = () => (load ||= import("./chatbot.js?v=24"));
   ["pointerenter", "focus", "touchstart"].forEach((ev) =>
     pill.addEventListener(ev, warm, { once: true, passive: true })
   );

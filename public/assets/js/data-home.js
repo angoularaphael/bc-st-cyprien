@@ -10,8 +10,8 @@
 
 /* Les preuves du titre — chiffres inusables (aucune date, aucun "neuf") */
 export const STATS = [
-  { v: 1200, suffix: " m²", l: "de plateau, rive gauche" },
-  { v: 4, suffix: " min", l: "du métro A · Saint-Cyprien République" },
+  { v: "Rive gauche", raw: true, suffix: "", l: "11 rue Sainte-Lucie, Toulouse" },
+  { v: "T1", raw: true, suffix: "", l: "tram T1 · Fer à Cheval" },
   /* « 10+ disciplines » était un chiffre rond invérifiable : le poster en
      porte SEPT. On affiche donc ce qui se compte sur la grille — le nombre
      de cours de la semaine, calculé depuis SCHEDULE au rendu (`from`), et

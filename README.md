@@ -43,7 +43,9 @@ La pastille en bas à droite est un vrai dialogue. Elle reste un lien `tel:` dan
 4. Dès qu'il a un moyen de rappel, il envoie le contact à `POST /api/lead`. Une signature anti-doublon empêche d'envoyer deux fois le même état.
 5. Une seule relance douce, après deux échanges sans coordonnées. Puis plus rien.
 
-**Sans aucune clé IA**, `/api/chat` répond 503 et le widget bascule sur sa base de connaissance locale (`chatbot-kb.js`) : réponses ancrées sur les vrais faits, jamais une bulle vide.
+**Sans clé IA, avec une clé expirée ou pendant une panne fournisseur**, `/api/chat` répond désormais lui-même en HTTP 200 depuis une base locale ancrée sur les faits du club. Le widget conserve aussi son propre repli (`chatbot-kb.js`) : deux étages de sécurité, jamais une bulle vide.
+
+`npm run check:chat-providers` contrôle les clés configurées sans en afficher la valeur. Le diagnostic ne sort que `OK`, `AUTH_ERROR`, `QUOTA`, `UPSTREAM`, `TIMEOUT` ou `NETWORK_ERROR`. `npm run test:chat` vérifie le contrat HTTP, le repli après une erreur 401 et l’absence de secret dans les réponses et les logs.
 
 **Accessibilité** : `role="dialog"` + `aria-modal`, focus piégé, Échap ferme et rend le focus à la pastille, `aria-live="polite"` sur le fil, `prefers-reduced-motion` respecté.
 

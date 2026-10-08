@@ -37,6 +37,8 @@ const AVIF = new Set([
   "/assets/img/sc/anglaise.webp",
   "/assets/img/sc/anneaux.webp",
   "/assets/img/sc/appuis-tapis.webp",
+  "/assets/img/sc/boxe-anglaise-sacs.webp",
+  "/assets/img/sc/circuit-halteres.webp",
   "/assets/img/sc/coach-brice.webp",
   "/assets/img/sc/coach-dadi.webp",
   "/assets/img/sc/coach-portrait-1.webp",
@@ -47,9 +49,13 @@ const AVIF = new Set([
   "/assets/img/sc/coachs-header.webp",
   "/assets/img/sc/cours-nb.webp",
   "/assets/img/sc/cross-barre.webp",
+  "/assets/img/sc/gainage-binome.webp",
+  "/assets/img/sc/grappling-kimono-controle.webp",
+  "/assets/img/sc/grappling-kimono-sol.webp",
   "/assets/img/sc/grappling.webp",
   "/assets/img/sc/k1-coup-pied.webp",
   "/assets/img/sc/k1-duo.webp",
+  "/assets/img/sc/kettlebell-swing.webp",
   "/assets/img/sc/lady-2.webp",
   "/assets/img/sc/lady-duo-2.webp",
   "/assets/img/sc/lady-duo.webp",
@@ -57,6 +63,8 @@ const AVIF = new Set([
   "/assets/img/sc/lady-sac-2.webp",
   "/assets/img/sc/lady-technique.webp",
   "/assets/img/sc/pattes-murales.webp",
+  "/assets/img/sc/pattes-ours-combinaison.webp",
+  "/assets/img/sc/pieds-poings-binome.webp",
   "/assets/img/sc/planning-2026-1600.webp",
   "/assets/img/sc/planning-2026-800.webp",
   "/assets/img/sc/sacs-rangee.webp",
@@ -96,7 +104,7 @@ export const SALLE = {
   name: "Boxing Center Saint-Cyprien",
   short: "Saint-Cyprien",
   baseline: "La nouvelle génération Boxing Center, rive gauche.",
-  opened: "Août 2025",          // fait daté — LD-JSON foundingDate uniquement, jamais en headline
+  opened: "10 janvier 2022",   // page officielle du réseau + LD-JSON foundingDate
   surface: "",
   district: "Saint-Cyprien · Toulouse rive gauche",
 
@@ -106,18 +114,21 @@ export const SALLE = {
     city: "Toulouse",
     full: "11 rue Sainte-Lucie, 31300 Toulouse",
   },
+  /* Distances mesurées sur OpenStreetMap le 08/10/2026 (à vol d'oiseau :
+     arrêt Fer à Cheval 200 m, station Saint-Cyprien – République 580 m).
+     L'ancien « métro A à 4 minutes » sous-estimait la marche de moitié. */
   access: [
-    "Métro ligne A — Saint-Cyprien République (4 min à pied)",
-    "Rive gauche — à 10 min du centre-ville",
+    "Tram T1 — arrêt Fer à Cheval, à 200 m (3 min à pied)",
+    "Métro ligne A — Saint-Cyprien – République, à 600 m (8 min à pied)",
     "Stationnement : parking Saint-Cyprien à proximité",
   ],
   phone: "05 62 24 46 82",
   phoneHref: "+33562244682",
   email: "boxingcenter31@gmail.com",
-  hours: "Lun – Sam · 10h00 – 21h15",
+  hours: "Lun – Sam · 10h00 – 21h30",
   hoursData: [
-    { d: "Lundi – Vendredi", h: "10h00 – 21h15" },
-    { d: "Samedi", h: "10h00 – 21h15" },
+    { d: "Lundi – Vendredi", h: "10h00 – 21h30" },
+    { d: "Samedi", h: "10h00 – 21h30" },
     { d: "Dimanche", h: "Fermé" },
   ],
   federations: ["FFBoxe", "FFKMDA", "FMMAF"],
@@ -133,6 +144,7 @@ export const LINKS = {
      donnée telle quelle — /offre/29, sans UTM, comme les autres liens
      d'offre déjà en place sur le site. */
   rentree: "https://boutique.boxingcenter.fr/offre/29",
+  saison: "https://boutique.boxingcenter.fr/offre/259",
   essai: "https://boutique.boxingcenter.fr/seance-essai",          // CTA principal de CHAQUE page (10€)
   abos: "https://boutique.boxingcenter.fr/abonnements",
   promos: "https://boutique.boxingcenter.fr/offres-speciales", // Rentrée / Saison
@@ -355,7 +367,7 @@ export const COACHES = [
 /* ------------------------------------------------------------------ *
  *  LES OFFRES — bloc daté (source : posters officiels + OFFRES_RENTREE_2026).
  *  Jamais en dur dans les pages ; toujours via PROMOS + SEASON. RÈGLE :
- *  le Duo s’écrit TOUJOURS "29€ par personne" — jamais "29€ pour deux".
+ *  l’offre s’écrit TOUJOURS "29€ par personne et toutes les 4 semaines".
  * ------------------------------------------------------------------ */
 export const PROMOS = {
   saison: SEASON,
@@ -371,19 +383,19 @@ export const PROMOS = {
     name: "Offre Rentrée",
     price: "29€",
     unit: "par personne",
-    was: "44€",
-    detail: "4 semaines, cours illimités, sans engagement. Encore mieux à deux — 29€ chacun.",
+    was: "44,99€",
+    detail: "Toutes les 4 semaines, cours illimités, sans engagement. Encore mieux à deux — 29€ chacun. Première échéance par carte, IBAN pour la suite, coordonnées d’un proche requises ; badge 34,99€ facturé après 72 h.",
     cta: "Je profite de l’offre — 29€",
-    href: LINKS.promos,
+    href: LINKS.rentree,
   },
   saisonOffer: {
     name: "Offre Saison",
     price: "259€",
     unit: "les 12 mois",
     was: "400€",
-    detail: "Boxe anglaise, MMA, boxe pieds-poings, Lady Punch, Boxing Fitness. Payable en 4× sans frais, accès libre aux 5 clubs du réseau.",
+    detail: "Boxe anglaise, MMA, boxe pieds-poings, Lady Punch, Boxing Fitness. Payable comptant ou en 4× sans frais, accès libre aux 5 clubs du réseau pendant 12 mois.",
     cta: "Je prends ma saison",
-    href: LINKS.promos,
+    href: LINKS.saison,
   },
 };
 
@@ -412,22 +424,22 @@ export const ROULETTE = [
     key: "rentree",
     price: "29€",
     name: "L’offre Rentrée",
-    /* la règle du bloc PROMOS s’applique ici aussi : « par personne »,
-       JAMAIS « pour deux ». */
-    detail: "par personne · 4 semaines illimitées",
-    was: "44€",
+    /* La règle du bloc PROMOS s’applique ici aussi : prix par personne
+       et périodicité de quatre semaines toujours explicites. */
+    detail: "par personne · toutes les 4 semaines · illimité",
+    was: "44,99€",
     cut: "-34%",
-    href: LINKS.promos,
+    href: LINKS.rentree,
     cta: "Je profite de l’offre",
   },
   {
     key: "saison",
     price: "259€",
     name: "La saison complète",
-    detail: "les 12 mois · 4× sans frais",
+    detail: "les 12 mois · comptant ou 4× sans frais",
     was: "400€",
     cut: "-35%",
-    href: LINKS.promos,
+    href: LINKS.saison,
     cta: "Je prends ma saison",
   },
 ];
@@ -436,12 +448,12 @@ export const TARIFS = [
   {
     name: "Offre Rentrée",
     price: "29€",
-    was: "44€",
-    period: "par personne · 4 semaines",
+    was: "44,99€",
+    period: "par personne · toutes les 4 semaines",
     feature: "Cours illimités, toutes disciplines — encore mieux à deux",
-    items: ["29€ par personne (au lieu de 44€)", "Toutes les disciplines", "Sans engagement"],
+    items: ["29€ par personne toutes les 4 semaines (au lieu de 44,99€)", "Toutes les disciplines · sans engagement", "1re échéance par carte, puis IBAN · coordonnées d’un proche requises · badge 34,99€ facturé 72 h après le début"],
     cta: "Je profite de l’offre — 29€",
-    href: LINKS.promos,
+    href: LINKS.rentree,
     highlight: true,
   },
   {
@@ -450,9 +462,9 @@ export const TARIFS = [
     was: "400€",
     period: "les 12 mois",
     feature: "Accès libre aux 5 clubs · payable en 4× — moins de 5€ par semaine",
-    items: ["Toutes les disciplines adultes", "Payable en 4× 64,75€ sans frais", "Accès libre aux 5 salles du réseau"],
+    items: ["Toutes les disciplines adultes", "Comptant, ou 4× 64,75€ sans frais", "Accès libre aux 5 salles du réseau pendant 12 mois"],
     cta: "Je prends ma saison",
-    href: LINKS.promos,
+    href: LINKS.saison,
     highlight: false,
   },
   /* LES CLASSIQUES — le barreau manquant de l’échelle. Entre la promo de
@@ -462,10 +474,10 @@ export const TARIFS = [
      boutique — c’est là que la formule au mois se règle. */
   {
     name: "Les classiques",
-    price: "44€",
+    price: "44,99€",
     period: "/ 4 semaines · adulte",
-    feature: "Le tarif de tous les jours — étudiant 36€",
-    items: ["Adulte 44€ / 4 semaines", "Étudiant 36€ / 4 semaines", "Accès aux 5 salles, toutes les disciplines"],
+    feature: "Le tarif de tous les jours — étudiant 36,99€",
+    items: ["Adulte 44,99€ / 4 semaines", "Étudiant 36,99€ / 4 semaines", "Accès aux 5 salles, toutes les disciplines · badge d’accès 34,99€ en sus"],
     cta: "Voir les formules au mois",
     href: LINKS.prelevement,
     highlight: false,
@@ -492,12 +504,14 @@ export const TARIFS = [
   },
 ];
 
-/* Avis Google RÉELS (verbatim, cités — jamais inventés). Réassurance sur
-   /tarifs/ + /contact/. Source : fiche Google Boxing Center Saint-Cyprien. */
+/* Avis Google RÉELS, cités mot pour mot (jamais inventés). Pas de note ni
+   de nombre d'avis, ni d'étoiles : ordre d'Eddy du 08/10/2026 (« no google
+   rating »). La preuve, ce sont les mots des adhérents et le lien vers la
+   fiche, où chacun lit la source à jour. */
 export const REVIEWS = {
-  rating: "4,0/5",
-  count: 97, // relevé Google Maps 2026-08-06
   source: "Avis Google",
+  url: SALLE.mapsLink,
+  label: "Lire tous les avis sur Google",
   quotes: [
     { text: "Une petite salle au top, des coachs au top, nichée au cœur de Saint Cyp'.", author: "Ronan L." },
     { text: "Super salle, tous les mois Dadi améliore la salle avec des nouveaux équipements.", author: "Kayon M." },
@@ -506,9 +520,8 @@ export const REVIEWS = {
   ],
 };
 
-/* Le réseau — les quatre sœurs, dans l’ordre de la lignée. C’est la PREUVE
-   du titre : Saint-Cyprien vient après elles et retient ce qui marche.
-   (Balma-Gramont vendue — jamais citée. Réseau = 5 clubs avec Saint-Cyprien.) */
+/* Le réseau — les quatre sœurs, chacune avec son trait (Balma-Gramont
+   vendue — jamais citée). Réseau = 5 clubs avec Saint-Cyprien. */
 export const NETWORK = [
   { id: "minimes", name: "Minimes", tag: "Le berceau", feat: "La salle historique · 3 rings · l’école", url: "https://boxe-toulouse.com/" },
   { id: "portet", name: "Portet-sur-Garonne", tag: "Le vaisseau amiral", feat: "Le grand format · ring de boxe anglaise · cage MMA", url: "https://boxing-center-portet.fr/" },
@@ -516,15 +529,18 @@ export const NETWORK = [
   { id: "ramonville", name: "Ramonville", tag: "Le ciel ouvert", feat: "Octogone 7 m · ring de boxe anglaise · 300 m² extérieur", url: "https://mmatoulouse.com/" },
 ];
 
-/* FAQ générale — servie en FAQPage LD-JSON sur /contact/. */
+/* FAQ générale visible sur /contact/ — servie AUSSI en FAQPage dans le
+   LD-JSON de la page : même questions, même ordre, même texte (contrôlé par
+   tests/seo-static.test.mjs). Les moteurs de réponse lisent ce balisage même
+   si Google n'en fait plus un résultat enrichi. */
 export const FAQ = [
-  { q: "Où se trouve Boxing Center Saint-Cyprien ?", a: "Au 11 rue Sainte-Lucie, 31300 Toulouse, en plein quartier Saint-Cyprien rive gauche — à 4 minutes à pied du métro ligne A (Saint-Cyprien République)." },
-  { q: "Comment se passe la première séance ?", a: "Tu arrives 10 minutes avant, en tenue de sport. Tu dis que c’est ta première fois — c’est la seule phrase à préparer. Les gants et le matériel te sont prêtés sur place, puis échauffement, technique et sac, à ton rythme : pas de sparring imposé, pas de test. La séance d’essai coûte 10€, toutes disciplines. Le déroulé complet est sur la page « Ta première séance »." },
+  { q: "Où se trouve Boxing Center Saint-Cyprien ?", a: "Au 11 rue Sainte-Lucie, 31300 Toulouse, dans le quartier Saint-Cyprien, rive gauche. L’arrêt de tram Fer à Cheval (T1) est à 200 m, 3 minutes à pied ; la station de métro Saint-Cyprien – République (ligne A) à 600 m, 8 minutes à pied." },
+  { q: "Comment se passe la première séance ?", a: "Tu arrives 10 minutes avant, en tenue de sport. Tu dis que c’est ta première fois — c’est la seule phrase à préparer. Les gants et le matériel te sont prêtés sur place, puis échauffement, technique et sac, à ton rythme : pas de sparring imposé, pas de test. La séance d’essai coûte 10€, toutes disciplines." },
   { q: "Je n’ai jamais boxé, je peux venir ?", a: "Oui. La plupart des créneaux sont ouverts à tous les niveaux : commence par le Boxing Camp — technique, cardio, sacs, à ton rythme. Personne ne te regarde débuter." },
   { q: "Quelles disciplines peut-on pratiquer ?", a: "Boxe anglaise, boxe thaï / K1, grappling, Hyrox, cross-training, Lady Punch, boxing camp et toute l’école enfants du Baby Boxe (3/6 ans) aux compétiteurs." },
   { q: "Y a-t-il des cours pour les enfants ?", a: "Oui, dès 3 ans : Baby Boxe le samedi, boxe éducative 7/11 ans et ados 12/16 ans le mercredi et le samedi, et un créneau compétiteurs encadré par Dadi." },
-  { q: "Faut-il un abonnement pour commencer ?", a: "Non. La séance d’essai à 10€ donne accès à toutes les disciplines, matériel prêté. Tu t’abonnes ensuite si tu veux continuer — sans engagement, ou à la saison." },
-  { q: "Quels sont les horaires ?", a: "Du lundi au samedi, de 10h00 à 21h15 (dernier cours 20h–21h15 selon les jours). Fermé le dimanche." },
+  { q: "Faut-il un abonnement pour commencer ?", a: "Non. La séance d’essai à 10€ donne accès à toutes les disciplines, matériel prêté. Tu t’abonnes ensuite si tu veux continuer — sans engagement avec l’offre Rentrée à 29€ par personne toutes les 4 semaines, ou à la saison, 259€ les 12 mois." },
+  { q: "Quels sont les horaires ?", a: "Du lundi au samedi, de 10h00 à 21h30. Le dernier cours se termine à 21h15 selon les jours. Fermé le dimanche." },
 ];
 
 /* ------------------------------------------------------------------ *

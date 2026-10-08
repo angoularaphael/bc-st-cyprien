@@ -1,19 +1,19 @@
+---
+import { AUTEUR_PRINCIPAL } from "../../../api/_lib/auteurs.js";
+---
 <!doctype html>
 <html lang="fr" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Salle de sport et de boxe | Boxing Center Saint-Cyprien</title>
-  <meta name="description" content="Sacs, tatamis et ring : ring d’anglaise, surface pieds-poings thaï/K1, zone cross & Hyrox, école dès 3 ans. Le premier Boxing Center rive gauche." />
+  <title>Salle de boxe Toulouse rive gauche | Saint-Cyprien</title>
+  <meta name="description" content="Visitez notre salle de boxe à Toulouse Saint-Cyprien : ring d’anglaise, tatamis, zone thaï/K1, cross-training, Hyrox, musculation et cardio." />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/space-grotesk-latin.woff2" crossorigin />
   <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin />
-  <meta name="keywords" content="salle de boxe Saint-Cyprien, boxe rive gauche Toulouse, salle boxe 1200 m2 Toulouse, ring boxe anglaise Toulouse, salle boxe thaï Toulouse, 11 rue Sainte-Lucie, Boxing Center rive gauche, boxing gym Toulouse, boxing club Toulouse, boxing lessons Toulouse, boxing classes Toulouse rive gauche, MMA gym Toulouse, kickboxing Toulouse, muay thai Toulouse, martial arts gym Toulouse, kids boxing Toulouse, women boxing Toulouse, gym near Saint-Cyprien" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
-  <meta name="author" content="Boxing Center Saint-Cyprien" />
+  <meta name="author" content={AUTEUR_PRINCIPAL.nom} />
   <meta name="geo.region" content="FR-31" />
   <meta name="geo.placename" content="Toulouse — Saint-Cyprien" />
-  <meta name="geo.position" content="43.598;1.427" />
-  <meta name="ICBM" content="43.598, 1.427" />
   <link rel="canonical" href="https://club-boxe-toulouse.com/la-salle/" />
   <meta name="theme-color" content="#0b0d14" />
   <link rel="icon" href="/favicon-16.png?i=3" type="image/png" sizes="16x16" />
@@ -43,10 +43,10 @@
   <meta name="twitter:description" content="Ring, pieds-poings, zone moteur, école dès 3 ans. Rive gauche, Toulouse." />
   <meta name="twitter:image" content="https://club-boxe-toulouse.com/assets/img/og.jpg?v=2" />
 
-  <link rel="stylesheet" href="/assets/css/base.css?v=39" />
+  <link rel="stylesheet" href="/assets/css/base.css?v=41" />
   <link rel="stylesheet" href="/assets/css/roulette.css?v=22" />
   <link rel="stylesheet" href="/assets/css/photos.css?v=22" />
-  <link rel="stylesheet" href="/assets/css/home.css?v=38" />
+  <link rel="stylesheet" href="/assets/css/home.css?v=39" />
   <link rel="stylesheet" href="/assets/css/la-salle.css?v=22" />
 
   <!-- SEO/GEO — graphe JSON-LD unifié (organisation · salle · site · page · image ·
@@ -122,8 +122,8 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 43.598,
-          "longitude": 1.427
+          "latitude": 43.592848,
+          "longitude": 1.433022
         },
         "hasMap": "https://maps.google.com/?q=11+rue+Sainte-Lucie+31300+Toulouse",
         "areaServed": [
@@ -152,7 +152,7 @@
               "Saturday"
             ],
             "opens": "10:00",
-            "closes": "21:15"
+            "closes": "21:30"
           }
         ],
         "sport": [
@@ -211,7 +211,7 @@
               "name": "Offre Rentrée",
               "price": "29",
               "priceCurrency": "EUR",
-              "description": "29€ par personne, 4 semaines, cours illimités, sans engagement.",
+              "description": "29€ par personne et par échéance de 4 semaines, sans engagement ; conditions complètes sur la boutique, dont badge à 34,99€.",
               "url": "https://boutique.boxingcenter.fr/offre/29"
             },
             {
@@ -219,7 +219,7 @@
               "name": "Offre Saison",
               "price": "259",
               "priceCurrency": "EUR",
-              "description": "259€ les 12 mois, payable en 4× sans frais, accès libre aux 5 clubs.",
+              "description": "259€ les 12 mois au lieu de 400€, comptant ou en 4× sans frais ; accès libre aux 5 clubs.",
               "url": "https://boutique.boxingcenter.fr/offre/259"
             },
             {
@@ -227,7 +227,7 @@
               "name": "Abonnement adulte, échéance de 4 semaines",
               "price": "44.99",
               "priceCurrency": "EUR",
-              "description": "44€ par échéance de 4 semaines, accès aux 5 salles et à toutes les disciplines — le tarif de tous les jours.",
+              "description": "44,99€ par échéance de 4 semaines. Badge d’accès 34,99€ en sus selon les CGV, sauf condition contraire à la souscription.",
               "url": "https://boutique.boxingcenter.fr/abonnements#prelevement"
             },
             {
@@ -235,7 +235,7 @@
               "name": "Abonnement étudiant, échéance de 4 semaines",
               "price": "36.99",
               "priceCurrency": "EUR",
-              "description": "36€ par échéance de 4 semaines pour les étudiants, accès aux 5 salles et à toutes les disciplines.",
+              "description": "36,99€ par échéance de 4 semaines pour les étudiants. Badge d’accès 34,99€ en sus selon les CGV, sauf condition contraire à la souscription.",
               "url": "https://boutique.boxingcenter.fr/abonnements#prelevement"
             },
             {
@@ -256,7 +256,7 @@
             }
           ]
         },
-        "description": "Boxing Center Saint-Cyprien : la salle du centre-ville de Toulouse, rive gauche de Toulouse. Boxe anglaise, thaï/K1, grappling, Hyrox, cross-training, Lady Punch et école enfants dès 3 ans, à 4 minutes du métro A (Saint-Cyprien République). Séance d’essai 10€.",
+        "description": "Boxing Center Saint-Cyprien : la salle du centre-ville de Toulouse, rive gauche. Boxe anglaise, thaï/K1, grappling, Hyrox, cross-training, Lady Punch et école enfants dès 3 ans, à 200 m du tram T1 Fer à Cheval. Séance d’essai 10€.",
         "potentialAction": {
           "@type": "ReserveAction",
           "name": "Réserver une séance d’essai",
@@ -290,7 +290,7 @@
         "@id": "https://club-boxe-toulouse.com/la-salle/#webpage",
         "url": "https://club-boxe-toulouse.com/la-salle/",
         "name": "La salle — Boxing Center Saint-Cyprien (Toulouse 31300)",
-        "description": "La visite de Boxing Center Saint-Cyprien : ring d’anglaise, surface pieds-poings thaï/K1, zone cross & Hyrox, école dès 3 ans. Le premier Boxing Center rive gauche de Toulouse, à 4 min du métro A.",
+        "description": "La visite de Boxing Center Saint-Cyprien : ring d’anglaise, surface pieds-poings thaï/K1, zone cross & Hyrox, école dès 3 ans. Le premier Boxing Center rive gauche, à 200 m du tram T1 Fer à Cheval.",
         "isPartOf": {
           "@id": "https://club-boxe-toulouse.com/#website"
         },
@@ -302,17 +302,7 @@
           "@id": "https://club-boxe-toulouse.com/la-salle/#primaryimage"
         },
         "datePublished": "2026-07-17",
-        "dateModified": "2026-07-19",
-        "breadcrumb": {
-          "@id": "https://club-boxe-toulouse.com/la-salle/#breadcrumb"
-        },
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [
-            "h1",
-            ".lead"
-          ]
-        }
+        "dateModified": "2026-10-08"
       },
       {
         "@type": "ImageObject",
@@ -362,26 +352,26 @@
       <div class="phero__spot" aria-hidden="true"></div>
       <div class="wrap">
         <p class="eyebrow" data-reveal style="margin-top:1.1rem">La visite · un seul niveau</p>
-        <h1 class="display"><span class="reveal-mask"><span>La salle,</span></span><span class="reveal-mask"><span class="tint">en plein Toulouse.</span></span></h1>
+        <h1 class="display"><span class="reveal-mask"><span>Une salle de boxe à</span></span><span class="reveal-mask"><span class="tint">Toulouse rive gauche.</span></span></h1>
         <p class="lead" data-reveal>Ici la lumière ne décore pas : elle isole le geste. Fais le tour — un seul niveau, six postes, chacun allumé quand tu l’atteins. Pas de visite guidée qui enjolive : ce que tu vois, c’est ce sur quoi tu vas travailler.</p>
         <div class="phero__mark" aria-hidden="true"></div>
       </div>
     </header>
 
     <!-- =================== LE RÉCIT / SEO LOCAL ==================== -->
-    <section class="section ecrin" aria-label="La nouvelle génération">
+    <section class="section ecrin" aria-label="Le club de Toulouse rive gauche">
       <div class="wrap ecrin__grid">
         <div class="ecrin__col">
-          <span class="eyebrow" data-reveal>La lignée</span>
-          <h2 class="display ecrin__title"><span class="reveal-mask"><span>La salle que le réseau</span></span><span class="reveal-mask"><span class="tint">a dessinée en dernier.</span></span></h2>
+          <span class="eyebrow" data-reveal>Le réseau</span>
+          <h2 class="display ecrin__title"><span class="reveal-mask"><span>Le club Boxing Center</span></span><span class="reveal-mask"><span class="tint">de Toulouse rive gauche.</span></span></h2>
         </div>
         <div class="ecrin__col ecrin__prose" data-reveal>
-          <p>Avant elle, quatre salles. Chacune a prouvé une chose ; <strong>Saint-Cyprien les a toutes retenues.</strong></p>
-          <p>Le <strong>premier Boxing Center rive gauche</strong> de Toulouse. Sept disciplines et toute l’école enfants, au même endroit.</p>
+          <p><strong>Boxing Center Saint-Cyprien</strong> accueille le public au 11 rue Sainte-Lucie depuis janvier 2022.</p>
+          <p>L’implantation <strong>rive gauche</strong> du réseau toulousain réunit les disciplines publiées au planning et l’école enfants au même endroit.</p>
           <ul class="faits">
             <li><b>Sacs, tatamis et ring</b> pour la boxe</li>
             <li><b>11 rue Sainte-Lucie</b>, Saint-Cyprien</li>
-            <li><b>4 min</b> du métro A — Saint-Cyprien République</li>
+            <li><b>Tram T1</b> — Fer à Cheval à proximité</li>
             <li><b>Dès 3 ans</b>, du Baby Boxe aux compétiteurs</li>
           </ul>
         </div>
@@ -393,7 +383,7 @@
     <!-- ======= LE PLATEAU, EN GRAND — le chiffre sur le lieu ======= -->
     <div class="ph-band ph-figure" data-reveal>
       <figure class="ph ph--veil">
-        <img src="/assets/img/sc/plateau-large.webp" alt="Le plateau d’un seul tenant : sacs suspendus, tapis et ring visibles d’un bout à l’autre" loading="lazy" decoding="async" width="2200" height="1162" />
+        <img src="/assets/img/sc/cours-plateau.webp" alt="Un cours en plein travail sur le plateau : binômes en garde sur les tapis bleu et rouge" loading="lazy" decoding="async" width="2200" height="1162" />
       </figure>
       <div class="ph-figure__v">
         <span class="ph-figure__n">2022</span>
@@ -413,12 +403,12 @@
     </section>
 
     <!-- ============ UNE SÉANCE, DE LA PORTE AU TAPIS ============== -->
-    <section class="section deroule-sec" aria-label="Le déroulé d’une séance">
+    <section class="section deroule-sec" aria-label="Exemple de déroulé d’une séance">
       <div class="wrap">
         <div class="deroule-sec__head" data-reveal>
           <span class="eyebrow">Le déroulé</span>
           <h2 class="display deroule-sec__title"><span class="reveal-mask"><span>De la porte</span></span><span class="reveal-mask"><span class="tint">au tapis.</span></span></h2>
-          <p class="deroule-sec__lead">Personne ne t’explique jamais ce qui se passe entre le moment où tu pousses la porte et celui où tu frappes. Voilà l’heure et quart, dans l’ordre.</p>
+          <p class="deroule-sec__lead">Le contenu varie selon la discipline et le coach. Voici un exemple indicatif pour comprendre les grandes étapes d’un cours d’environ une heure et quart.</p>
         </div>
         <ol class="deroule" data-reveal-group>
           <li class="dstep">
@@ -427,14 +417,14 @@
             <p class="dstep__d">Le ring est en face, la zone moteur à droite : un seul niveau, tu ne cherches personne. Le coach du créneau se présente, tu dis ce que tu as déjà fait — ou que tu n’as jamais rien fait, ça se dit très bien aussi.</p>
           </li>
           <li class="dstep">
-            <span class="dstep__k">Les 15 premières minutes</span>
+            <span class="dstep__k">Au début</span>
             <h3 class="dstep__t">L’échauffement, en groupe</h3>
-            <p class="dstep__d">Corde, déplacements, mobilité. C’est là qu’on voit tes appuis et que le coach cale la suite sur ce que tu sais tenir. Personne n’est mis au fond de la salle.</p>
+            <p class="dstep__d">Échauffement, déplacements et mobilité selon le cours. Le coach adapte ensuite les exercices au groupe et au niveau observé.</p>
           </li>
           <li class="dstep">
             <span class="dstep__k">Le cœur</span>
             <h3 class="dstep__t">Une chose à la fois</h3>
-            <p class="dstep__d">C’est le principe de la maison : chaque cours éclaire un point — ta garde, ton souffle, tes appuis — et on le travaille jusqu’à ce qu’il tienne. Technique au ring ou au tapis, puis application aux sacs ou aux pattes.</p>
+            <p class="dstep__d">Un point technique peut être travaillé au ring ou au tapis, puis appliqué aux sacs, aux pattes d’ours ou avec un partenaire selon la discipline.</p>
           </li>
           <li class="dstep">
             <span class="dstep__k">La fin</span>
@@ -442,7 +432,7 @@
             <p class="dstep__d">Gainage, étirements, et le point du coach : ce qui a bougé, ce qui ne bouge pas encore. Tu repars en sachant sur quoi tu reviens la fois d’après.</p>
           </li>
         </ol>
-        <p class="deroule__note" data-reveal>Les gants et les protections sont prêtés pour la première séance : viens en tenue de sport, le reste attend sur place.</p>
+        <p class="deroule__note" data-reveal>Pour un premier essai, viens en tenue de sport : gants et matériel te sont prêtés sur place.</p>
       </div>
     </section>
 
@@ -490,8 +480,8 @@
       <div class="wrap">
         <div class="reseau-sec__head" data-reveal>
           <span class="eyebrow">Le réseau</span>
-          <h2 class="display reseau-sec__title"><span class="reveal-mask"><span>Minimes a ouvert la voie.</span></span><span class="reveal-mask"><span class="tint">Saint-Cyprien a tout retenu.</span></span></h2>
-          <p class="reseau-sec__lead">Cinq clubs, une lignée. Voilà l’ordre dans lequel elles sont arrivées — et pourquoi la dernière est arrivée en connaissant déjà les erreurs des quatre autres.</p>
+          <h2 class="display reseau-sec__title"><span class="reveal-mask"><span>Cinq clubs.</span></span><span class="reveal-mask"><span class="tint">Un réseau toulousain.</span></span></h2>
+          <p class="reseau-sec__lead">Voici les cinq implantations actuelles du réseau. Cette liste ne constitue pas une chronologie d’ouverture.</p>
         </div>
         <ol class="lineage" id="lineage"></ol>
       </div>
@@ -518,7 +508,7 @@
         <h2 class="display" style="font-size:clamp(2rem,5vw,3.6rem)"><span class="reveal-mask"><span>Le tour est fait.</span></span><span class="reveal-mask"><span class="tint">Passe la porte.</span></span></h2>
         <p class="lead" data-reveal>Le plateau que tu viens de parcourir n’a pas le même visage quand il est plein. Dix euros pour le voir tourner.</p>
         <div class="gong__cta" data-reveal>
-          <a class="btn btn--primary" data-magnetic href="https://boutique.boxingcenter.fr/inscription?product=offre-duo&step=1&utm_source=site&utm_medium=cta&utm_campaign=st-cyprien"><span>Ma place de rentrée — 29€</span></a><a class="btn btn--ghost" data-magnetic href="https://boutique.boxingcenter.fr/seance-essai?utm_source=site&utm_medium=cta&utm_campaign=st-cyprien"><span>Essayer une séance · 10€</span></a>
+          <a class="btn btn--primary" data-magnetic href="https://boutique.boxingcenter.fr/offre/29"><span>Voir l’offre Rentrée — 29€</span></a><a class="btn btn--ghost" data-magnetic href="https://boutique.boxingcenter.fr/seance-essai?utm_source=site&utm_medium=cta&utm_campaign=st-cyprien"><span>Essayer une séance · 10€</span></a>
           <a class="btn" data-magnetic href="/activites/"><span>Voir les activités</span></a>
         </div>
       </div>
@@ -526,15 +516,17 @@
 
   </main>
 
-  <div id="footer"><!-- LE MAILLAGE DE MARQUE, SERVI EN DUR ------------------------------
-       Les liens sortants du pied de page (le groupe, la boutique, les salles
-       sœurs, les réseaux) sont écrits par site.js. Un robot qui n’exécute pas
-       le JavaScript n’en voyait donc AUCUN dans le HTML livré : le maillage
-       n’existait qu’à l’écran. Il est posé ici, en dur, À L’INTÉRIEUR du
-       conteneur que site.js remplace intégralement au montage. Résultat : les
-       liens sont dans dist/*.html, et le rendu à l’écran est inchangé — ce
-       bloc ne peint rien et disparaît dès que le pied de page est monté. -->
-    <nav class="maillage" hidden style="display:none" aria-label="Le réseau Boxing Center">
+  <div id="footer"><!-- Repli HTML visible : site.js le remplace par le pied complet.
+       Sans JavaScript, visiteurs et robots reçoivent les mêmes liens réseau. -->
+    <nav class="maillage" aria-label="Le réseau Boxing Center">
+      <a href="/">Accueil</a>
+      <a href="/la-salle/">La salle</a>
+      <a href="/activites/">Activités</a>
+      <a href="/coachs/">Coachs</a>
+      <a href="/galerie/">Galerie</a>
+      <a href="/plannings/">Planning</a>
+      <a href="/tarifs/">Tarifs</a>
+      <a href="/contact/">Contact</a>
       <a href="https://boxingcenter.fr/">Boxing Center — le groupe</a>
       <a href="https://boutique.boxingcenter.fr/">La boutique Boxing Center</a>
       <a href="https://boxe-toulouse.com/">Boxing Center Minimes</a>
@@ -543,6 +535,7 @@
       <a href="https://mmatoulouse.com/">Boxing Center Ramonville</a>
       <a href="https://www.instagram.com/boxingcentertoulouse/">Instagram Boxing Center</a>
       <a href="https://www.facebook.com/BoxingCenterToulouse/">Facebook Boxing Center</a>
+      <a href="/mentions-legales/">Mentions légales</a>
     </nav>
   </div>
 
@@ -555,7 +548,7 @@
   <!-- Libs d’animation, auto-hébergées et regroupées (gsap + ScrollTrigger + Lenis) :
        une seule requête same-origin au lieu de trois vers un CDN tiers. -->
   <script is:inline defer src="/assets/js/vendor.min.js?v=22"></script>
-  <script is:inline type="module" src="/assets/js/site.js?v=23"></script>
-  <script is:inline type="module" src="/assets/js/la-salle.js?v=22"></script>
+  <script is:inline type="module" src="/assets/js/site.js?v=26"></script>
+  <script is:inline type="module" src="/assets/js/la-salle.js?v=25"></script>
 </body>
 </html>

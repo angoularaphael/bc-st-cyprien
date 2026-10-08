@@ -9,71 +9,73 @@
    ===================================================================== */
 
 /* ------------------------------------------------------------------ *
- *  LA GALERIE, ZONE PAR ZONE — remontée ici depuis galerie.js (le module
- *  la portait en local avec un TODO). Une zone = un intertitre, une SPEC
- *  mono, une ligne d’édito (ce qu’on y fait vraiment) et ses clichés.
- *  `alt` décrit la photo ; `cap` est la pastille mono — les deux ne se
- *  confondent jamais. Aucune photo de banque : le seul fichier de stock qui
- *  traînait encore (salle-2.webp — deux modèles en studio, gants rouges,
- *  zéro signalétique BC) a été SUPPRIMÉ du dépôt, pas seulement décâblé :
- *  un visuel qui ne montre pas cette salle n’a rien à faire dans le build.
+ *  LA GALERIE, ZONE PAR ZONE. Une zone = un intertitre, une SPEC mono, une
+ *  ligne d’édito (ce qu’on y fait vraiment) et ses clichés. `alt` décrit la
+ *  photo ; `cap` est la pastille mono — les deux ne se confondent jamais.
+ *
+ *  RÈGLE (08/10/2026) : une photo n’apparaît qu’UNE fois sur le site. La
+ *  galerie ne remontre donc aucune image déjà posée sur l’accueil, la salle
+ *  ou les activités. Les vues du LIEU sont toutes de Saint-Cyprien ; les
+ *  scènes d’entraînement cadrées serré sur les personnes viennent aussi des
+ *  autres clubs du réseau (consigne d’Eddy) — leur `alt` décrit ce qu’on
+ *  voit et ne prétend jamais situer la scène rue Sainte-Lucie.
  * ------------------------------------------------------------------ */
 export const GALLERY = [
   {
     id: "plateau", zone: "Le plateau", spec: "Sacs, tatamis et ring",
-    lede: "Un seul niveau : depuis la porte tu vois déjà les sacs, le ring et la cage. Rien n’est planqué derrière une cloison, aucune mezzanine à monter — c’est tout l’argument.",
+    lede: "Un seul niveau : depuis la porte tu vois déjà les sacs et le ring. Rien n’est planqué derrière une cloison, aucune mezzanine à monter — c’est tout l’argument.",
     shots: [
-      { f: "salle-1.webp", feat: "wide", cap: "Le plateau", alt: "Le plateau vu dans sa longueur : bancs et racks au premier plan, tapis bleu et rouge, bannière Boxing Center au fond sous la charpente métallique" },
+      { f: "salle-contrejour.webp", feat: "wide", cap: "Le ring", alt: "Le ring Boxing Center vu entre deux sacs de frappe, un pratiquant à la corde au premier plan" },
     ],
   },
   {
     id: "anglaise", zone: "L’anglaise", spec: "Le noble art · le ring",
-    lede: "Cinq créneaux par semaine sur le même ring : deux midis, trois soirs. C’est le poste de Dadi, du premier jab au sparring encadré.",
+    lede: "Cinq créneaux par semaine : deux midis, trois soirs. C’est le poste de Dadi, du premier jab au sparring encadré.",
     shots: [
-      { f: "anglaise-header.webp", feat: "wide", cap: "Aux boucliers", alt: "Un cours en plein travail : les pratiquants frappent des boucliers ronds tenus par leurs binômes, entre les sacs suspendus" },
-      { f: "anglaise.webp", cap: "Au travail", alt: "Une boxeuse en garde, poings fermés devant le visage, concentrée, devant le mur peint de la salle" },
+      { f: "cours-garde.webp", feat: "wide", cap: "En garde", alt: "Un cours de boxe anglaise : des pratiquantes en garde travaillent aux boucliers sur le tapis bleu et rouge" },
+      { f: "boxe-anglaise-sacs.webp", cap: "Aux sacs", alt: "Un boxeur en maillot vert, garde haute, déplace ses appuis entre deux sacs de frappe" },
     ],
   },
   {
     id: "pieds-poings", zone: "Le pieds-poings", spec: "Thaï · K1",
-    lede: "Le tapis pieds-poings — le sixième, samedi 18h, attend son encadrant. Les tibias et les genoux entrent dans le jeu, la technique ne baisse pas d’un cran.",
+    lede: "Les tibias et les genoux entrent dans le jeu, la technique ne baisse pas d’un cran. Cinq créneaux encadrés par semaine — le sixième, samedi 18h, attend son encadrant.",
     shots: [
-      { f: "thai-2.webp", feat: "wide", cap: "Aux sacs", alt: "Le groupe aux sacs pendant un cours pieds-poings, chacun sur son sac le long de la charpente" },
-      { f: "thai.webp", cap: "Tibias, genoux", alt: "Une pratiquante lance un coup de pied haut dans la cage, appui planté et garde tenue" },
-      { f: "thai-1.webp", cap: "K1", alt: "Un pratiquant place un coup de pied haut ; son partenaire, casque et gants, pare des avant-bras, devant la rangée de sacs" },
+      { f: "thai-genou.webp", feat: "wide", cap: "Genoux", alt: "Un cours pieds-poings : au premier plan un jeune en garde, derrière lui un pratiquant lance un coup de pied haut" },
+      { f: "cage-coup-de-pied.webp", cap: "Dans la cage", alt: "Dans la cage, un pratiquant arme un coup de pied sur les paos que tient son partenaire" },
+      { f: "pieds-poings-binome.webp", cap: "En binôme", alt: "Une pratiquante monte le genou sur les paos que tient son partenaire, protège-tibias aux jambes" },
     ],
   },
   {
     id: "sol", zone: "Le sol", spec: "Grappling · mardi & jeudi",
-    lede: "Une heure au sol, deux soirs par semaine, dans la cage : projections, contrôle, soumissions. Le complément qui manque à la plupart des boxeurs.",
+    lede: "Une heure au sol, deux soirs par semaine : projections, contrôle, soumissions. On apprend à tomber avant d’apprendre à faire tomber.",
     shots: [
-      { f: "grappling.webp", feat: "wide", cap: "Au sol", alt: "Deux pratiquants au sol sur le tapis bleu : l’un contrôle l’autre, au pied du ring" },
+      { f: "grappling-kimono-controle.webp", feat: "wide", cap: "Contrôle", alt: "Deux pratiquants en kimono, l’un en blanc l’autre en bleu, se disputent un contrôle au sol" },
+      { f: "grappling-kimono-sol.webp", cap: "Au sol", alt: "Un pratiquant en kimono bleu maintient son partenaire au sol sous lui, appuis bien écartés" },
     ],
   },
   {
     id: "moteur", zone: "Le moteur", spec: "Hyrox · cross · muscu",
-    lede: "La zone qui porte tout le reste : charges, rameurs, circuits. La caisse se construit ici, pas sur le ring.",
+    lede: "La zone qui porte tout le reste : charges, kettlebells, gainage, circuits. C’est ici que le souffle du troisième round se construit.",
     shots: [
-      { f: "muscu.webp", feat: "wide", cap: "Charges", alt: "La salle de charge : cage à squat, bancs inclinés et machines alignées sur sol caoutchouc" },
-      { f: "cross.webp", cap: "Cross-training", alt: "La zone moteur : rameurs alignés au premier plan, bancs et racks derrière, bannière Boxing Center au mur" },
-      { f: "hyrox.webp", cap: "Hyrox", alt: "Travail en circuit au pied du ring : montées sur step, gainage au sol et banc, plusieurs ateliers en parallèle" },
-      { f: "training.webp", cap: "Boxing camp", alt: "Un coach donne la consigne à un groupe monté sur le ring, gants aux mains" },
+      { f: "kettlebells.webp", feat: "wide", cap: "Kettlebells", alt: "Une rangée de kettlebells noirs et jaunes posés au sol devant la cage" },
+      { f: "kettlebell-swing.webp", cap: "Swing", alt: "Une pratiquante en t-shirt jaune lève un kettlebell à bout de bras devant une fresque noire et blanche" },
+      { f: "gainage-binome.webp", cap: "Gainage", alt: "Deux pratiquantes enchaînent un exercice de gainage à quatre pattes sur les dalles noires" },
     ],
   },
   {
     id: "lady", zone: "Lady Punch", spec: "100 % féminin · mar. & jeu.",
     lede: "Mardi et jeudi à 18h20, le créneau est à elles. Zéro prérequis, zéro galerie qui regarde : la boxe pour la forme, le cardio et la confiance.",
     shots: [
-      { f: "lady-2.webp", feat: "wide", cap: "100 % féminin", alt: "Deux pratiquantes en garde, mains bandées, pendant un cours Lady Punch" },
-      { f: "lady.webp", cap: "Cardio & confiance", alt: "Un cours Lady Punch : plusieurs pratiquantes travaillent aux sacs le long du plateau" },
+      { f: "lady-cage.webp", feat: "wide", cap: "100 % féminin", alt: "Un cours Lady Punch dans la cage : deux pratiquantes travaillent en binôme, gants aux mains" },
+      { f: "lady-garde.webp", cap: "En garde", alt: "Une pratiquante en sweat vert, mains bandées, garde haute et regard fixé devant elle" },
+      { f: "lady-sac.webp", cap: "Au sac", alt: "Une pratiquante frappe le sac Metal, gants noirs, sur le tapis bleu et rouge" },
     ],
   },
   {
     id: "ecole", zone: "L’école", spec: "Dès 3 ans → compétiteurs",
-    lede: "Baby Boxe le samedi, éducative 7/11 et ados 12/16 le mercredi et le samedi, compétiteurs dans la foulée. Le même coach du bac à sable au premier combat.",
+    lede: "Baby Boxe le samedi, éducative 7/11 et ados 12/16 le mercredi et le samedi, compétiteurs dans la foulée. Le même coach du premier déplacement au premier combat.",
     shots: [
-      { f: "educative.webp", cap: "L’école en compétition", alt: "Deux jeunes licenciées en maillot Boxing Center, médaille aux dents, après une compétition" },
-      { f: "tous-niveaux.webp", cap: "Tous niveaux", alt: "Un groupe mêlé, adultes et plus jeunes, travaille aux sacs et aux cibles murales pendant le même cours" },
+      { f: "ados-pattes.webp", cap: "Ados 12/16", alt: "Un adolescent, mains bandées, en garde face à son coach au bord du ring" },
     ],
   },
 ];
