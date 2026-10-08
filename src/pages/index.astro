@@ -1,5 +1,12 @@
 ---
 import { AUTEUR_PRINCIPAL } from "../../api/_lib/auteurs.js";
+import { SCHEDULE, SEMAINE, HOME_FAQ, REVIEWS, NETWORK } from "../../public/assets/js/data.js";
+const FAQ_LD = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://club-boxe-toulouse.com/#faq",
+  mainEntity: HOME_FAQ.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+});
 ---
 <!doctype html>
 <html lang="fr" data-theme="dark">
@@ -320,6 +327,8 @@ import { AUTEUR_PRINCIPAL } from "../../api/_lib/auteurs.js";
   </script>
 
   <script is:inline>document.documentElement.classList.add('fx');</script>
+  <!-- Les questions d’accueil en FAQPage, générées depuis HOME_FAQ — le même tableau que la FAQ visible. -->
+  <script is:inline type="application/ld+json" set:html={FAQ_LD}></script>
 </head>
 
 <body data-page="home">
@@ -443,6 +452,27 @@ import { AUTEUR_PRINCIPAL } from "../../api/_lib/auteurs.js";
     </section>
 
     <!-- ================== CARTE ESSAI — 10€ seule ================= -->
+    <!-- ======================= LA SEMAINE ============================
+         Cuite dans le HTML (les moteurs la lisent sans JavaScript) ; home.js
+         marque aujourd’hui et le prochain cours, à l’heure de Paris. -->
+    <section class="section semaine" id="semaine" aria-labelledby="t-semaine">
+      <div class="wrap">
+        <span class="eyebrow" data-reveal>Au planning</span>
+        <h2 id="t-semaine" class="display" style="margin-top:1rem;font-size:clamp(2.2rem,5vw,4.2rem)"><span class="reveal-mask"><span>Cette semaine</span></span><span class="reveal-mask"><span class="tint">à Saint-Cyprien.</span></span></h2>
+        <p class="lead" data-reveal style="max-width:60ch">Du lundi au samedi, de 10h00 à 21h30 : {SCHEDULE.length} cours encadrés par semaine, sans réservation. Entre deux, la salle reste ouverte en accès libre.</p>
+        <p class="semaine__live mono" id="semaine-live" aria-live="polite" hidden></p>
+        <ol class="semaine__jours">
+          {SEMAINE.map((j) => (
+            <li class="semaine__jour" data-day={j.d}>
+              <h3 class="semaine__nom mono">{j.long}</h3>
+              <ul>{j.cours.map((c) => (<li data-start={c.start}><time>{c.start}</time><span>{c.cours}</span><em>{c.lvl}</em></li>))}</ul>
+            </li>
+          ))}
+        </ol>
+        <p class="semaine__plus mono"><a href="/plannings/">Le planning complet, discipline par discipline →</a></p>
+      </div>
+    </section>
+
     <section class="section essai-sec" aria-label="La séance d’essai">
       <div class="wrap">
         <div class="essai" data-reveal>
@@ -465,6 +495,34 @@ import { AUTEUR_PRINCIPAL } from "../../api/_lib/auteurs.js";
     </section>
 
     <!-- ==================== QUARTIER / ACCÈS ====================== -->
+    <!-- =================== TA PREMIÈRE SÉANCE ======================= -->
+    <section class="section premiere" aria-labelledby="t-premiere">
+      <div class="wrap">
+        <span class="eyebrow" data-reveal>Ta première fois</span>
+        <h2 id="t-premiere" class="display" style="margin-top:1rem;font-size:clamp(2.2rem,5vw,4.2rem)"><span class="reveal-mask"><span>Ta première séance,</span></span><span class="reveal-mask"><span class="tint">étape par étape.</span></span></h2>
+        <ol class="etapes">
+          <li><b>Tu arrives dix minutes avant.</b> En tenue de sport, au 11 rue Sainte-Lucie — à 200 m du tram T1, arrêt Fer à Cheval.</li>
+          <li><b>Tu dis que c’est ta première fois.</b> C’est la seule phrase à préparer : le coach du créneau te prend en charge.</li>
+          <li><b>On te prête les gants.</b> Gants et matériel sont prêtés sur place, la séance d’essai coûte 10€, toutes disciplines.</li>
+          <li><b>Tu avances à ton rythme.</b> Échauffement, technique, sac. Pas de sparring imposé, pas de test.</li>
+        </ol>
+        <p class="semaine__plus mono"><a href="/activites/">Choisir sa discipline →</a> · <a href="/tarifs/">Les tarifs →</a></p>
+      </div>
+    </section>
+
+    <!-- ====================== ILS EN PARLENT ==========================
+         Avis Google réels, mot pour mot — ni note, ni nombre, ni étoiles. -->
+    <section class="section avis-accueil" aria-labelledby="t-avis">
+      <div class="wrap">
+        <span class="eyebrow" data-reveal>Ils en parlent</span>
+        <h2 id="t-avis" class="display" style="margin-top:1rem;font-size:clamp(2.2rem,5vw,4.2rem)"><span class="reveal-mask"><span>Ce qu’en disent</span></span><span class="reveal-mask"><span class="tint">les adhérents.</span></span></h2>
+        <div class="reviews__grid" style="margin-top:1.6rem">
+          {REVIEWS.quotes.map((q) => (<blockquote class="review"><p class="review__text">« {q.text} »</p><cite class="review__author">— {q.author} · Avis Google</cite></blockquote>))}
+        </div>
+        <p class="semaine__plus mono"><a href={REVIEWS.url} target="_blank" rel="noopener">{REVIEWS.label} ↗</a></p>
+      </div>
+    </section>
+
     <section class="section quartier" aria-label="Le quartier & l’accès">
       <div class="wrap quartier__grid">
         <div>
@@ -483,6 +541,30 @@ import { AUTEUR_PRINCIPAL } from "../../api/_lib/auteurs.js";
     </section>
 
     <!-- ========================= FINAL CTA ========================= -->
+    <!-- ======================== LE RÉSEAU ============================ -->
+    <section class="section reseau-accueil" aria-labelledby="t-reseau">
+      <div class="wrap">
+        <span class="eyebrow" data-reveal>Le réseau</span>
+        <h2 id="t-reseau" class="display" style="margin-top:1rem;font-size:clamp(2.2rem,5vw,4.2rem)"><span class="reveal-mask"><span>Un abonnement,</span></span><span class="reveal-mask"><span class="tint">cinq clubs.</span></span></h2>
+        <p class="lead" data-reveal style="max-width:60ch">Avec la Saison — 259€ les 12 mois au lieu de 400€ —, tu t’entraînes aussi dans les quatre autres Boxing Center de Toulouse.</p>
+        <div class="soeurs">
+          {NETWORK.map((n) => (<a class="soeur" href={n.url}><span class="soeur__tag mono">{n.tag}</span><b>Boxing Center {n.name}</b><span>{n.feat}</span></a>))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== QUESTIONS ============================ -->
+    <section class="section questions" aria-labelledby="t-questions">
+      <div class="wrap">
+        <span class="eyebrow" data-reveal>Questions</span>
+        <h2 id="t-questions" class="display" style="margin-top:1rem;font-size:clamp(2.2rem,5vw,4.2rem)"><span class="reveal-mask"><span>Avant de venir,</span></span><span class="reveal-mask"><span class="tint">tes questions.</span></span></h2>
+        <div class="faq" style="margin-top:1.6rem">
+          {HOME_FAQ.map((f) => (<details><summary>{f.q}</summary><div class="faq__a">{f.a}</div></details>))}
+        </div>
+        <p class="semaine__plus mono"><a href="/contact/">L’adresse, l’accès et les autres réponses →</a></p>
+      </div>
+    </section>
+
     <section class="gong" aria-label="Rejoindre la salle">
       <span class="gong__mark" aria-hidden="true"><b>Boxing Center</b><i>Saint-Cyprien</i></span>
       <div class="gong__inner">

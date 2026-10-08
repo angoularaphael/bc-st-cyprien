@@ -197,8 +197,39 @@ function countUp() {
 }
 
 /* ------------------------------ BOOT ------------------------------ */
+/* --------------------------- LA SEMAINE ---------------------------
+   La semaine est cuite dans le HTML (#semaine). On y marque le jour et le
+   PROCHAIN cours, à l’heure de Paris — jamais un « en cours » deviné. */
+function marquerSemaine() {
+  const box = document.getElementById("semaine");
+  const live = document.getElementById("semaine-live");
+  if (!box || !live) return;
+  const parts = Object.fromEntries(new Intl.DateTimeFormat("fr-FR", {
+    timeZone: "Europe/Paris", weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+  }).formatToParts(new Date()).map((p) => [p.type, p.value]));
+  const jours = ["lun", "mar", "mer", "jeu", "ven", "sam", "dim"];
+  const idx = jours.indexOf(String(parts.weekday || "").slice(0, 3).toLowerCase());
+  const maintenant = Number(parts.hour) * 60 + Number(parts.minute);
+  const minutes = (t) => { const m = String(t).match(/(\d{1,2})h(\d{2})/); return m ? Number(m[1]) * 60 + Number(m[2]) : NaN; };
+  const cols = [...box.querySelectorAll(".semaine__jour")];
+  const dire = (li, quand) => `${quand} : ${li.querySelector("span")?.textContent || ""} à ${li.dataset.start}`;
+  let annonce = "";
+  if (idx >= 0 && idx < 6 && cols[idx]) {
+    const col = cols[idx]; col.classList.add("is-today"); let prochain = null;
+    col.querySelectorAll("li[data-start]").forEach((li) => { if (minutes(li.dataset.start) <= maintenant) li.classList.add("is-past"); else if (!prochain) prochain = li; });
+    if (prochain) { prochain.classList.add("is-next"); annonce = dire(prochain, "Prochain cours aujourd’hui"); }
+  }
+  if (!annonce) {
+    for (let k = 1; k <= 7; k++) {
+      const col = cols[(Math.max(idx, 0) + k) % 7]; const li = col && col.querySelector("li[data-start]");
+      if (li) { annonce = dire(li, `Prochain cours ${col.querySelector(".semaine__nom")?.textContent || ""}`); break; }
+    }
+  }
+  if (annonce) { live.textContent = annonce; live.hidden = false; }
+}
+
 function boot() {
-  renderStats(); renderTicker(); renderConfig(); renderCoaches();
+  renderStats(); renderTicker(); renderConfig(); renderCoaches(); marquerSemaine();
 
   window.BC.media(document);
   window.BC.reveal(document);

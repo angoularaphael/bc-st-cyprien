@@ -576,3 +576,37 @@
    restent. Vérifié en simulant le recadrage avant de trancher. */
 .config__media img[src*="educative"],
 .media img[src*="educative"] { object-position: 50% 0%; }
+
+/* =====================================================================
+   L’ACCUEIL S’ÉTOFFE (08/10/2026) — la semaine, la première séance, les
+   avis, le réseau, les questions. Même grammaire que le site : papier clair,
+   bleu du club, mono pour les étiquettes.
+   ===================================================================== */
+.semaine__jours { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: .7rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 168px), 1fr)); }
+.semaine__jour { border: 1px solid var(--line); background: var(--paper-2); border-radius: var(--radius, 6px); padding: 1rem 1rem 1.1rem; transition: border-color .3s, box-shadow .3s; }
+.semaine__nom { color: var(--muted); text-transform: uppercase; letter-spacing: .14em; margin-bottom: .7rem; font-size: var(--step--1); }
+.semaine__jour ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
+.semaine__jour li { display: grid; grid-template-columns: auto 1fr; column-gap: .6rem; font-size: var(--step--1); line-height: 1.35; }
+.semaine__jour time { font: 600 var(--step--1)/1.35 var(--f-mono); color: var(--spark); }
+.semaine__jour em { grid-column: 2; font-style: normal; color: var(--muted); font-size: .8rem; }
+.semaine__jour.is-today { border-color: var(--spark); box-shadow: 0 0 0 1px var(--spark) inset; }
+.semaine__jour.is-today .semaine__nom { color: var(--spark); }
+.semaine__jour.is-today .semaine__nom::after { content: " · aujourd’hui"; }
+.semaine__jour li.is-past { opacity: .45; }
+.semaine__jour li.is-next span { font-weight: 700; color: var(--ink); }
+.semaine__jour li.is-next time::before { content: "▸ "; }
+.semaine__live { margin: 1rem 0 0; color: var(--spark); }
+.semaine__plus { margin-top: 1.2rem; font-size: var(--step--1); letter-spacing: .06em; }
+.semaine__plus a { color: var(--spark); text-decoration: none; }
+.semaine__plus a:hover { text-decoration: underline; text-underline-offset: .25em; }
+.etapes { list-style: none; margin: 1.6rem 0 0; padding: 0; counter-reset: etape; display: grid; gap: .9rem; max-width: 70ch; }
+.etapes li { counter-increment: etape; position: relative; padding-left: 3.1rem; color: var(--ink-soft); line-height: 1.55; font-size: var(--step-0); }
+.etapes li b { color: var(--ink); }
+.etapes li::before { content: "0" counter(etape); position: absolute; left: 0; top: -.1rem; width: 2.2rem; height: 2.2rem; display: grid; place-items: center; border-radius: 50%;
+  font: 700 .85rem/1 var(--f-mono); color: #fff; background: var(--spark); }
+.soeurs { margin-top: 1.6rem; display: grid; gap: .8rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+.soeur { display: grid; gap: .4rem; padding: 1.2rem 1.25rem 1.3rem; border: 1px solid var(--line); border-radius: var(--radius, 6px); background: var(--paper-2); color: var(--ink); text-decoration: none; transition: transform .35s, border-color .3s; }
+.soeur:hover, .soeur:focus-visible { transform: translateY(-3px); border-color: var(--spark); }
+.soeur__tag { color: var(--spark); text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; }
+.soeur b { font: 700 var(--step-1)/1.1 var(--f-display); }
+.soeur span:not(.soeur__tag) { color: var(--ink-soft); font-size: var(--step--1); line-height: 1.5; }

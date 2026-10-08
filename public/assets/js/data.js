@@ -592,3 +592,36 @@ if (OVERRIDES.salle?.phone && !OVERRIDES.salle.phoneHref) {
   if (/^0\d{9}$/.test(chiffres)) SALLE.phoneHref = "+33" + chiffres.slice(1);
   else if (/^33\d{9}$/.test(chiffres)) SALLE.phoneHref = "+" + chiffres;
 }
+
+/* ------------------------------------------------------------------ *
+ *  L’ACCUEIL S’ÉTOFFE (08/10/2026) — St-Cyprien n’avait AUCUNE page dans
+ *  l’index Google (« détectée, non indexée ») : un accueil de 308 mots, sans
+ *  H1 en production, et presque aucun lien entrant. La semaine, la première
+ *  séance, les avis, le réseau et les questions s’ajoutent — rien n’est
+ *  retiré. Les horaires cités sont CALCULÉS depuis SCHEDULE.
+ * ------------------------------------------------------------------ */
+const _J = { Lun: "lundi", Mar: "mardi", Mer: "mercredi", Jeu: "jeudi", Ven: "vendredi", Sam: "samedi" };
+const _quand = (key) => {
+  const rows = SCHEDULE.filter((s) => s.key === key);
+  const parts = rows.map((s) => `le ${_J[s.day]} à ${s.time}`);
+  return parts.length > 1 ? `${parts.slice(0, -1).join(", ")} et ${parts.at(-1)}` : parts[0] || "";
+};
+
+export const SEMAINE = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"].map((d) => ({
+  d, long: _J[d], cours: SCHEDULE.filter((s) => s.day === d).map((s) => ({ start: s.time, cours: s.name, lvl: s.lvl, key: s.key })),
+}));
+
+/* Questions d’ACCUEIL — distinctes de la FAQ de /contact/ (où, première
+   séance, débutant, disciplines, enfants, abonnement, horaires). */
+export const HOME_FAQ = [
+  { q: "Peut-on s’entraîner dans les autres Boxing Center avec un abonnement de Saint-Cyprien ?",
+    a: "Oui, avec la Saison : 259€ les 12 mois au lieu de 400€, comptant ou en 4× sans frais, et l’accès libre aux 5 clubs du réseau — Saint-Cyprien, les Minimes, États-Unis, Ramonville et Portet-sur-Garonne." },
+  { q: "Faut-il réserver son cours ?",
+    a: "Non. Les cours collectifs se font sans réservation : tu viens à l’heure du créneau, en tenue, et tu montes sur le tapis." },
+  { q: "Peut-on venir s’entraîner en dehors des cours ?",
+    a: "Oui. Le club est ouvert du lundi au samedi, de 10h00 à 21h30, en accès libre : sacs, tatamis, ring, musculation, charges libres et cardio. Fermé le dimanche." },
+  { q: "Quel cours pour une femme qui débute ?",
+    a: `Le Lady Punch, 100 % féminin, ${_quand("lady")}. Zéro prérequis, et personne ne regarde : la boxe pour la forme, le cardio et la confiance.` },
+  { q: "Y a-t-il du cross-training et de l’Hyrox à Saint-Cyprien ?",
+    a: `Oui : ${_quand("hyrox")}. Charges, rameurs, circuits — la zone qui prépare le souffle du troisième round.` },
+];
