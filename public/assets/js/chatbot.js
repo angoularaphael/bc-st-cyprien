@@ -128,7 +128,7 @@ const ACTIONS = {
   offre:       { label: "Je prends ma place — 29€", href: "https://boutique.boxingcenter.fr/offre/29" },
   saison:      { label: "Je réserve ma saison · 259€", href: "https://boutique.boxingcenter.fr/offre/259" },
   essai:       { label: "Je viens essayer · 10€", href: "https://boutique.boxingcenter.fr/seance-essai" },
-  enfants:     { label: "J’inscris mon enfant", href: "https://boutique.boxingcenter.fr/abonnements" },
+  enfants:     { label: "J’inscris mon enfant", href: "https://boutique.boxingcenter.fr/abonnements#enfants" },
   abonnements: { label: "Voir les abonnements", href: "https://boutique.boxingcenter.fr/abonnements" },
   boutique:    { label: "La boutique du club", href: "https://boutique.boxingcenter.fr/" },
   tarifs:      { label: "Les tarifs en détail", href: "/tarifs/" },

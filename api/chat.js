@@ -10,6 +10,8 @@
 import { allowCors, readBody, geminiKeys } from "./_lib/util.js";
 import { factsBlock } from "./_lib/salle.js";
 import { localChatReply } from "./_lib/chat-fallback.js";
+import { contexteDuMoment } from "./_lib/moment.js";
+import { reponseDuPlanning } from "./_lib/repli-planning.js";
 
 export function providerTimeoutMs(raw = process.env.CHAT_PROVIDER_TIMEOUT_MS) {
   const parsed = Number(raw);
@@ -112,9 +114,25 @@ L’ARME SECRÈTE (à ne dégainer QUE quand la vente est morte) :
    posée en tête ET en fin de consigne, là où un modèle la respecte le mieux. */
 const LANGUE = "LANGUE — RÈGLE ABSOLUE : réponds TOUJOURS dans la langue du DERNIER message du visiteur. S’il écrit en anglais, toute ta réponse est en anglais (prix, horaires, conseils) et les libellés de boutons sont traduits : [boutons: offre:Get the 29€ offer]. S’il écrit en espagnol, en espagnol. Sinon, en français.";
 
-function systemFor(context) {
+/* Le planning OFFICIEL (data.js), normalisé pour le bloc « maintenant ».
+   Aucun coach par créneau : Saint-Cyprien ne publie que la discipline de
+   chaque coach (un créneau pieds-poings attend encore son encadrant). */
+const PRIX_ENFANTS = "295 € l’année t-shirt inclus, Baby Boxe 250 € l’année";
+
+async function planningOfficiel() {
+  try {
+    const D = await import("../public/assets/js/data.js");
+    return (D.SCHEDULE || []).map((s) => ({
+      day: s.day, start: s.time, end: (/jusqu.?à\s*(\d{1,2}h\d{2})/i.exec(s.lvl || "") || [])[1],
+      cours: s.name, enfant: s.key === "kids", age: /ans/.test(s.lvl || "") ? s.lvl : "",
+    }));
+  } catch { return []; }
+}
+
+async function systemFor(context) {
   const c = String(context || "").slice(0, 300).trim();
-  const base = `${LANGUE}\n\n${RULES}\n\nLES FAITS DE LA SALLE :\n${factsBlock()}\n\n${LANGUE}`;
+  const moment = contexteDuMoment({ planning: await planningOfficiel(), prixEnfants: PRIX_ENFANTS });
+  const base = `${LANGUE}\n\n${RULES}\n\nLES FAITS DE LA SALLE :\n${factsBlock()}\n\n${moment}\n\n${LANGUE}`;
   return c ? `${base}\n\nCONTEXTE VISITEUR (déjà connu — ne le redemande pas) : ${c}` : base;
 }
 
@@ -159,6 +177,10 @@ async function gemini(key, model, messages, system) {
   return text;
 }
 
+/* 09/10/2026 : llama-3.3-70b-versatile et groq/compound rendent 404 avec la
+   clé Groq du réseau — le relais Groq était mort sans bruit. gpt-oss-120b
+   est le grand modèle encore servi ; sa réflexion se paie sur max_tokens,
+   d’où reasoning_effort bas. */
 async function openaiLike(url, key, model, messages, system) {
   const provider = url.includes("groq.com") ? "groq" : "mistral";
   const r = await providerFetch(provider, url, {
@@ -168,6 +190,8 @@ async function openaiLike(url, key, model, messages, system) {
       model,
       max_tokens: 700,
       temperature: 0.4,
+      ...(/gpt-oss/.test(model) ? { reasoning_effort: "low" } : {}),
+      ...(/qwen/.test(model) ? { reasoning_format: "hidden" } : {}),
       messages: [{ role: "system", content: system }, ...messages],
     }),
   });
@@ -176,6 +200,11 @@ async function openaiLike(url, key, model, messages, system) {
   if (!text) throw new ProviderError(provider, 0, "empty");
   return text;
 }
+
+/* Groq gratuit : 8 000 jetons/min PAR MODÈLE, soit environ une réponse par
+   minute avec ce prompt (mesuré le 09/10/2026). GROQ_MODEL est donc une
+   LISTE, essayée dans l’ordre : trois modèles = trois fois plus de relais. */
+const GROQ_MODELES = () => (process.env.GROQ_MODEL || "openai/gpt-oss-120b,openai/gpt-oss-20b,qwen/qwen3.8-27b").split(",").map((m) => m.trim()).filter(Boolean);
 
 export default async function handler(req, res) {
   allowCors(res);
@@ -193,7 +222,7 @@ export default async function handler(req, res) {
       }))
     : [];
   const messages = [...history, { role: "user", content: message }];
-  const system = systemFor(body.context);
+  const system = await systemFor(body.context);
   const failures = [];
   let attempted = 0;
 
@@ -224,13 +253,15 @@ export default async function handler(req, res) {
 
   // 2) Groq
   if (process.env.GROQ_API_KEY) {
-    const reply = await attempt("groq", process.env.GROQ_API_KEY, () => openaiLike(
-          "https://api.groq.com/openai/v1/chat/completions",
-          process.env.GROQ_API_KEY,
-          process.env.GROQ_MODEL || "llama-3.3-70b-versatile",
-          messages, system
-        ));
-    if (reply) return res.status(200).json({ reply, via: "groq", degraded: false });
+    for (const gm of GROQ_MODELES()) {
+      const reply = await attempt("groq", `${process.env.GROQ_API_KEY}|${gm}`, () => openaiLike(
+            "https://api.groq.com/openai/v1/chat/completions",
+            process.env.GROQ_API_KEY,
+            gm,
+            messages, system
+          ));
+      if (reply) return res.status(200).json({ reply, via: "groq", degraded: false });
+    }
   }
 
   // 3) Mistral
@@ -248,7 +279,7 @@ export default async function handler(req, res) {
      le visiteur. La réponse reste 200, ancrée, et l'état dégradé est explicite
      sans exposer les noms de variables ni le moindre fragment de secret. */
   return res.status(200).json({
-    reply: localChatReply(message),
+    reply: reponseDuPlanning(message, { planning: await planningOfficiel(), prixEnfants: PRIX_ENFANTS }) || localChatReply(message),
     via: "local",
     degraded: true,
     diagnostic: {

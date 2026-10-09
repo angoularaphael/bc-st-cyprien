@@ -150,7 +150,7 @@ export const LINKS = {
   promos: "https://boutique.boxingcenter.fr/offres-speciales", // Rentrée / Saison
   prelevement: "https://boutique.boxingcenter.fr/abonnements#prelevement", // les classiques au mois
   comptant: "https://boutique.boxingcenter.fr/abonnements",
-  enfants: "https://boutique.boxingcenter.fr/abonnements",
+  enfants: "https://boutique.boxingcenter.fr/abonnements#enfants",
   coachings: "https://boutique.boxingcenter.fr/coachings",
   materiel: "https://boutique.boxingcenter.fr/materiel",
   // maillage de marque : la boutique du réseau a son propre domaine

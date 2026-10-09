@@ -38,7 +38,10 @@ export function localChatReply(message) {
   if (/horaire|ouvert|ferme|heure|dimanche|samedi|soir|midi/.test(q)) {
     return `${f.horaires} [boutons: planning, contact]`;
   }
-  if (/adresse|ou se trouve|acces|tram|metro|parking|venir|itineraire|rue/.test(q)) {
+  if (/enfant|fils|fille|baby|educative|ado|jeune/.test(q)) {
+    return "L’école accueille les enfants dès 3 ans : Baby Boxe 3/6 ans, éducative 7/11 ans, ados 12/16 ans et compétiteurs. Dis-moi l’âge de ton enfant, je te donne son créneau. [boutons: enfants, planning]";
+  }
+  if (/adresse|ou se trouve|c.?est ou|\bou est\b|\bou etes\b|acces|tram|metro|parking|venir|itineraire|rue/.test(q)) {
     return `${f.adresse}. ${f.acces} [boutons: contact, salle]`;
   }
   if (/tarif|prix|combien|abonn|offre|promo|29|259|paiement|payer/.test(q)) {
@@ -47,10 +50,7 @@ export function localChatReply(message) {
   if (/essai|tester|essayer|premiere seance|debuter|debutant|commencer/.test(q)) {
     return `${f.premiere} [boutons: essai, planning, contact]`;
   }
-  if (/enfant|baby|educative|ado|jeune/.test(q)) {
-    return "L’école accueille les enfants dès 3 ans : Baby Boxe 3/6 ans, éducative 7/11 ans, ados 12/16 ans et compétiteurs. Dis-moi l’âge de ton enfant, je te donne son créneau. [boutons: enfants, planning]";
-  }
-  if (/coach|entraineur|prof|dadi|tawee|brice|encadr/.test(q)) {
+  if (/coach|entraineur|prof|dadi|tawee|brice|encadr|qui (?:donne|fait|enseigne|anime|tient)/.test(q)) {
     return `${COACHS} [boutons: coachs, contact]`;
   }
   if (/discipline|cours|anglaise|thai|k1|kick|grappling|hyrox|cross|lady|camp/.test(q)) {
