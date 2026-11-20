@@ -3,7 +3,7 @@
    Trois voies, toutes optionnelles, toutes cumulables :
      1. STOCKAGE   Upstash Redis REST (UPSTASH_REDIS_REST_URL + _TOKEN) —
                    c’est ce que le vestiaire relit dans « Les contacts ».
-     2. E-MAIL     Resend (RESEND_API_KEY + LEAD_EMAIL_TO, défaut
+     2. E-MAIL     Brevo (BREVO_API_KEY + LEAD_EMAIL_TO, defaut
                    boxingcenter31@gmail.com) — une notification par lead.
      3. WEBHOOK    LEAD_WEBHOOK_URL — POST JSON brut (Zapier, Make, CRM…).
    Rien de configuré ⇒ 200 + journal serveur. Le parcours visiteur ne
@@ -30,27 +30,25 @@ async function forwardToNetwork(lead) {
 }
 
 async function notifyEmail(lead) {
-  const key = process.env.RESEND_API_KEY;
-  if (!key) return false;
-  /* Les deux noms sont acceptés : le .env de ce dépôt écrit LEAD_TO, le code
-     lisait LEAD_EMAIL_TO. Tant que les deux existent dans la nature, on lit
-     les deux — une notification qui part à la mauvaise adresse parce qu’une
-     variable s’appelle presque comme il faut, ça ne se voit pas, et c’est le
-     pire genre de panne. */
+  const key = String(process.env.BREVO_API_KEY || "").trim();
+  if (!key.startsWith("xkeysib-")) return false;
   const to = process.env.LEAD_EMAIL_TO || process.env.LEAD_TO || "boxingcenter31@gmail.com";
-  const from = process.env.LEAD_EMAIL_FROM || process.env.LEAD_FROM || "Boxing Center Saint-Cyprien <onboarding@resend.dev>";
+  const name = process.env.BREVO_SENDER_NAME || "Boxing Center";
+  const email = process.env.BREVO_SENDER_EMAIL || "contact@boxingcenter.fr";
   const lignes = [
-    ["Prénom", lead.prenom], ["Nom", lead.nom], ["Email", lead.email],
-    ["Téléphone", lead.phone], ["Salle", lead.salle], ["Origine", lead.event],
-    ["Session", lead.sessionId], ["Reçu le", lead.at],
+    ["Prenom", lead.prenom], ["Nom", lead.nom], ["Email", lead.email],
+    ["Telephone", lead.phone], ["Salle", lead.salle], ["Origine", lead.event],
+    ["Session", lead.sessionId], ["Recu le", lead.at],
   ].filter(([, v]) => v).map(([k, v]) => `<tr><td style="padding:4px 12px 4px 0"><b>${k}</b></td><td>${v}</td></tr>`).join("");
-  const r = await fetch("https://api.resend.com/emails", {
+  const r = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
-    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+    headers: { "api-key": key, "Content-Type": "application/json", Accept: "application/json" },
     body: JSON.stringify({
-      from, to: [to],
+      sender: { name, email },
+      to: [{ email: to }],
+      replyTo: { email: "boxingcenter31@gmail.com", name },
       subject: `Nouveau contact — ${lead.prenom || "visiteur"}${lead.phone ? ` · ${lead.phone}` : ""}`,
-      html: `<p>Un visiteur a laissé ses coordonnées à l’assistant du site Saint-Cyprien.</p><table>${lignes}</table>`,
+      htmlContent: `<p>Un visiteur a laisse ses coordonnees a l assistant du site Saint-Cyprien.</p><table>${lignes}</table>`,
     }),
   });
   return r.ok;
